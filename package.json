@@ -1,0 +1,20 @@
+{
+  "name": "marketplace",
+  "version": "1.0.0",
+  "description": "Marketplace where users can sell and buy art pieces.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcuetos97/MARKETPLACE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcuetos97/MARKETPLACE/issues"
+  },
+  "homepage": "https://github.com/jcuetos97/MARKETPLACE#readme"
+}
