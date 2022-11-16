@@ -33,12 +33,7 @@ const Header = () => {
                         </li>
                         <li className='header-link-wrapper'>
                             <Link to={About}>
-                            <span className='header-link'>Login</span>
-                            </Link>
-                        </li>
-                        <li className='header-link-wrapper'>
-                            <Link to={About}>
-                            <span className='header-link'>Sign Up</span>
+                            <span className='header-link'><strong>Sign In</strong></span>
                             </Link>
                         </li>
                     </ul>
