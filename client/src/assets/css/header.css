@@ -19,8 +19,7 @@
     cursor: pointer;
     color: #333;
     transition: color .3s; }
-    .header-logo-container:hover {
-        color: #0062b9; }
+    
 
 .header-logo-img-cont {
     width: 3rem;
@@ -45,6 +44,8 @@
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 2px; }
+    .header-logo-title:hover {
+        color: #0062b9; }
 
 .header-links {
     display: flex; }
@@ -73,3 +74,24 @@
     padding: 0 2.2rem ;
     height: 1.2rem;
 }
+
+.search-bar {
+    background-color: #e9e9e9;
+    float: right;
+    margin-left: 1.3rem;
+    width: 31rem;
+    padding: .4rem;
+    border: none;
+    border-radius: 35px; 
+  }
+
+.search-bar input[type=text] {
+    background-color: inherit;
+    border: none;
+    padding: 0 1rem;
+}
+
+.search {
+    border: none;
+    cursor: pointer;
+  }
