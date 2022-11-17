@@ -1,0 +1,38 @@
+.home {
+    color: #fff;
+    height: 100vh;
+    min-height: 80rem;
+    max-height: 120rem;
+    position: relative;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+    margin-top: 7rem; }
+
+.home-banner {
+    height: 25rem;
+    width: 100%;
+    background-color: aliceblue;
+    background-image: url(https://miro.medium.com/max/1400/1*GdrS-uxX2971bu3mEdOR5Q.jpeg);
+    background-position: center;
+    transition: transform .3s;
+} 
+.home-banner:hover {
+    transform: translateY(-5px); 
+}
+
+.home-banner:hover > .welcome-text {
+    transform: translateY(-5px); 
+}
+
+.welcome-text {
+    padding: 6rem 5rem;
+    position: relative;
+    transition: transform .3s;
+}
+
+

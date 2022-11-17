@@ -1,5 +1,6 @@
 .header {
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
     background: #000;
@@ -10,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3rem; }
+    padding: 0 5rem; }
 
 .header-logo-container {
     display: flex;
@@ -22,8 +23,8 @@
         color: #0062b9; }
 
 .header-logo-img-cont {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     overflow: hidden;
     margin-right: 1.5rem; }
     @media only screen and (max-width: 56.25em) {
@@ -40,20 +41,19 @@
     display: block; }
 
 .header-logo-title {
-    font-size: 1.1rem;
+    font-size: .85rem;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 2px; }
 
 .header-links {
     display: flex; }
 
 .header-link {
-    padding: 2.2rem 3rem;
+    padding: 1.7rem 3rem;
     display: inline-block;
-    font-size: 1rem;
+    font-size: .9rem;
     color: #333;
-    text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
     transition: color .3s; }
@@ -63,3 +63,13 @@
         .header-link {
             padding: 3rem 1.8rem;
             font-size: 1.5rem; } }
+
+.shop-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.shopCart {
+    padding: 0 2.2rem ;
+    height: 1.2rem;
+}
