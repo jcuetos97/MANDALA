@@ -27,7 +27,7 @@ const Message = ({ message }) => (
     </section>
 );
 
-export default function App() {
+export default function Checkout() {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
