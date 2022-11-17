@@ -23,5 +23,11 @@
   "homepage": "https://github.com/jcuetos97/MARKETPLACE#readme",
   "devDependencies": {
     "concurrently": "^7.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "stripe": "^11.0.0"
   }
 }
