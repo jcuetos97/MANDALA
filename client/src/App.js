@@ -3,13 +3,15 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
-
+import './assets/css/general.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import ChatBox from './components/Chatbox';
 import Home from './pages/Home';
+import User from './pages/User';
 import About from './pages/About';
 import Explore from './pages/Explore';
-import SignIn from './pages/SignIn';
+import SignForm from './pages/SignForm';
 
 // Construct our main GraphQL API endpoint
 const client = new ApolloClient({
@@ -23,7 +25,7 @@ function App() {
       <Router>
         <div>
           <Header/>
-            <div>
+            <div className='main-container'>
               <Routes>
                 <Route
                 path='/'
@@ -34,14 +36,19 @@ function App() {
                 element={<About />}  
                 />
                 <Route
+                path='/user'
+                element={<User />}  
+                />
+                <Route
                 path='/explore'
                 element={<Explore />}  
                 />
                 <Route
-                path='/signIn'
-                element={<SignIn />}  
+                path='/signForm'
+                element={<SignForm />}  
                 />
               </Routes>
+              <ChatBox/>
             </div>
           <Footer/>
         </div>

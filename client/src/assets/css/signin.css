@@ -1,82 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
-.form {
-    margin-top: 15rem;
-    background-color: black;
-    color: #fff;
-    padding: 40px;
-    max-width:600px;
-    margin:40px auto;
-    border-radius:15px;
+.signin {
+    display:flex;
+    width: 100%;
+    height: inherit;
+    font-family: 'Lora', serif;
+    padding: 0 7rem;
+    margin-top: 7rem; }
+
+.signin-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    color: var(--dark); }
+
+.container-img {
+    animation: slideInLeft;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    display: flex;
+    width: 50%;
+    justify-content: center; }
+
+.signin-img {
+  height: 75vh; }
+
+.form-containter {
+  animation: slideInRight;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  width: 60%; }
+
+.form-containter-title {
+  margin-top: 2rem; }
+
+.tab-group {
+  animation: slideInDown;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center; 
+  gap: 1rem; }
+
+.tab-active {
+  background-color: var(--dark);
+  color: var(--light);  
+  padding: .2rem 1rem; 
+  border-radius: 15px; }
+
+.field-wrap {
+  font-size: 1rem;
+  padding: .5rem 0rem;
+  flex-wrap: wrap; }
+  
+
+.field-wrap input {
+    background-color: var(--light-blue);
+    border: none;
+    margin: .3rem 0rem;
+    padding: .5rem;
+    width: 100%;
+    border-radius: 5px; }
+
+.button-animated:hover {
+  transform: translateY(-5px);
+  opacity: 1.2; }
+
+
+  @keyframes slideInLeft {
+    0% {
+        transform: translateX(-170%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes slideInRight {
+  0% {
+      transform: translateX(170%);
   }
+  100% {
+      transform: translateX(0);
+  }
+}
 
-
-   /* <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up for Free</h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
-
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
-        </div>
-        
-      </div> */
+@keyframes slideInDown {
+  0% {
+      transform: translateY(-370%);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}

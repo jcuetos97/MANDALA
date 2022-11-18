@@ -3,7 +3,7 @@ import Logo from '../assets/png/logo.png';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee, faUser, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -26,7 +26,7 @@ const Header = () => {
                     <p className='header-logo-title'>man<br/>da<br/>la</p>  
                     </Link>  
                     <div className='search-bar'>
-                        <FontAwesomeIcon className='search' icon="magnifying-glass"/>
+                        <FontAwesomeIcon className='search-icon' icon="magnifying-glass"/>
                         <input type="text" placeholder="Search.." name="search"/> 
                     </div>
                 </div>
@@ -38,12 +38,17 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className='header-link-wrapper'>
+                            <Link to='/user'>
+                            <span className='header-link'>User</span>
+                            </Link>
+                        </li>
+                        <li className='header-link-wrapper'>
                             <Link to='/explore'>
                             <span className='header-link'>Explore</span>
                             </Link>
                         </li>
                         <li className='header-link-wrapper'>
-                            <Link to='/signIn'>
+                            <Link to='/signForm'>
                             <span className='header-link'>Sign In</span>
                             </Link>
                         </li>
