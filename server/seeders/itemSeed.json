@@ -1,0 +1,16 @@
+[
+    {
+      "author": "Vincent van Gogh",
+      "title": "La Noche Estrellada",
+      "description": "Oleo sobre lienzo, replica",
+      "price": 300.00,
+      "image": "imagen VVG"
+    },
+    {
+      "author": "Frida Khalo",
+      "title": "Las dos Fridas",
+      "description": "Cuadro al oleo, replica",
+      "price": 200.00,
+      "image": "imagen FK"
+    }    
+]
