@@ -121,6 +121,41 @@ const resolver = {
         //     }
         //     throw new AuthenticationError('You need to be logged in');
         // },
+        addBoughtItem: async (parent, {itemId}) => {
+            
+            const fakeId = '637668f531027ec63cec3f11';
+            return await User.findOneAndUpdate(
+                { _id: fakeId },
+                { $push: { boughtItems: itemId } },
+                { new: true }
+            );   
+        },
+
+        addSoldItem: async (parent, {itemId}) => {
+            
+            const fakeId = '637668f531027ec63cec3f11';
+            return await User.findOneAndUpdate(
+                { _id: fakeId },
+                { $push: { soldItems: itemId } },
+                { new: true }
+            );   
+        },
+
+        updateUser: async (parent, args) => {
+            const fakeUserId = '637668f531027ec63cec3f11';
+            return await User.findOneAndUpdate(
+                { _id: fakeUserId },
+                {
+                    street: args.street,
+                    zip: args.zip,
+                    city: args.city,
+                    state: args.state,
+                    country: args.country
+                },
+                { new: true }
+            );
+        },
+
     }
 };
 
