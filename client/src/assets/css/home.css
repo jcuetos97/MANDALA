@@ -5,6 +5,7 @@
     font-family: 'Lora', serif;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     padding: 0 7rem;
     margin-top: 7rem; }
 
@@ -59,6 +60,22 @@
     margin-top: 2rem;
     box-shadow: 0 10px 100px rgba(0, 0, 0, 0.3); }
 
+@media screen and (max-width: 992px) {
+    .container-1  {
+        justify-content: center;
+        width: 100%;
+        order: 2;
+    }
+    .container-2  {
+        justify-content: center;
+        width: 100%;
+        order: 1;
+    }
+    .btn-start-now {
+        width: 100%;
+    }
+}
+
 @keyframes slideInLeft {
     0% {
         transform: translateX(-170%);
@@ -67,7 +84,6 @@
         transform: translateY(0);
     }
 }
-
 
 @keyframes slideUp {
     0% {

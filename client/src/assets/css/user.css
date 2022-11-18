@@ -1,28 +1,23 @@
 .user {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
-    height: inherit;
     background-color: var(--light);
-    padding: 4rem;
-    padding-top: 7rem; }
-
-.user-content {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    gap: 2rem; }
+    padding: 7rem 1rem;
+    gap: 1rem; }
 
 .user-container {
     text-transform: capitalize;
     font-family: 'Lora', sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    color: var(--light);
-    display: flex-start;  
+    color: var(--light); 
     border-radius: 15px;
     padding: 1rem;
     box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); }
+    .user-container:hover {
+        transform: translateY(-5px); }
 
 .art {
     position: relative;
@@ -62,9 +57,9 @@
     border: none;
     padding: .7rem 2rem;
     border-radius: 5px; 
-    transition: all 1s; 
+    transition: all 1s;
     position: absolute;
-    bottom: 15px; }
+    bottom: 15px;  }
 
 .btn-art {
     background-color: var(--dark);
@@ -73,9 +68,7 @@
     border: none;
     padding: .7rem 2rem;
     border-radius: 5px; 
-    transition: all 1s; 
-    position: absolute;
-    bottom: 15px; }
+    transition: all 1s;  }
 
 .edit-icon {
     position: absolute;
@@ -88,6 +81,24 @@
     position: absolute;
     bottom: 15px;
     right: 0;
+}
+
+.collection-img {
+    height: 35%;
+    position: absolute;
+    bottom: 15px;
+}
+
+.info-content-title {
+    margin-top: 1rem;
+    color: var(--blue);
+}
+
+
+@media screen and (max-width: 992px) {
+    .user-container {
+        min-width: 100%;
+    }
 }
 
 @keyframes slideInUp {

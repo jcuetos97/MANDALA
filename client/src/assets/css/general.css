@@ -26,7 +26,7 @@ body {
     overflow-y: scroll; }  
     
 .main-container {
-  height: 100vh;
+  min-height: 100vh;
   min-width: 275px;
   margin: 0;
   padding: 0; }
@@ -60,4 +60,5 @@ textarea {
     border-radius: 5px; 
     transition: all 1s;
 }
-
+.btn:hover {
+  transform: translateY(-5px); }

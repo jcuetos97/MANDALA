@@ -52,9 +52,9 @@ const Header = () => {
                             <span className='header-link'>Sign In</span>
                             </Link>
                         </li>
-                        <li className='shop-wrapper'>
-                            <Link to='/signIn'>
-                            <img className='shopCart' src={ShopCart} alt="Shop Cart Icon" />
+                        <li className="shop-wrapper">
+                            <Link to="/explore">
+                            <img className="shopCart" src={ShopCart} alt="Shop Cart Icon" />
                             </Link>
                         </li>
                     </ul>

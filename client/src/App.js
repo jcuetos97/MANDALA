@@ -7,6 +7,7 @@ import './assets/css/general.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import ChatBox from './components/Chatbox';
+import Sell from './pages/Sell';
 import Home from './pages/Home';
 import User from './pages/User';
 import About from './pages/About';
@@ -46,6 +47,10 @@ function App() {
                 <Route
                 path='/signForm'
                 element={<SignForm />}  
+                />
+                <Route
+                path='/sell'
+                element={<Sell />}  
                 />
               </Routes>
               <ChatBox/>
