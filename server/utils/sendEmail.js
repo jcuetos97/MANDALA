@@ -3,6 +3,7 @@
 
 
 const nodemailer = require("nodemailer");
+const env = require('dotenv');
 
 //Contiene infomracion del mail prinncipal
 
@@ -21,10 +22,10 @@ nodemailer.createTransport({
     host: "smtp.gmail.com",
     //587 para no tener secure
     port: 465,
-    secure: false, // upgrade later with STARTTLS
+    secure: true, // upgrade later with STARTTLS
     auth: {
-      user: "martqetplace@gmail.com",
-      pass: "Friday123#",
+      user: 'process.env.SMTP_USERNAME',
+      pass: 'process.env.SMTP_PASSWORD',
     },
   });
 
@@ -34,9 +35,9 @@ nodemailer.createTransport({
 const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'martqetplace@gmail.com',
-            pass: 'Friday123#'
-        }
+            user: 'process.env.SMTP_USERNAME',
+            pass: 'process.env.SMTP_PASSWORD',
+          },
      });
 
 const mailOption = {
