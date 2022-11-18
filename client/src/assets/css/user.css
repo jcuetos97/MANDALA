@@ -1,0 +1,120 @@
+.user {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: var(--light);
+    padding: 7rem 1rem;
+    gap: 1rem; }
+
+.user-container {
+    text-transform: capitalize;
+    font-family: 'Lora', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--light); 
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); }
+    .user-container:hover {
+        transform: translateY(-5px); }
+
+.art {
+    position: relative;
+    background-color: var(--blue);  
+    animation: slideInLeft;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-duration: 1.6s;
+    height: 75vh;
+    width: 20%; }
+
+.info {
+    position: relative;
+    color: var(--dark);
+    animation: slideInUp;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-duration: 2.4s;
+    height: 75vh;
+    width: 50%; }
+
+.items {
+    position: relative;
+    color: var(--dark);
+    animation: slideInUp;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-duration: 1.6s;
+    height: 55vh;
+    width: 20%;
+ }
+
+.btn-explore {
+    background-color: var(--dark);
+    color: var(--light);
+    margin-top: 1rem;
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 5px; 
+    transition: all 1s;
+    position: absolute;
+    bottom: 15px;  }
+
+.btn-art {
+    background-color: var(--dark);
+    color: var(--light);
+    margin-top: 1rem;
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 5px; 
+    transition: all 1s;  }
+
+.edit-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+}
+
+.info-img {
+    height: 45%;
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+}
+
+.collection-img {
+    height: 35%;
+    position: absolute;
+    bottom: 15px;
+}
+
+.info-content-title {
+    margin-top: 1rem;
+    color: var(--blue);
+}
+
+
+@media screen and (max-width: 992px) {
+    .user-container {
+        min-width: 100%;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(150%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-170%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

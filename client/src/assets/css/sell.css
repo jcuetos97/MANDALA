@@ -1,0 +1,8 @@
+.sell {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: var(--light);
+    padding: 7rem 1rem;
+    gap: 1rem; }
