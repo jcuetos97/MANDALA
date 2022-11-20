@@ -1,8 +1,106 @@
-.navbar {
-    margin-top: 50px;
+.navbar-explore {
+    animation: slideDown 2s;
+    margin-top: 4.2rem;
+    background-color: var(--dark);
+    transform: all 4s; }
+    .navbar-explore:hover {
+        transform: translateY(7px);
+        opacity: 1.2; }
+
+.header-links-explore {
+    display: flex; 
+    font-family: 'Lora', serif; }
+
+.header-link-explore {
+    padding: 1rem 3rem;
+    cursor: pointer;
+    display: inline-block;
+    color: var(--light);
+    font-size: .9rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: color .3s; }
+    .header-link-explore:hover {
+        color: #0062b9; }
+    @media only screen and (max-width: 56.25em) {
+        .header-link {
+            padding: 3rem 1.8rem;
+            font-size: 1.5rem; } }
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    width: 17rem;
+    margin: 2rem;
+    background-color: var(--light-grey);
+    color: var(--dark);
+    border-radius: 25px; }
+
+.card-image-container {
+    height: 60%;
+    width: 100%;
+    transition: all 1s;
 }
 
-.imgart {
-    width: 600px;
-    height: 400px
+.cards-container {
+    animation: opacity 2s;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: flex-start;
+    padding: 4rem;
+}
+
+.card-image-top {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.card-body {
+    width: 100%;
+}
+
+.card-body-content {
+    padding: 1rem;
+}
+
+.btn-add {
+    opacity: 0;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 100%;
+    background-color: var(--dark); 
+    color: var(--light);
+    padding: .7rem 2rem;
+    transition: all 1s;
+}
+
+.card:hover .btn-add {
+    opacity:1;
+    transform: translateY(5px);
+    color: var(--light-blue);
+}
+
+.card:hover .card-image-container {
+    transform: translateY(-5px);
+}
+
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-150%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
