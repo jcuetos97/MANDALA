@@ -1,51 +1,72 @@
 import React from "react";
-import "../assets/css/explore.css";
 import Card from "../components/Card";
 import image from "../assets/jpeg/homeimage.jpeg";
+
+import "../assets/css/explore.css";
+import "../assets/css/general.css";
 
 const Explore = () => {
     return (
         <div>
-            <h1>Explore</h1>
-            <nav class="navbar navbar-expand-lg bg-light">
+            <nav className="navbar-explore">
                 <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">
-                                    Top 5 pieces
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">
-                                    Top 5 Artists
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active">All Categories</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex" role="search">
-                            <input
-                                class="form-control me-2"
-                                type="search"
-                                placeholder="Search"
-                                aria-label="Search"
-                            />
-                            <button class="btn btn-dark" type="submit">
-                                Search
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                    <ul className="header-links-explore">
+                        <li className="header-link-explore">
+                                Top 5 pieces
+                        </li>
+                        <li className="header-link-explore">
+                                Top 5 Artists
+                        </li>
+                        <li className="header-link-explore">
+                            All Categories
+                        </li>
+                    </ul>
+                </div> 
             </nav>
-            <Card
-            image= {image}
-            title= "TEST"
-            description= "DESC"
-            id= "asd"
-            price= "$20.00"
-            />
+            <div className="cards-container">
+                <Card
+                image= {image}
+                title= "TEST"
+                description= "DESC"
+                id= "asd"
+                price= "$20.00"
+                />
+                <Card
+                image= {image}
+                title= "TEST"
+                description= "DESC"
+                id= "asd"
+                price= "$20.00"
+                />
+                <Card
+                image= {image}
+                title= "TEST"
+                description= "DESC"
+                id= "asd"
+                price= "$20.00"
+                />
+                <Card
+                image= {image}
+                title= "TEST"
+                description= "DESC"
+                id= "asd"
+                price= "$20.00"
+                />
+                <Card
+                image= {image}
+                title= "TEST"
+                description= "DESC"
+                id= "asd"
+                price= "$20.00"
+                />
+                <Card
+                image= {image}
+                title= "TEST"
+                description= "DESC"
+                id= "asd"
+                price= "$20.00"
+                />
+            </div>   
         </div>
     );
 };
