@@ -14,14 +14,14 @@
     animation-timing-function: ease-in-out;
     animation-delay: 0s;
     animation-duration: 2s;
-    padding: 1rem;
     display: flex;
     width: 50%;
     transition: transform .3s; }
 
 .home-doodle {
-    height: 75vh;
-}
+    padding: 2rem 1rem;
+    width: 100%;
+    object-fit: contain; }
 
 .container-2 {
     animation: slideUp;
@@ -30,12 +30,9 @@
     animation-duration: 1s;
     display: flex;
     width: 50%;
+    padding: 3rem 5rem;
     transition: transform .3s;
     color: var(--dark); }
-
-.welcome-text {
-    padding: 3rem 5rem;
-    transition: transform .3s; }
 
 .home-banner:hover {
     transform: translateY(5px); }
@@ -61,19 +58,19 @@
     box-shadow: 0 10px 100px rgba(0, 0, 0, 0.3); }
 
 @media screen and (max-width: 992px) {
+    .home {
+        padding: 1rem 2rem; }
     .container-1  {
         justify-content: center;
         width: 100%;
-        order: 2;
-    }
+        order: 2; }
     .container-2  {
         justify-content: center;
         width: 100%;
         order: 1;
-    }
+        padding: 0rem 0rem; }
     .btn-start-now {
-        width: 100%;
-    }
+        width: 100%; }
 }
 
 @keyframes slideInLeft {
