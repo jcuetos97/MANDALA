@@ -15,13 +15,15 @@
     animation-delay: 0s;
     animation-duration: 2s;
     display: flex;
+    justify-content: center;
     width: 50%;
     transition: transform .3s; }
 
 .home-doodle {
-    padding: 2rem 1rem;
+    padding: 2rem 0rem;
     width: 100%;
-    object-fit: contain; }
+    object-fit: contain; 
+    max-width: 500px;}
 
 .container-2 {
     animation: slideUp;
@@ -57,9 +59,15 @@
     margin-top: 2rem;
     box-shadow: 0 10px 100px rgba(0, 0, 0, 0.3); }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1050px) {
     .home {
         padding: 1rem 2rem; }
+    .home-main-title { 
+        font-size: 3rem;
+    }
+    .home-main-sub { 
+        font-size: 1rem;
+    }
     .container-1  {
         justify-content: center;
         width: 100%;
@@ -68,7 +76,7 @@
         justify-content: center;
         width: 100%;
         order: 1;
-        padding: 0rem 0rem; }
+        padding: 0; }
     .btn-start-now {
         width: 100%; }
 }

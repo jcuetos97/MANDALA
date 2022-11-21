@@ -1,60 +1,71 @@
+.explore {
+    display: flex;
+    font-family: 'Lora', serif;
+}
+
 .navbar-explore {
     animation: slideDown 2s;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    width: 20%;
+    height: 75vh;
     margin-top: 4.2rem;
+    padding: 5rem 2rem;
     background-color: var(--dark);
-    transform: all 4s; }
-    .navbar-explore:hover {
-        transform: translateY(7px);
-        opacity: 1.2; }
-
-.header-links-explore {
-    display: flex; 
-    font-family: 'Lora', serif; }
-
-.header-link-explore {
-    padding: 1rem 3rem;
-    cursor: pointer;
-    display: inline-block;
     color: var(--light);
-    font-size: .9rem;
-    letter-spacing: 1px;
-    font-weight: 500;
+    border-radius:  0 0 25px;
+    transform: all 4s; }
+
+.navbar-explore-title {
+    padding: 1rem 0rem;
+    border-bottom: solid 1px var(--light);
+}
+
+.explore-link-explore {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0rem;
+    margin-left: 1rem;
+    cursor: pointer;
     transition: color .3s; }
-    .header-link-explore:hover {
-        color: #0062b9; }
-    @media only screen and (max-width: 56.25em) {
-        .header-link {
-            padding: 3rem 1.8rem;
-            font-size: 1.5rem; } }
+    .explore-link-explore label {
+        padding-left: 1rem;
+    }
 
 .card {
     display: flex;
     flex-wrap: wrap;
     width: 17rem;
     margin: 2rem;
-    background-color: var(--light-grey);
     color: var(--dark);
+    background-color: var(--light-grey);
     border-radius: 25px; }
 
 .card-image-container {
     height: 60%;
     width: 100%;
-    transition: all 1s;
-}
+    transition: all 1s; }
 
 .cards-container {
     animation: opacity 2s;
     display: flex;
     flex-wrap: wrap ;
     justify-content: flex-start;
-    padding: 4rem;
+    padding: 4rem; }
+
+.cards-container-header {
+    width: 100%;
+    padding: 2rem;
+}
+.cards-container description {
+    font-size: .5rem;
 }
 
 .card-image-top {
     object-fit: cover;
     height: 100%;
     width: 100%;
-    border-radius: 25px;
 }
 
 .card-body {

@@ -50,7 +50,7 @@ button {
   cursor: pointer; }
 
 textarea {
-  resize: none; }
+  resize: vertical; }
 
 .btn {
     background-color: var(--dark);
@@ -63,3 +63,12 @@ textarea {
 }
 .btn:hover {
   transform: translateY(-5px); }
+
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-170%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}

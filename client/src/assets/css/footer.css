@@ -13,11 +13,11 @@
     width: 100%;
     max-width: 1400px;
     justify-content: space-between;
-    padding: 2rem 7rem; }
+    padding: 4rem 7rem; }
     
 .authors {
-line-height: 2;
-font-size: .8rem; }
+    line-height: 2;
+    font-size: .8rem; }
 
 .upper-row {
     padding: 2rem;
@@ -37,8 +37,10 @@ font-size: .8rem; }
 .footer-row-icons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+    justify-content: space-evenly; }
+
+.footer-row-copyright {
+    padding: 1rem 0rem; }
 
 .footer-logo-img {
     height: 5.7rem; }
