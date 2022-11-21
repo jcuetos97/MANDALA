@@ -7,37 +7,29 @@ import "../assets/css/general.css";
 
 const Explore = () => {
     return (
-        <div>
+        <div className="explore">
             <nav className="navbar-explore">
-                <div class="container-fluid">
+               <h3 className="navbar-explore-title">Filters & Categories</h3> 
                     <ul className="header-links-explore">
-                        <li className="header-link-explore">
-                                Top 5 pieces
+                        <li className="explore-link-explore">
+                            <input type="checkbox" name="pieces"/>
+                            <label for="pieces">Top 5 Pieces</label>
                         </li>
-                        <li className="header-link-explore">
-                                Top 5 Artists
+                        <li className="explore-link-explore">
+                            <input type="checkbox" name="allCategories"/>
+                            <label for="allCategories">All Categories</label>
                         </li>
-                        <li className="header-link-explore">
-                            All Categories
+                        <li className="explore-link-explore">
+                            <input type="checkbox" name="artists"/>
+                            <label for="artists">Top 5 Artists</label>
                         </li>
                     </ul>
-                </div> 
             </nav>
             <div className="cards-container">
-                <Card
-                image= {image}
-                title= "TEST"
-                description= "DESC"
-                id= "asd"
-                price= "$20.00"
-                />
-                <Card
-                image= {image}
-                title= "TEST"
-                description= "DESC"
-                id= "asd"
-                price= "$20.00"
-                />
+                <div className="cards-container-header">
+                    <h1>Explore</h1>
+                    <h4>Discover the latest artwork</h4>
+                </div>
                 <Card
                 image= {image}
                 title= "TEST"

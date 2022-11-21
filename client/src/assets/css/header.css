@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5rem; }
+    padding: 0 7rem; }
     @media only screen and (max-width: 950px) {
         .header-content {
         padding: 1rem 2rem; } }
@@ -42,12 +42,11 @@
     object-fit: cover;
     object-position: center;
     display: block; }
-    
 
 .header-logo-title {
-    font-size: .85rem;
+    font-size: .75rem;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 2px; }
     .header-logo-title:hover {
         color: var(--blue); }

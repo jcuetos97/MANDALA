@@ -62,10 +62,9 @@
   flex-wrap: wrap;
  }
   
-
-.field-wrap input {
-    background-color: var(--light-blue);
-    border: none;
+.field-wrap input, .field-wrap textarea {
+    background-color: var(--light);
+    border: dashed 1px var(--blue);
     margin: .3rem 0rem;
     padding: .5rem;
     width: 100%;

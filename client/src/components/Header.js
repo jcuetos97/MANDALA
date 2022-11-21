@@ -33,7 +33,7 @@ const Header = () => {
                     </Link>  
                     <div className='search-bar'>
                         <FontAwesomeIcon className='search-icon' icon="magnifying-glass"/>
-                        <input type="text" placeholder="Search.." name="search"/> 
+                        <input type="text" name="search"/> 
                     </div>
                 </div>
                 <div className='header-main'>
