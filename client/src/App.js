@@ -10,7 +10,6 @@ import ChatBox from './components/Chatbox';
 import Sell from './pages/Sell';
 import Home from './pages/Home';
 import User from './pages/User';
-import About from './pages/About';
 import Explore from './pages/Explore';
 import SignForm from './pages/SignForm';
 
@@ -31,10 +30,6 @@ function App() {
                 <Route
                 path='/'
                 element={<Home />}  
-                />
-                <Route
-                path='/about'
-                element={<About />}  
                 />
                 <Route
                 path='/user'
