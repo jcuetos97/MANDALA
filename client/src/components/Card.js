@@ -13,11 +13,12 @@ const Card = ({image,title,description,id,price}) => {
             
             <div className="card-body">
                 <div className="card-body-content">
-                    <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{description}</p>
+                    <h4 className="card-title">{title}</h4>
+                    <h5 className="card-text">{description}</h5>
                     <p className="card-text">{price}</p>
+                    <button className="btn-add" onClick={()=>console.log(`Add to cart ID: ${id}`)}>Add to Cart</button>
                 </div>
-                <button className="btn-add" onClick={()=>console.log(`Add to cart ID: ${id}`)}>Add to Cart</button>
+                
             </div>
         </div>
     )
