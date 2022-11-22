@@ -7,7 +7,7 @@ const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const server = new ApolloServer({
   typeDefs,
@@ -15,7 +15,7 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-// This is your test secret API key.
+// This is the checkout session
 require('dotenv').config();
 const secretkey = (process.env.secret);
 const stripe = require("stripe")(secretkey);
@@ -25,9 +25,9 @@ app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        // Provide Price ID (for example, pr_1234) of the product you want to sell
         price: 'price_1M4whsJL7p827Ta0DKuJFcBR',
-        quantity: 2,
+        quantity: 1,
       },
     ],
     mode: 'payment',
