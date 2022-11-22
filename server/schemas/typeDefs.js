@@ -10,6 +10,7 @@ const typeDefs = gql`
         city: String
         state: String
         country: String
+        cart: [Item]
         boughtItems: [Item]
         saleItems: [Item]
         soldItems: [Item]
@@ -33,12 +34,16 @@ const typeDefs = gql`
     type Query {
         me: User
         items: [Item]
-        item(itemId: ID!): Item        
+        item(itemId: ID!): Item
+        #item por tag || descr || title || author
+        
     }
 
     type Mutation {
-        addUser(username: String!, email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth        
         login(email: String!, password: String!): Auth
+
+        updateUser(street: String!, zip: String!, city: String!, state: String!, country: String!): User
         
         addItemToSale(author: String!, title: String!, description: String!, price: Float!, image: String): User
         deleteItemToSale(itemId: ID!): User
@@ -46,7 +51,13 @@ const typeDefs = gql`
 
         addBoughtItem(itemId: ID!): User
         addSoldItem(itemId: ID!): User
+
+
+        addToCart(itemId: ID!): User
+        deleteFromCart(itemId: ID!): User
+
         updateUser(street: String!, zip: String!, city: String!, state: String!, country: String!): User        
+
     }
 `;
 
