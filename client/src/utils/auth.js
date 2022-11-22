@@ -21,17 +21,17 @@ class AuthService {
     }
 
     getToken(){
-        //EL ID_TOKEN SE SACAN DE LAS MUTATION PARA ACCEDER A ESE ELEMENTO
         return localStorage.getItem('id_token');
     }
 
     login(idToken) {
         localStorage.setItem('id_token', idToken);
+        window.location.assign('/explore');
     }
 
     logout() {
         localStorage.removeItem('id_token');
-        window.location.reload();
+        window.location.assign('/');
     }
 }
 

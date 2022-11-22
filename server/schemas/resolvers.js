@@ -147,10 +147,6 @@ const resolver = {
         addSoldItem: async (parent, { itemId }) => {
             const fakeId = '63799fa8fd00ed880b593d51';
 
-            );   
-        },
-
-
             return await User.findOneAndUpdate(
                 { _id: fakeId },
                 { $push: { soldItems: itemId } },
@@ -170,9 +166,6 @@ const resolver = {
         // },
         updateUser: async (parent, args) => {
             const fakeUserId = '63799fa8fd00ed880b593d51';
-
-            );   
-        },
 
             return await User.findOneAndUpdate(
                 { _id: fakeUserId },
