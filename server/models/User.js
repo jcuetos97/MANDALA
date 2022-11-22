@@ -33,6 +33,12 @@ const userSchema = new Schema(
     country: {
       type: String,
     },
+    cart: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Item'
+      }
+    ],
     boughtItems: [
         {
             type: Schema.Types.ObjectId,
