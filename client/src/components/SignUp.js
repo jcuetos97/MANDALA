@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
@@ -16,7 +15,7 @@ const SignUp = () => {
         email: '',
         password: '',
       });
-      const [addUser, { error, data }] = useMutation(ADD_USER);
+      const [addUser, { error }] = useMutation(ADD_USER);
     
       const handleChange = (event) => {
         const { name, value } = event.target;
@@ -47,47 +46,42 @@ const SignUp = () => {
                 <div className="form-containter-title">
                     <h1>Sign Up for Free</h1>
                 </div>
-                { data ? (
-                <p>
-                  Success! You are now set to 
-                  <Link to="/explore"> <strong>explore</strong> a new world</Link>
-                </p>
-              ) : (<form onSubmit={handleFormSubmit}>
-                        <div className="field-wrap">
-                            <label>Name</label>
-                            <input 
-                                value={formState.name}
-                                onChange={handleChange}
-                                placeholder="Your username..."
-                                name="username"
-                                type="text"
-                                required />
-                        </div>
-                        <div className="field-wrap">
-                            <label>Email </label>
-                            <input 
-                                value={formState.email}
-                                onChange={handleChange}
-                                placeholder="Your email..."
-                                name="email"
-                                type="email"
-                                required />
-                        </div>
-                        <div className="field-wrap">
-                            <label>Password</label>
-                            <input 
-                                value={formState.password}
-                                onChange={handleChange}
-                                placeholder="******"
-                                name="password"
-                                type="password" 
-                                required />
-                        </div>
-                        <div className="button-started-container">
-                            <button type="submit" className="btn button-animated">Sign Up</button>
-                        </div>
-                    </form>
-                    )}
+                <form onSubmit={handleFormSubmit}>
+                    <div className="field-wrap">
+                        <label>Name</label>
+                        <input 
+                            value={formState.name}
+                            onChange={handleChange}
+                            placeholder="Your username..."
+                            name="username"
+                            type="text"
+                            required />
+                    </div>
+                    <div className="field-wrap">
+                        <label>Email </label>
+                        <input 
+                            value={formState.email}
+                            onChange={handleChange}
+                            placeholder="Your email..."
+                            name="email"
+                            type="email"
+                            required />
+                    </div>
+                    <div className="field-wrap">
+                        <label>Password</label>
+                        <input 
+                            value={formState.password}
+                            onChange={handleChange}
+                            placeholder="******"
+                            name="password"
+                            type="password" 
+                            required />
+                    </div>
+                    <div className="button-started-container">
+                        <button type="submit" className="btn button-animated">Sign Up</button>
+                    </div>
+                </form>
+                    
                 {error && (
                     <div>
                     <br />

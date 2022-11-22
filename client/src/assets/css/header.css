@@ -59,6 +59,7 @@
     padding: 1.7rem 3rem;
     display: inline-block;
     font-size: .9rem;
+    cursor: pointer;
     color: var(--dark);
     letter-spacing: 1px;
     font-weight: 500;

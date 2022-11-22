@@ -29,7 +29,6 @@ const User = () => {
                         <button type="submit" className="btn btn-art">See More</button>
                     </Link> 
                 </div>
-
                 <div className="user-container info">
                     <h2>Profile</h2>
                     <div><img className="info-img" src="https://doodleipsum.com/700/hand-drawn?i=656e5bba23d76eae300a40faf5ee1c3f" alt="Sitting by Irene Falgueras" /></div>
@@ -42,9 +41,7 @@ const User = () => {
                         <p className="info-content-title">Art Collection</p>
                         <p>7 pieces </p>
                     </div>
-                   
                 </div>
-
                 <div className="user-container items">
                     <h2>Art-at-sale</h2>
                     <Link to='/sell'>
