@@ -7,7 +7,6 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import Auth from '../utils/auth';
 
-
 // CSS Style
 import '../assets/css/header.css';
 import '../assets/css/general.css';
