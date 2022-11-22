@@ -1,0 +1,30 @@
+[
+    {
+      "username": "user1",
+      "email": "user1@mail.com",
+      "password": "user123",
+      "street": "Avenida 123",
+      "zip": "12345",
+      "city": "Ciudad 1",
+      "state": "Estado 1",
+      "country": "Mexico",
+      "cart": [],
+      "boughtItems": [],
+      "saleItems": [],
+      "soldItems": []
+    },
+    {
+      "username": "user2",
+      "email": "user2@mail.com",
+      "password": "user234",
+      "street": "Street 234",
+      "zip": "23456",
+      "city": "Ciudad 2",
+      "state": "Estado 2",
+      "country": "Mexico",
+      "cart": [],
+      "boughtItems": [],
+      "saleItems": [],
+      "soldItems": []
+    }
+]

@@ -1,0 +1,18 @@
+.sell {
+    animation: slideInLeft;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: inherit;
+    font-family: 'Lora', serif;
+    padding: 0 7rem;
+    margin-top: 7rem; }
+
+
+.collection-img {
+    height: 35%;
+    position: absolute;
+    bottom: 15px; }
