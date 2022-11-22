@@ -52,8 +52,12 @@ const typeDefs = gql`
         addBoughtItem(itemId: ID!): User
         addSoldItem(itemId: ID!): User
 
+
         addToCart(itemId: ID!): User
         deleteFromCart(itemId: ID!): User
+
+        updateUser(street: String!, zip: String!, city: String!, state: String!, country: String!): User        
+
     }
 `;
 
