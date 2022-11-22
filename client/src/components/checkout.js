@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+//import "./App.css";
+
+
 
 const ProductDisplay = () => (
     <section>
@@ -13,7 +15,7 @@ const ProductDisplay = () => (
                 <h5>$20.00</h5>
             </div>
         </div>
-        <form action="/create-checkout-session" method="POST">
+        <form action="http://localhost:4242/create-checkout-session" method="POST">
             <button type="submit">
                 Checkout
             </button>
@@ -35,6 +37,8 @@ export default function Checkout() {
         const query = new URLSearchParams(window.location.search);
 
         if (query.get("success")) {
+
+            //send email function
             setMessage("Order placed! You will receive an email confirmation.");
         }
 

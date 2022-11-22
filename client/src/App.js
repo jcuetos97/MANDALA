@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Checkout from './components/Checkout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Explore from './pages/Explore';
+
 
 // Construct our main GraphQL API endpoint
 const client = new ApolloClient({
@@ -19,24 +21,29 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header/>
-            <div>
-              <Routes>
-                <Route
+          <Header />
+          <div>
+            <Routes>
+              <Route
                 path='/'
-                element={<Home />}  
-                />
-                <Route
+                element={<Home />}
+              />
+              <Route
                 path='/about'
-                element={<About />}  
-                />
-                <Route
+                element={<About />}
+              />
+              <Route
                 path='/explore'
-                element={<Explore />}  
-                />
-              </Routes>
-            </div>
-          <Footer/>
+                element={<Explore />}
+              />
+            </Routes>
+          </div>
+          <div>
+            <Checkout>
+
+            </Checkout>
+          </div>
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>
