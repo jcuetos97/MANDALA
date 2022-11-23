@@ -9,11 +9,7 @@ const db = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: authMiddleware,
-});
+
 
 // This is the checkout session
 require('dotenv').config();
@@ -38,6 +34,11 @@ app.post('/create-checkout-session', async (req, res) => {
   res.redirect(303, session.url);
 });
 
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -49,7 +50,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-// Create a new instance of an Apollo server with the GraphQL schema
+//Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });

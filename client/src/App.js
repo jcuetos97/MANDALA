@@ -51,6 +51,7 @@ function App() {
                 element={<Sell />}
               />
             </Routes>
+            <Checkout />
             <ChatBox />
           </div>
           <Footer />

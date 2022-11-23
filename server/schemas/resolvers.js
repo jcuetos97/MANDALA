@@ -5,15 +5,15 @@ const { signToken } = require('../utils/auth');
 const resolver = {
     Query: {
         me: async () => {
-            const fakeId = '63799fa8fd00ed880b593d51';            
+            const fakeId = '63799fa8fd00ed880b593d51';
             return await User.findOne(
-                {_id: fakeId}
+                { _id: fakeId }
             )
-            .populate('cart')
-            .populate('boughtItems')
-            .populate('saleItems')
-            .populate('soldItems');
-        },        
+                .populate('cart')
+                .populate('boughtItems')
+                .populate('saleItems')
+                .populate('soldItems');
+        },
         // me: async (parent, args, context) => {
         //     if (context.user) {
         //         return await User.findOne(
@@ -52,15 +52,15 @@ const resolver = {
         //     return { token, user };
         // },
         addItemToSale: async (parent, args) => {
-            
-                const item = await Item.create(args);
-                const fakeId = '63799fa8fd00ed880b593d51';
-                return await User.findOneAndUpdate(
-                    { _id: fakeId },
-                    { $push: { saleItems: item._id } },
-                    { new: true }
-                );
-            
+
+            const item = await Item.create(args);
+            const fakeId = '63799fa8fd00ed880b593d51';
+            return await User.findOneAndUpdate(
+                { _id: fakeId },
+                { $push: { saleItems: item._id } },
+                { new: true }
+            );
+
         },
         // addItemToSale: async (parent, args, context) => {
         //     if (context.user) {
@@ -104,14 +104,14 @@ const resolver = {
         //     throw new AuthenticationError('You need to be logged in');
         // },        
         deleteItemToSale: async (parent, { itemId }) => {
-                await Item.findOneAndDelete({ _id: itemId });
-                const fakeId = '63799fa8fd00ed880b593d51';
-                return await User.findOneAndUpdate(
-                    { _id: fakeId },
-                    { $pull: { saleItems: itemId } },
-                    { new: true }
-                );
-        },        
+            await Item.findOneAndDelete({ _id: itemId });
+            const fakeId = '63799fa8fd00ed880b593d51';
+            return await User.findOneAndUpdate(
+                { _id: fakeId },
+                { $pull: { saleItems: itemId } },
+                { new: true }
+            );
+        },
         // deleteItemToSale: async (parent, { itemId }, context) => {
         //     if (context.user) {
         //         await Item.findOneAndDelete({ _id: itemId });
@@ -147,10 +147,6 @@ const resolver = {
         addSoldItem: async (parent, { itemId }) => {
             const fakeId = '63799fa8fd00ed880b593d51';
 
-            );   
-        },
-
-
             return await User.findOneAndUpdate(
                 { _id: fakeId },
                 { $push: { soldItems: itemId } },
@@ -171,8 +167,6 @@ const resolver = {
         updateUser: async (parent, args) => {
             const fakeUserId = '63799fa8fd00ed880b593d51';
 
-            );   
-        },
 
             return await User.findOneAndUpdate(
                 { _id: fakeUserId },
@@ -201,7 +195,7 @@ const resolver = {
             const fakeId = '63799fa8fd00ed880b593d51';
             return await User.findOneAndUpdate(
                 { _id: fakeId },
-                { $push: { cart: itemId }},
+                { $push: { cart: itemId } },
                 { new: true }
             ).populate('cart');
         },
@@ -217,11 +211,11 @@ const resolver = {
         // },
         deleteFromCart: async (parent, { itemId }, context) => {
             const fakeId = '63799fa8fd00ed880b593d51';
-                return await User.findOneAndUpdate(
-                    { _id: fakeId },
-                    { $pull: { cart: itemId } },
-                    { new: true }
-                ).populate('cart');
+            return await User.findOneAndUpdate(
+                { _id: fakeId },
+                { $pull: { cart: itemId } },
+                { new: true }
+            ).populate('cart');
         },
     }
 };
