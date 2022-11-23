@@ -1,41 +1,44 @@
 //npm install nodemailer para activarlo
+//npm install nodemailer-express-handlebars -S
 //Dominio http://localhost:4242
-
-
-const nodemailer = require("nodemailer");
-
 //Contiene infomracion del mail prinncipal
 
 
-const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    //587 para no tener secure
+const nodemailer = require('nodemailer');
+const hbs = require('nodemailer-handlebars');
+const log = console.log;
+
+
+// We made the transporter
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
     port: 465,
-    secure: true, // upgrade later with STARTTLS
+    secure: true,
     auth: {
-      //Agregar en user el correo@electronico.com
-      user: '',
-      //Agregar la contraseña para aplicaciones
-      pass: '',
+        user: '25sparnol@gmail.com',  
+        pass: 'evufodyhefjnkdwu', 
     },
-  });
-  
-const mailOption = {
-      from: '',
-      //Aqui se cambia el mail del usuario
-      //Este mail es de testing
-      to: '',
-      subject: 'EMAIL TEST',
-      text: 'Este email es de test'
-  };
-  
-transporter.sendMail(mailOption, function(error, info){
-      if (error) {
-          console.log(error);
-      } else {
-          console.log('Email Enviado! 👍📧');
-      }
-  });
+});
 
 
+transporter.use('compile', hbs({
+    viewEngine: 'express-handlebars',
+    viewPath: './views/'
+}));
 
+
+let mailOptions = {
+    from: '25sparnol@gmail.com', // TODO: email sender
+    to: '25sparnol@gmail.com', // TODO: email receiver
+    subject: 'Thank you for shopping with MANDALA',
+    text: 'Hola hola',
+    template: 'index',
+};
+
+// We use the .sendMail() function that receives two values
+transporter.sendMail(mailOptions, (err, data) => {
+    if (err) {
+        return log('Error occurs');
+    }
+    return log('Email Enviado! 👍📧');
+});
