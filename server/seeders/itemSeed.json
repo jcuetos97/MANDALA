@@ -1,16 +1,72 @@
 [
     {
-      "author": "Vincent van Gogh",
-      "title": "La Noche Estrellada",
-      "description": "Oleo sobre lienzo, replica",
-      "price": 300.00,
-      "image": "imagen VVG"
+      "author": "Vincent Van Gogh",
+      "title": "The Starry Night",
+      "description": "Van Gogh's night sky is a field of roiling energy. Below the exploding stars, the village is a place of quiet order. Connecting earth and sky is the flamelike cypress, a tree traditionally associated with graveyards and mourning. But death was not ominous for van Gogh. 'Looking at the stars always makes me dream,' he said, 'Why, I ask myself, shouldn't the shining dots of the sky be as accessible as the black dots on the map of France? Just as we take the train to get to Tarascon or Rouen, we take death to reach a star.'",
+      "price": 20000.00,
+      "image": "https://cdn.pixabay.com/photo/2015/12/15/05/43/starry-night-1093721_960_720.jpg"
     },
     {
       "author": "Frida Khalo",
-      "title": "Las dos Fridas",
-      "description": "Cuadro al oleo, replica",
-      "price": 200.00,
-      "image": "imagen FK"
-    }    
+      "title": "The two Fridas",
+      "description": "The Two Fridas (Las dos Fridas in Spanish) is an oil painting by Mexican artist Frida Kahlo. The painting was the first large-scale work done by Kahlo and is considered one of her most notable paintings.[1] It is a double self-portrait, depicting two versions of Kahlo seated together. One is wearing a white European-style Victorian dress while the other is wearing a traditional Tehuana dress.[1] The painting is housed at the Museo de Arte Moderno in Mexico City.",
+      "price": 8000.00,
+      "image": "https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calder%C3%B3n-de-rivera/the-two-fridas-1939.jpg!Large.jpg"
+    },    
+    {
+      "author": "Leonardo Da Vinci",
+      "title": "The Last Supper",
+      "description": "The Last Supper painting is a snapshot of the moment Christ tells his Apostles that one of them will betray him; “Very truly I tell you, one of you is going to betray me,” (Gospel of John 13:21). The painting depicts each apostle reacting in his own unique way.",
+      "price": 80000.00,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/22/The-Last-Supper-Restored-Da-Vinci_32x16.jpg"
+    },
+    {
+      "author": "Gustav Klimt",
+      "title": "The Kiss",
+      "description": "The painting depicts a couple embracing in a field of flowers. The man is bent over the woman, and she, clinging tightly to him, awaits his kiss. In terms of ornamentation, the male figure is characterized by square and rectangular forms, while for the female, soft lines and floral patterns are dominant",
+      "price": 50000.00,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Klimt_-_The_Kiss.jpg"
+    },    
+    {
+      "author": "Picasso",
+      "title": "Don Quixote",
+      "description": "Don Quixote is a 1955 sketch by Pablo Picasso of the Spanish literary hero and his sidekick, Sancho Panza. It was featured on the August 18–24 issue of the French weekly journal Les Lettres Françaises in celebration of the 350th anniversary of the first part, published in 1605, of the Miguel de Cervantes novel Don Quixote. Made on August 10, 1955, the drawing Don Quixote was in a very different style than Picasso’s earlier Blue, Rose, and Cubist periods",
+      "price": 8000.00,
+      "image": "https://www.pablopicasso.org/images/paintings/don-quixote.jpg"
+    },
+    {
+      "author": "Michelangelo",
+      "title": "The Creation of Adam",
+      "description": "The Creation of Adam (Italian: Creazione di Adamo) is a fresco painting by Italian artist Michelangelo, which forms part of the Sistine Chapel's ceiling, painted c. 1508–1512. It illustrates the Biblical creation narrative from the Book of Genesis in which God gives life to Adam, the first man. The fresco is part of a complex iconographic scheme and is chronologically the fourth in the series of panels depicting episodes from Genesis.",
+      "price": 100000.00,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Creaci%C3%B3n_de_Ad%C3%A1n.jpg"
+    },    
+    {
+      "author": "Claude Monet",
+      "title": "Bain a la Grenouillere",
+      "description": "Bain à la Grenouillère is an 1869 painting by the French impressionist painter, Claude Monet. (Oil on canvas, 74.6 cm x 99.7 cm). It depicts 'Flowerpot Island', also known as the Camembert, and the gangplank to La Grenouillère, a floating restaurant and boat-hire on the Seine at Croissy-sur-Seine. He was accompanied by Pierre-Auguste Renoir, who also painted the scene at the same time",
+      "price": 45000.00,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/La_Grenouill%C3%A8re_MET_DT833.jpg/1024px-La_Grenouill%C3%A8re_MET_DT833.jpg"
+    },
+    {
+      "author": "Johannes Vermeer",
+      "title": "The Little Street",
+      "description": "The painting is showing a quiet street, depicts a typical aspect of the life in a Dutch Golden Age town. It is one of only three Vermeer paintings of views of Delft, the others being View of Delft and the now lost House Standing in Delft. This painting is considered to be an important work of the Dutch master.",
+      "price": 75000.00,
+      "image": "http://www.essentialvermeer.com/catalogue_xl/xl_images/xl_street.jpg"
+    },
+    {
+      "author": "Rembrandt",
+      "title": "The Polish Rider",
+      "description": "The Polish Rider is a seventeenth-century painting, usually dated to the 1650s, of a young man traveling on horseback through a murky landscape, now in The Frick Collection in New York.[2] When the painting was sold by Zdzisław Tarnowski [pl] to Henry Frick in 1910, there was consensus that the work was by the Dutch painter Rembrandt. This attribution has since been contested, though those who contest it remain in the minority",
+      "price": 66000.00,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Rembrandt_-_De_Poolse_ruiter%2C_c.1655_%28Frick_Collection%29.jpg/1024px-Rembrandt_-_De_Poolse_ruiter%2C_c.1655_%28Frick_Collection%29.jpg"
+    },
+    {
+      "author": "Salvador Dali",
+      "title": "The Persistence of Memory",
+      "description": "The Persistence of Memory (Catalan: La persistència de la memòria) is a 1931 painting by artist Salvador Dalí and one of the most recognizable works of Surrealism. First shown at the Julien Levy Gallery in 1932, since 1934 the painting has been in the collection of the Museum of Modern Art (MoMA) in New York City, which received it from an anonymous donor. It is widely recognized and frequently referred to in popular culture, and sometimes referred to by more descriptive titles, such as 'Melting Clocks', 'The Soft Watches' or 'The Melting Watches'.",
+      "price": 90000.00,
+      "image": "https://uploads6.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg!Large.jpg"
+    }
 ]
