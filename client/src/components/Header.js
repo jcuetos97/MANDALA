@@ -86,9 +86,9 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className="shop-wrapper">
-                            <button onClick={() => setShopCart(shopCart === "hidden" ? "visible" : "hidden")}>
+                            <Link to='/signForm'>
                                 <img className="shopCart" src={ShopCart} alt="Shop Cart Icon" />
-                            </button>
+                            </Link>
                         </li>
                         </>
                          )}
@@ -144,7 +144,14 @@ const Header = () => {
                     </ul>
                 </div>
             </div>
+            {Auth.loggedIn() ? (
+            <>
             {shopCart === "visible" ? <Cart></Cart> : "" }
+            </>
+            ):(
+            <>
+            </>
+            )}
         </header>
     );
 };

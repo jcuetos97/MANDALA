@@ -3,9 +3,29 @@
     background-color: var(--light);
     border: dashed 1px var(--blue);
     border-radius: 25px;
-    min-width: 350px;
-    padding: 2rem;
+    min-width: 550px;
+    padding: 0rem 2rem;
     top: 75px;
     right: 15px;
-    z-index: 2000;
-}
+    z-index: 2000; }
+
+.card-cart-row {
+    padding: 1rem 0rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between; 
+    align-items: center;}
+
+.card-cart-subtotal {
+    border-top: dashed 2px var(--blue);}
+
+.btn-remove-all {
+    font-size: .9rem;
+    padding: .5rem 1rem;
+    background-color: var(--light-blue);
+    border: dashed 1px var(--blue);
+    border-radius: 15px; }
+    .btn-remove-all:hover {
+        background-color:  var(--blue);
+        color: var(--light);
+        border: solid 1px var(--dark);}
