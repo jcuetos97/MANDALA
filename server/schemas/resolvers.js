@@ -22,6 +22,14 @@ const resolver = {
         item: async (parent, { itemId }) => {
             return Item.findOne({ _id: itemId });
         },
+        cartItems: async () => {
+            if (context.user) {
+                return await User.findOne(
+                    { _id: context.user }
+                ).populate('cart');
+            }
+            throw new AuthenticationError('You need to be logged in');
+        }
     },
     Mutation: {
         addUser: async (parent, args) => {

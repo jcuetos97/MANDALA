@@ -35,6 +35,7 @@ const typeDefs = gql`
         me: User
         items: [Item]
         item(itemId: ID!): Item
+        cartItems: User
         #item por tag || descr || title || author
         
     }

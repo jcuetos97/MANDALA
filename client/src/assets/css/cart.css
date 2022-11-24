@@ -1,0 +1,11 @@
+.card-cart {
+    position: fixed;
+    background-color: var(--light);
+    border: dashed 1px var(--blue);
+    border-radius: 25px;
+    min-width: 350px;
+    padding: 2rem;
+    top: 75px;
+    right: 15px;
+    z-index: 2000;
+}
