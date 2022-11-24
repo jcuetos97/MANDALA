@@ -17,7 +17,7 @@ const Card = ({ image, author, title, description, id, price }) => {
                     <h4 className="card-title">{title} <span className="card-title-author">- By {author}</span> </h4>
                     <h5 className="card-text">{description}</h5>
                     <p className="card-text">{price}</p>
-                    <div className="btn-add"  >
+                    <div className="btn-add" action="http://localhost:3001/create-checkout-session" >
                         <button onClick={fetchdata}>Add to Cart</button>
                     </div>
                 </div>
@@ -29,16 +29,16 @@ const Card = ({ image, author, title, description, id, price }) => {
 function fetchdata() {
     var data = { "price_ID": "price_1M4whsJL7p827Ta0DKuJFcBR" };
     console.log(data, "data");
-    fetch('/create-checkout-session', {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
+    fetch('/create-checkout-session',
+        {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
         .then((res) => res.json())
 
         .then((data) => console.log(data, "data2"))
-
 };
 export default Card;
