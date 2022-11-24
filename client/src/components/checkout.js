@@ -15,14 +15,27 @@ const ProductDisplay = () => (
                 <h5>$20.00</h5>
             </div>
         </div>
-        <form action="http://localhost:4242/create-checkout-session" method="POST">
-            <button type="submit">
+        <div action="http://localhost:3001/create-checkout-session" >
+            <button onClick={fetchdata}>
                 Checkout
             </button>
-        </form>
-    </section>
+        </div>
+    </section >
 );
 
+function fetchdata() {
+    var data = { "price_ID": "price_1M4whsJL7p827Ta0DKuJFcBR" };
+
+    fetch('/create-checkout-session', {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then((res) => res.json())
+        .then((data) => console.log(data, "data"));
+}
 const Message = ({ message }) => (
     <section>
         <p>{message}</p>

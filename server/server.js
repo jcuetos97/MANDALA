@@ -7,8 +7,13 @@ const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
 
 
 // This is the checkout session
@@ -17,31 +22,29 @@ const secretkey = (process.env.secret);
 const stripe = require("stripe")(secretkey);
 app.use(express.static('public'));
 const YOUR_DOMAIN = 'http://localhost:3000';
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.post('/create-checkout-session', async (req, res) => {
+  console.log("reqbody=", req.body);
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
         // Provide Price ID (for example, pr_1234) of the product you want to sell
-        price: 'price_1M4whsJL7p827Ta0DKuJFcBR',
+
+        price: req.body.price_ID,
         quantity: 1,
-        receipt_email: 'javier@example.com',
+        //currency: "USD"
+
       },
     ],
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}?success=true`,
+    success_url: `${YOUR_DOMAIN}/explore?success=true`,
     cancel_url: `${YOUR_DOMAIN}?canceled=true`,
   });
 
-  res.redirect(303, session.url);
+  res.json({ url: session.url });
 });
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: authMiddleware,
-});
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
@@ -51,7 +54,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-//Create a new instance of an Apollo server with the GraphQL schema
+// Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
