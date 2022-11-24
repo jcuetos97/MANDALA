@@ -1,16 +1,65 @@
 [
-    {
-      "author": "Vincent van Gogh",
-      "title": "La Noche Estrellada",
-      "description": "Oleo sobre lienzo, replica",
-      "price": 300.00,
-      "image": "imagen VVG"
-    },
-    {
-      "author": "Frida Khalo",
-      "title": "Las dos Fridas",
-      "description": "Cuadro al oleo, replica",
-      "price": 200.00,
-      "image": "imagen FK"
-    }    
+  {
+    "author": "Vincent Van Gogh",
+    "title": "The Starry Night",
+    "description": "Van Gogh's night sky is a field of roiling energy. Below the exploding stars, the village is a place of quiet order.",
+    "price": 20000.00,
+    "image": "https://cdn.pixabay.com/photo/2015/12/15/05/43/starry-night-1093721_960_720.jpg"
+  },
+  {
+    "author": "Frida Khalo",
+    "title": "The two Fridas",
+    "description": "The Two Fridas (Las dos Fridas in Spanish) is an oil painting by Mexican artist Frida Kahlo.", 
+    "price": 8000.00,
+    "image": "https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calder%C3%B3n-de-rivera/the-two-fridas-1939.jpg!Large.jpg"
+  },    
+  {
+    "author": "Leonardo Da Vinci",
+    "title": "The Last Supper",
+    "description": "The Last Supper painting is a snapshot of the moment Christ tells his Apostles that one of them will betray him; “Very truly I tell you, one of you is going to betray me,” (Gospel of John 13:21).",
+    "price": 80000.00,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/22/The-Last-Supper-Restored-Da-Vinci_32x16.jpg"
+  },
+  {
+    "author": "Gustav Klimt",
+    "title": "The Kiss",
+    "description": "The painting depicts a couple embracing in a field of flowers.",
+    "price": 50000.00,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Klimt_-_The_Kiss.jpg"
+  },    
+  {
+    "author": "Michelangelo",
+    "title": "The Creation of Adam",
+    "description": "The Creation of Adam (Italian: Creazione di Adamo) is a fresco painting by Italian artist Michelangelo, which forms part of the Sistine Chapel's ceiling.",
+    "price": 100000.00,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Creaci%C3%B3n_de_Ad%C3%A1n.jpg"
+  },    
+  {
+    "author": "Claude Monet",
+    "title": "Bain a la Grenouillere",
+    "description": "Bain à la Grenouillère is an 1869 painting by the French impressionist painter, Claude Monet.",
+    "price": 45000.00,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/La_Grenouill%C3%A8re_MET_DT833.jpg/1024px-La_Grenouill%C3%A8re_MET_DT833.jpg"
+  },
+  {
+    "author": "Johannes Vermeer",
+    "title": "The Little Street",
+    "description": "The painting is showing a quiet street, depicts a typical aspect of the life in a Dutch Golden Age town.",
+    "price": 75000.00,
+    "image": "http://www.essentialvermeer.com/catalogue_xl/xl_images/xl_street.jpg"
+  },
+  {
+    "author": "Rembrandt",
+    "title": "The Polish Rider",
+    "description": "The Polish Rider is a seventeenth-century painting, usually dated to the 1650s, of a young man traveling on horseback through a murky landscape.",
+    "price": 66000.00,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Rembrandt_-_De_Poolse_ruiter%2C_c.1655_%28Frick_Collection%29.jpg/1024px-Rembrandt_-_De_Poolse_ruiter%2C_c.1655_%28Frick_Collection%29.jpg"
+  },
+  {
+    "author": "Salvador Dali",
+    "title": "The Persistence of Memory",
+    "description": "The Persistence of Memory is a 1931 painting by artist Salvador Dalí and one of the most recognizable works of Surrealism.",
+    "price": 90000.00,
+    "image": "https://uploads6.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg!Large.jpg"
+  }
 ]

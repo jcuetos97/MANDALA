@@ -1,34 +1,50 @@
 import React, {useState} from "react";
 import { Link } from 'react-router-dom';
+import { useQuery } from "@apollo/client";
+import { QUERY_ITEMS } from "../utils/queries";
 
 import Card from "../components/Card";
-import image from "../assets/jpeg/homeimage.jpeg";
+import Cart from "../components/Cart";
 import Filter from "../assets/png/filter-ico.png";
-import Profile from "../assets/png/user-ico.png"
+import Profile from "../assets/png/user-ico.png";
+
+import Auth from "../utils/auth";
 
 import "../assets/css/explore.css";
 import "../assets/css/general.css";
 
 const Explore = () => {
     const [filterHide, setFilterHide]= useState("visible");
-
+    
+    const { loading, data } = useQuery(QUERY_ITEMS);
+    const items = data?.items || [];
+    
+    if (loading) {
+        return <div>Loading...</div>;
+      }
+    
     return (
         <div className="explore">
             <nav className="navbar-explore">
-                <div className="navbar-explore-filter">
-                    <Link to="/user">
-                        <img src={Profile} alt="User" className="filter-icon" />
-                    </Link>
-                    <p className={filterHide === "hidden" ? "hide" : "show"}> My Profile</p>
-                </div> 
-                <div className="navbar-explore-filter">
-                    <a onClick={() => setFilterHide(filterHide === "hidden" ? "visible" : "hidden")}>
-                    <img src={Filter} alt="Filter" className="filter-icon" />
-                    </a>
-                    <p className={filterHide === "hidden" ? "hide" : "show"}> Hide filters</p>
-                </div>     
+                <div className="navbar-explore-filters-container">
+                {Auth.loggedIn() ? (
+                    <div className="navbar-explore-filter">
+                        <Link to="/user">
+                            <img src={Profile} alt="User" className="filter-icon" />
+                        </Link>
+                        
+                        <p className={filterHide === "hidden" ? "hide" : "show"}> My Profile</p>
+                    </div> 
+                    ) : ("")}
+                    <div className="navbar-explore-filter">
+                        <a onClick={() => setFilterHide(filterHide === "hidden" ? "visible" : "hidden")}>
+                        <img src={Filter} alt="Filter" className="filter-icon" />
+                        </a>
+                        <p className={filterHide === "hidden" ? "hide" : "show"}> Hide filters</p>
+                    </div>     
+                </div>  
                 <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Filters & Categories</h3> 
-                    <ul className={filterHide === "hidden" ? "hide" : "show"}>
+                    <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
                         <li className="navbar-explore-link">
                             <input type="checkbox" name="pieces"/>
                             <label for="pieces">Top 5 Pieces</label>
@@ -43,8 +59,7 @@ const Explore = () => {
                         </li>
                     </ul>
                     <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Tags</h3>
-                    <div className={filterHide === "hidden" ? "hide" : "show"}>
-                        <ul className="navbar-explore-tags">
+                        <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-tags"}>
                             <li className="tag">Surrealism</li>
                             <li className="tag">Abstract</li>
                             <li className="tag">Pop Art</li>
@@ -54,56 +69,28 @@ const Explore = () => {
                             <li className="tag">Portrait</li>
                             <li className="tag">Animals</li>
                         </ul>
-                    </div>
             </nav>
             <div className="cards-container">
                 <div className="cards-container-header">
-                    <h1>Explore</h1>
-                    <h4>Discover the latest artwork...</h4>
+                    <div>
+                        <h1>Explore</h1>
+                        <h4>Discover the latest artwork...</h4>
+                    </div>
+                    <Link to="/sell">
+                        <button className="btn">Publish artwork</button>
+                    </Link>  
                 </div>
-                <Card
-                image= {image}
-                author= "Van Gogh" 
-                title= "Starry Night"
-                description= "The oil-on-canvas painting is dominated by a night sky roiling with chromatic blue swirls."
-                id= "asd"
-                price= "$2,000.00"
+
+                {items && items.map((item) => 
+                (<Card
+                image= {item.image} 
+                author= {item.author}
+                title= {item.title}
+                description= {item.description}
+                id= {item.id}
+                price= {item.price}
                 />
-                <Card
-                image= {image}
-                title= "TEST"
-                description= "DESC"
-                id= "asd"
-                price= "$2,000.00"
-                />
-                <Card
-                image= {image}
-                title= "TEST"
-                description= "DESC"
-                id= "asd"
-                price= "$20.00"
-                />
-                <Card
-                image= {image}
-                title= "TEST"
-                description= "DESC"
-                id= "asd"
-                price= "$20.00"
-                />
-                <Card
-                image= {image}
-                title= "TEST"
-                description= "DESC"
-                id= "asd"
-                price= "$20.00"
-                />
-                 <Card
-                image= {image}
-                title= "TEST"
-                description= "DESC"
-                id= "asd"
-                price= "$20.00"
-                />
+                ))}
             </div>   
         </div>
     );
