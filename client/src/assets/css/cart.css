@@ -4,10 +4,14 @@
     border: dashed 1px var(--blue);
     border-radius: 25px;
     min-width: 550px;
+    max-height: 65vh;
     padding: 0rem 2rem;
+    margin: 0rem 2rem;
+    overflow-y: scroll;
     top: 75px;
     right: 15px;
-    z-index: 2000; }
+    z-index: 2000;
+     }
 
 .card-cart-row {
     padding: 1rem 0rem;
@@ -26,6 +30,18 @@
     border: dashed 1px var(--blue);
     border-radius: 15px; }
     .btn-remove-all:hover {
+        background-color:  var(--blue);
+        color: var(--light);
+        border: solid 1px var(--dark);}
+
+.btn-remove {
+    font-size: .7rem;
+    padding: .1rem .3rem;
+    margin-left: .5rem;
+    background-color: var(--light-blue);
+    border: dashed 1px var(--blue);
+    border-radius: 15px; }
+    .btn-remove:hover {
         background-color:  var(--blue);
         color: var(--light);
         border: solid 1px var(--dark);}

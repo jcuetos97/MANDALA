@@ -85,8 +85,6 @@
     .navbar-explore-link label {
         padding-left: 1rem; }
     
-        
-
 .cards-container {
     animation: opacity 2s;
     display: flex;
@@ -137,8 +135,16 @@
 
 .card-text {
     width: 100%;
-    padding: .2rem 1rem;
-    font-size: .8rem; }
+    padding: .2rem 1rem; }
+
+.card-text-description {
+    font-size: .8rem;
+    padding: .6rem 1rem;
+}
+
+.card-text-price {
+    padding: .6rem 1rem;
+}
 
 .card-title-author {
     font-size: .8rem;

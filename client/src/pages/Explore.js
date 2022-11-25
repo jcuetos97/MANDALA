@@ -4,7 +4,6 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ITEMS } from "../utils/queries";
 
 import Card from "../components/Card";
-import Cart from "../components/Cart";
 import Filter from "../assets/png/filter-ico.png";
 import Profile from "../assets/png/user-ico.png";
 
@@ -47,15 +46,15 @@ const Explore = () => {
                     <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
                         <li className="navbar-explore-link">
                             <input type="checkbox" name="pieces"/>
-                            <label for="pieces">Top 5 Pieces</label>
+                            <label htmlFor="pieces">Top 5 Pieces</label>
                         </li>
                         <li className="navbar-explore-link">
                             <input type="checkbox" name="allCategories"/>
-                            <label for="allCategories">All Categories</label>
+                            <label htmlFor="allCategories">All Categories</label>
                         </li>
                         <li className="navbar-explore-link">
                             <input type="checkbox" name="artists"/>
-                            <label for="artists">Top 5 Artists</label>
+                            <label htmlFor="artists">Top 5 Artists</label>
                         </li>
                     </ul>
                     <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Tags</h3>
@@ -83,11 +82,12 @@ const Explore = () => {
 
                 {items && items.map((item) => 
                 (<Card
+                key={item._id}
                 image= {item.image} 
                 author= {item.author}
                 title= {item.title}
                 description= {item.description}
-                id= {item.id}
+                id= {item._id}
                 price= {item.price}
                 />
                 ))}

@@ -54,16 +54,16 @@ export const QUERY_SINGLE_ITEM = gql `
 `;
 
 export const QUERY_CART_ITEMS = gql`
-  query Query {
+  query CartItems {
     cartItems {
-      cart {
-        _id
-        title
-        author
-        description
-        price
-        image
-      }
+        cart {
+          _id
+          title
+          author
+          description
+          price
+          image
+        }
     }
   }
 `;

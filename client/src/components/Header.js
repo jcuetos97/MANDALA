@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Logo from '../assets/png/logo.png';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_CART_ITEMS } from '../utils/queries';
 import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -21,6 +23,7 @@ import HamMenuClose from '../assets/svg/ham-menu-close.svg';
 library.add(faMagnifyingGlass);
 
 const Header = () => {
+    const { data } = useQuery(QUERY_CART_ITEMS);
 
     const [headerMenu, setHeaderMenu] = useState('close');
     const [shopCart, setShopCart] = useState('hidden');
@@ -64,7 +67,8 @@ const Header = () => {
                         </li>
                         <li className="shop-wrapper">
                             <button onClick={() => setShopCart(shopCart === "hidden" ? "visible" : "hidden")}>
-                                <img className="shopCart" src={ShopCart} alt="Shop Cart Icon" />
+                                <img className="shop-cart" src={ShopCart} alt="Shop Cart Icon"/>
+                                <div className={data?.cartItems?.cart.length === 0 ? "": "shop-cart-dot"}></div>
                             </button>
                         </li>
                         </>
@@ -87,7 +91,7 @@ const Header = () => {
                         </li>
                         <li className="shop-wrapper">
                             <Link to='/signForm'>
-                                <img className="shopCart" src={ShopCart} alt="Shop Cart Icon" />
+                                <img className="shop-cart" src={ShopCart} alt="Shop Cart Icon" />
                             </Link>
                         </li>
                         </>
