@@ -148,6 +148,16 @@ const resolver = {
             }
             throw new AuthenticationError('You need to be logged in');
         },
+        deleteAllFromCart: async (parent, args, context) => {
+            if (context.user) {
+                return await User.findOneAndUpdate(
+                    { _id: context.user },
+                    { $set: { cart: [] } },
+                    { new: true }
+                ).populate('cart');
+            }
+            throw new AuthenticationError('You need to be logged in');
+        }
     }
 };
 
