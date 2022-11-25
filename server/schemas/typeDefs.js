@@ -46,8 +46,11 @@ const typeDefs = gql`
         updateItemToSale(author: String!, title: String!, description: String!, price: Float!, image: String): Item
         addBoughtItem(itemId: ID!): Item
         addSoldItem(itemId: ID!): Item
+
         addToCart(itemId: ID!): User
         deleteFromCart(itemId: ID!): User
+        deleteAllFromCart: User
+
     }
 `;
 
