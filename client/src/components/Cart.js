@@ -56,9 +56,9 @@ const Cart = () => {
                     </div>
                     <h3>$ {numFor.format(sum)}.00<small> MXN</small></h3>
                 </div>
-                <div className="card-cart-row">
+                <form className="card-cart-row">
                     <button className="btn" onClick={fetchdata}>Checkout</button>
-                </div>
+                </form>
             </div>
         </div>
     )
@@ -76,6 +76,6 @@ function fetchdata() {
         })
         .then((res) => res.json())
 
-        .then((data) => console.log(data, "data2"))
+        .then((data) => window.open(data, "_blank"))
 };
 export default Cart;
