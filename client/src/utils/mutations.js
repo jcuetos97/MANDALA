@@ -122,7 +122,7 @@ export const ADD_TO_CART = gql`
 `;
 
 export const DELETE_FROM_CART = gql`
-  mutation Mutation($itemId: ID!) {
+  mutation deleteFromCart($itemId: ID!) {
     deleteFromCart(itemId: $itemId) {
       _id
       username
@@ -133,6 +133,23 @@ export const DELETE_FROM_CART = gql`
         description
         image
         price
+      }
+    }
+  }
+`;
+
+export const DELETE_ALL_FROM_CART = gql`
+  mutation deleteAllFromCart {
+    deleteAllFromCart {
+      _id
+      username
+      cart {
+        _id
+        title
+        author
+        description
+        price
+        image
       }
     }
   }

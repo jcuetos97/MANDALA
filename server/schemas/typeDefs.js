@@ -52,8 +52,10 @@ const typeDefs = gql`
 
         addBoughtItem(itemId: ID!): Item
         addSoldItem(itemId: ID!): Item
+
         addToCart(itemId: ID!): User
         deleteFromCart(itemId: ID!): User
+        deleteAllFromCart: User
 
     }
 `;
