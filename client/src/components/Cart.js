@@ -5,7 +5,6 @@ import { DELETE_FROM_CART } from "../utils/mutations";
 import "../assets/css/general.css";
 import "../assets/css/cart.css";
 
-
 const Cart = () => {
     const numFor = Intl.NumberFormat('en-US');
     const [deleteFromCart] = useMutation(DELETE_FROM_CART, {
@@ -56,9 +55,9 @@ const Cart = () => {
                     </div>
                     <h3>$ {numFor.format(sum)}.00<small> MXN</small></h3>
                 </div>
-                <form className="card-cart-row">
+                <div className="card-cart-row">
                     <button className="btn" onClick={fetchdata}>Checkout</button>
-                </form>
+                </div>
             </div>
         </div>
     )
@@ -77,5 +76,6 @@ function fetchdata() {
         .then((res) => res.json())
 
         .then((data) => window.open(data, "_blank"))
+
 };
 export default Cart;

@@ -2,7 +2,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
-
+var cors = require('cors')
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
@@ -24,9 +24,11 @@ app.use(express.static('public'));
 const YOUR_DOMAIN = 'http://localhost:3000';
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors())
 app.post('/create-checkout-session', async (req, res) => {
   console.log("reqbody=", req.body);
   const session = await stripe.checkout.sessions.create({
+
     line_items: [
       {
         // Provide Price ID (for example, pr_1234) of the product you want to sell
@@ -36,13 +38,14 @@ app.post('/create-checkout-session', async (req, res) => {
         //currency: "USD"
 
       },
+
     ],
     mode: 'payment',
     success_url: `${YOUR_DOMAIN}/explore?success=true`,
     cancel_url: `${YOUR_DOMAIN}?canceled=true`,
   });
-
-  res.redirect(303, session.url);
+  console.log(session, "session");
+  return res.json(session.url);
 });
 
 
