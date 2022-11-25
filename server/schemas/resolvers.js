@@ -7,7 +7,7 @@ const resolver = {
         me: async (parent, args, context) => {
             if (context.user) {
                 return await User.findOne(
-                    {_id: context.user._id}
+                    { _id: context.user._id }
                 )
                 .populate('cart')
                 .populate('boughtItems')
@@ -22,6 +22,14 @@ const resolver = {
         item: async (parent, { itemId }) => {
             return Item.findOne({ _id: itemId });
         },
+        cartItems: async (parent, args, context) => {
+            if (context.user) {
+                return await User.findOne(
+                    { _id: context.user._id }
+                ).populate('cart');
+            }
+            throw new AuthenticationError('You need to be logged in');
+        }
     },
     Mutation: {
         addUser: async (parent, args) => {

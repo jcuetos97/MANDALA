@@ -23,7 +23,6 @@ export const QUERY_ME = gql`
             soldItems {
               _id
             }
-          }
         }
     }
 `;
@@ -42,7 +41,7 @@ export const QUERY_ITEMS = gql`
 `;
 
 export const QUERY_SINGLE_ITEM = gql `
-    query singleItem(itemId: ID!) {
+    query singleItem($itemId: ID!) {
         item(itemId: $itemId) {
             _id
             title
@@ -52,4 +51,19 @@ export const QUERY_SINGLE_ITEM = gql `
             image
         }
     }
+`;
+
+export const QUERY_CART_ITEMS = gql`
+  query CartItems {
+    cartItems {
+        cart {
+          _id
+          title
+          author
+          description
+          price
+          image
+        }
+    }
+  }
 `;
