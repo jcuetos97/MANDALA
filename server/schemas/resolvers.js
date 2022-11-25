@@ -9,10 +9,10 @@ const resolver = {
                 return await User.findOne(
                     { _id: context.user._id }
                 )
-                .populate('cart')
-                .populate('boughtItems')
-                .populate('saleItems')
-                .populate('soldItems');
+                    .populate('cart')
+                    .populate('boughtItems')
+                    .populate('saleItems')
+                    .populate('soldItems');
             }
             throw new AuthenticationError('You need to be logged in');
         },
@@ -57,7 +57,7 @@ const resolver = {
                     { $push: { saleItems: item._id } },
                     { new: true }
                 );
-                return item; 
+                return item;
             }
             throw new AuthenticationError('You need to be logged in');
         },
@@ -111,7 +111,7 @@ const resolver = {
                 return Item.findOne({ _id: itemId });
             }
             throw new AuthenticationError('You need to be logged in');
-        },        
+        },
         updateUser: async (parent, args, context) => {
             if (context.user) {
                 return await User.findOneAndUpdate(
@@ -126,18 +126,18 @@ const resolver = {
                     { new: true }
                 );
             }
-            throw new AuthenticationError('You need to be logged in');           
-        },        
+            throw new AuthenticationError('You need to be logged in');
+        },
         addToCart: async (parent, { itemId }, context) => {
             if (context.user) {
                 return await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $push: { cart: itemId }},
+                    { $push: { cart: itemId } },
                     { new: true }
                 ).populate('cart');
             }
             throw new AuthenticationError('You need to be logged in');
-        },       
+        },
         deleteFromCart: async (parent, { itemId }, context) => {
             if (context.user) {
                 return await User.findOneAndUpdate(
@@ -148,6 +148,16 @@ const resolver = {
             }
             throw new AuthenticationError('You need to be logged in');
         },
+        deleteAllFromCart: async (parent, args, context) => {
+            if (context.user) {
+                return await User.findOneAndUpdate(
+                    { _id: context.user },
+                    { $set: { cart: [] } },
+                    { new: true }
+                ).populate('cart');
+            }
+            throw new AuthenticationError('You need to be logged in');
+        }
     }
 };
 
