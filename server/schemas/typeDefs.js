@@ -35,6 +35,7 @@ const typeDefs = gql`
         me: User
         items: [Item]
         item(itemId: ID!): Item
+        cartItems: User
         #item por tag || descr || title || author
         
     }
@@ -45,18 +46,14 @@ const typeDefs = gql`
 
         updateUser(street: String!, zip: String!, city: String!, state: String!, country: String!): User
         
-        addItemToSale(author: String!, title: String!, description: String!, price: Float!, image: String): User
-        deleteItemToSale(itemId: ID!): User
+        addItemToSale(author: String!, title: String!, description: String!, price: Float!, image: String): Item
+        deleteItemToSale(itemId: ID!): Item
         updateItemToSale(author: String!, title: String!, description: String!, price: Float!, image: String): Item
 
-        addBoughtItem(itemId: ID!): User
-        addSoldItem(itemId: ID!): User
-
-
+        addBoughtItem(itemId: ID!): Item
+        addSoldItem(itemId: ID!): Item
         addToCart(itemId: ID!): User
         deleteFromCart(itemId: ID!): User
-
-        updateUser(street: String!, zip: String!, city: String!, state: String!, country: String!): User        
 
     }
 `;

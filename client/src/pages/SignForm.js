@@ -9,7 +9,7 @@ import '../assets/css/signin.css';
 
 const SignForm = () => {
     
-    const [currentPage, setCurrentPage] = useState('LogIn');
+    const [currentPage, setCurrentPage] = useState('SignUp');
 
     const renderPage = () => {
         if (currentPage === 'LogIn') {

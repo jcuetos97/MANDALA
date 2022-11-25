@@ -32,13 +32,12 @@ const userSchema = new Schema(
     },
     country: {
       type: String,
-      required: true,
     },
     cart: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Item'
-      }
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Item'
+        }
     ],
     boughtItems: [
         {
