@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useQuery } from "@apollo/client";
 import { QUERY_ITEMS } from "../utils/queries";
@@ -13,61 +13,61 @@ import "../assets/css/explore.css";
 import "../assets/css/general.css";
 
 const Explore = () => {
-    const [filterHide, setFilterHide]= useState("visible");
-    
+    const [filterHide, setFilterHide] = useState("visible");
+
     const { loading, data } = useQuery(QUERY_ITEMS);
     const items = data?.items || [];
-    
+
     if (loading) {
         return <div>Loading...</div>;
-      }
-    
+    }
+
     return (
         <div className="explore">
             <nav className="navbar-explore">
                 <div className="navbar-explore-filters-container">
-                {Auth.loggedIn() ? (
-                    <div className="navbar-explore-filter">
-                        <Link to="/user">
-                            <img src={Profile} alt="User" className="filter-icon" />
-                        </Link>
-                        
-                        <p className={filterHide === "hidden" ? "hide" : "show"}> My Profile</p>
-                    </div> 
+                    {Auth.loggedIn() ? (
+                        <div className="navbar-explore-filter">
+                            <Link to="/user">
+                                <img src={Profile} alt="User" className="filter-icon" />
+                            </Link>
+
+                            <p className={filterHide === "hidden" ? "hide" : "show"}> My Profile</p>
+                        </div>
                     ) : ("")}
                     <div className="navbar-explore-filter">
                         <a onClick={() => setFilterHide(filterHide === "hidden" ? "visible" : "hidden")}>
-                        <img src={Filter} alt="Filter" className="filter-icon" />
+                            <img src={Filter} alt="Filter" className="filter-icon" />
                         </a>
                         <p className={filterHide === "hidden" ? "hide" : "show"}> Hide filters</p>
-                    </div>     
-                </div>  
-                <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Filters & Categories</h3> 
-                    <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
-                        <li className="navbar-explore-link">
-                            <input type="checkbox" name="pieces"/>
-                            <label htmlFor="pieces">Top 5 Pieces</label>
-                        </li>
-                        <li className="navbar-explore-link">
-                            <input type="checkbox" name="allCategories"/>
-                            <label htmlFor="allCategories">All Categories</label>
-                        </li>
-                        <li className="navbar-explore-link">
-                            <input type="checkbox" name="artists"/>
-                            <label htmlFor="artists">Top 5 Artists</label>
-                        </li>
-                    </ul>
-                    <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Tags</h3>
-                        <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-tags"}>
-                            <li className="tag">Surrealism</li>
-                            <li className="tag">Abstract</li>
-                            <li className="tag">Pop Art</li>
-                            <li className="tag">Modernism</li>
-                            <li className="tag">Realism</li>
-                            <li className="tag">Landscape</li>
-                            <li className="tag">Portrait</li>
-                            <li className="tag">Animals</li>
-                        </ul>
+                    </div>
+                </div>
+                <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Filters & Categories</h3>
+                <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
+                    <li className="navbar-explore-link">
+                        <input type="checkbox" name="pieces" />
+                        <label htmlFor="pieces">Top 5 Pieces</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="checkbox" name="allCategories" />
+                        <label htmlFor="allCategories">All Categories</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="checkbox" name="artists" />
+                        <label htmlFor="artists">Top 5 Artists</label>
+                    </li>
+                </ul>
+                <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Tags</h3>
+                <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-tags"}>
+                    <li className="tag">Surrealism</li>
+                    <li className="tag">Abstract</li>
+                    <li className="tag">Pop Art</li>
+                    <li className="tag">Modernism</li>
+                    <li className="tag">Realism</li>
+                    <li className="tag">Landscape</li>
+                    <li className="tag">Portrait</li>
+                    <li className="tag">Animals</li>
+                </ul>
             </nav>
             <div className="cards-container">
                 <div className="cards-container-header">
@@ -77,21 +77,21 @@ const Explore = () => {
                     </div>
                     <Link to="/sell">
                         <button className="btn">Publish artwork</button>
-                    </Link>  
+                    </Link>
                 </div>
 
-                {items && items.map((item) => 
+                {items && items.map((item) =>
                 (<Card
-                key={item._id}
-                image= {item.image} 
-                author= {item.author}
-                title= {item.title}
-                description= {item.description}
-                id= {item._id}
-                price= {item.price}
+                    key={item._id}
+                    image={item.image}
+                    author={item.author}
+                    title={item.title}
+                    description={item.description}
+                    id={item._id}
+                    price={item.price}
                 />
                 ))}
-            </div>   
+            </div>
         </div>
     );
 };

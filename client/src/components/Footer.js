@@ -54,38 +54,38 @@ const Footer = () => {
                 </div>
                 <div className='upper-row'>
                     <div>
-                        <img src={LogoWhite} alt="Company Logo" className="footer-logo-img"/>    
+                        <img src={LogoWhite} alt="Company Logo" className="footer-logo-img" />
                     </div>
                     <Link to='/'>
-                    <h1 className='footer-logo-title'>man<br/>da<br/>la</h1>  
+                        <h1 className='footer-logo-title'>man<br />da<br />la</h1>
                     </Link>
-                   
+
                 </div>
             </div>
 
             <div className='footer-down'>
                 <div className='footer-row-icons'>
                     <a target="_blank" rel="noreferrer" href="https://www.discord.com">
-                        <img className='icon' src={Discord} alt="icon"/>
+                        <img className='icon' src={Discord} alt="icon" />
                     </a>
                     <a target="_blank" rel="noreferrer" href="https://linkedin.com">
-                        <img className='icon' src={LinkedIn} alt='icon'/>
+                        <img className='icon' src={LinkedIn} alt='icon' />
                     </a>
                     <a target="_blank" rel="noreferrer" href="https://github.com/jcuetos97/MARKETPLACE">
-                        <img className='icon' src={GitHub} alt='icon'/>
-                    </a>      
+                        <img className='icon' src={GitHub} alt='icon' />
+                    </a>
                     <a target="_blank" rel="noreferrer" href="https://www.instagram.com">
-                        <img className='icon' src={Instagram} alt="icon"/>
+                        <img className='icon' src={Instagram} alt="icon" />
                     </a>
                     <a target="_blank" rel="noreferrer" href="https://www.youtube.com">
-                        <img className='icon' src={Youtube} alt="icon"/>
+                        <img className='icon' src={Youtube} alt="icon" />
                     </a>
                 </div>
                 <div className='footer-row-copyright'>
                     <p>© Copyright 2022</p>
                 </div>
-               
-            </div>  
+
+            </div>
         </footer>
     );
 };
