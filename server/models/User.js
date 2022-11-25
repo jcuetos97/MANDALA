@@ -34,10 +34,10 @@ const userSchema = new Schema(
       type: String,
     },
     cart: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Item'
-      }
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Item'
+        }
     ],
     boughtItems: [
         {

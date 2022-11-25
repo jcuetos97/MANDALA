@@ -72,15 +72,24 @@
             font-size: 1.5rem; } }
 
 .shop-wrapper {
+    position: relative;
     display: flex;
     align-items: center; }
     .shop-wrapper button {
-        background-color: inherit;
-    }
+        background-color: inherit; }
 
-.shopCart {
+.shop-cart {
     padding: 0 2.2rem ;
     height: 1.2rem; }
+    
+.shop-cart-dot {
+    height: 10px;
+    width: 10px;
+    background-color: var(--blue);
+    border-radius: 50%;
+    position: absolute;
+    top: 1.4rem;
+    right: 1.8rem; }
 
 .search-bar {
     background-color: var(--light-grey);
@@ -92,7 +101,7 @@
     border-radius: 35px; }
     @media only screen and (max-width: 1450px) {
     .search-bar {
-    display: none; } }
+    display: none;} }
 
 .search-bar input[type=text] {
     background-color: inherit;
