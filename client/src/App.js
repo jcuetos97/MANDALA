@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import User from './pages/User';
 import Explore from './pages/Explore';
 import SignForm from './pages/SignForm';
+import Resume from './pages/Resume';
 
 // Construct our main GraphQL API endpoint
 const client = new ApolloClient({
@@ -46,6 +47,10 @@ function App() {
                 <Route
                 path='/sell'
                 element={<Sell />}  
+                />
+                <Route
+                path="/resume"
+                element={<Resume />}
                 />
               </Routes>
               <ChatBox/>

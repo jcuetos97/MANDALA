@@ -23,5 +23,10 @@
   "homepage": "https://github.com/jcuetos97/MARKETPLACE#readme",
   "devDependencies": {
     "concurrently": "^7.5.0"
+  },
+  "dependencies": {
+    "apollo": "^2.34.0",
+    "nodemailer": "^6.8.0",
+    "nodemailer-handlebars": "^1.0.1"
   }
 }
