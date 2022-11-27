@@ -117,6 +117,8 @@ const resolver = {
                 return await User.findOneAndUpdate(
                     { _id: context.user._id },
                     {
+                        username: args.username,
+                        email: args.email,
                         street: args.street,
                         zip: args.zip,
                         city: args.city,
@@ -132,7 +134,7 @@ const resolver = {
             if (context.user) {
                 return await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $push: { cart: itemId } },
+                    { $addToSet: { cart: itemId } },
                     { new: true }
                 ).populate('cart');
             }
@@ -143,7 +145,7 @@ const resolver = {
                 return await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $pull: { cart: itemId } },
-                    { new: true }
+                    { new: true}
                 ).populate('cart');
             }
             throw new AuthenticationError('You need to be logged in');

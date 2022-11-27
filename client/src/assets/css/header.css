@@ -74,12 +74,22 @@
 .shop-wrapper {
     position: relative;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    margin: .8rem 2rem; 
+    border-radius: 25%;
+    background-color: inherit;
+    border: dashed 1px var(--light);;
+    border-radius: 25%;
+    transition: all 1s;}
     .shop-wrapper button {
         background-color: inherit; }
+    .wrapper--active {
+        background-color: var(--light-blue);
+        border: dashed 1px var(--blue);
+        border-radius: 25%; }
 
 .shop-cart {
-    padding: 0 2.2rem ;
+    padding: 0 1rem ;
     height: 1.2rem; }
     
 .shop-cart-dot {
@@ -88,8 +98,8 @@
     background-color: var(--blue);
     border-radius: 50%;
     position: absolute;
-    top: 1.4rem;
-    right: 1.8rem; }
+    top: .6rem;
+    right: .7rem; }
 
 .search-bar {
     background-color: var(--light-grey);

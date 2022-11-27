@@ -16,12 +16,24 @@ export const QUERY_ME = gql`
             }
             boughtItems {
               _id
+              description
+              image
+              price
+              title
             }
             saleItems {
-              _id
+              author
+              description
+              image
+              price
+              title
             }
             soldItems {
               _id
+              description
+              image
+              price
+              title
             }
         }
     }

@@ -4,17 +4,15 @@
     justify-content: space-evenly;
     width: 100%;
     background-color: var(--light);
-    padding: 7rem 1rem;
-    gap: .5rem; }
+    color: var(--dark);
+    padding: 7rem 1rem; }
 
 .user-container {
-    text-transform: capitalize;
     font-family: 'Lora', sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
     background-color: var(--light);
-    border: dashed 1px var(--blue);
-    color: var(--light); 
+    border: dashed 1px var(--blue); 
     border-radius: 15px;
     padding: 1rem;
     box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); }
@@ -22,35 +20,25 @@
         transform: translateY(-5px); }
 
 .art {
-    color: var(--dark);
     position: relative; 
-    animation: slideInLeft;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
+    animation: slideInLeft ease-in-out;
     animation-duration: 1.6s;
     height: 75vh;
     width: 25%; }
 
 .info {
     position: relative;
-    color: var(--dark);
-    animation: slideInUp;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
+    animation: slideInUp ease-in-out;
     animation-duration: 2.4s;
-    height: 75vh;
+    min-height: 75vh;
     width: 45%; }
 
 .items {
     position: relative;
-    color: var(--dark);
-    animation: slideInUp;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
+    animation: slideInUp ease-in-out;
     animation-duration: 1.6s;
     height: 55vh;
-    width: 25%;
- }
+    width: 25%; }
 
 .btn-explore {
     background-color: var(--dark);
@@ -72,10 +60,26 @@
     border-radius: 5px; 
     transition: all 1s;  }
 
+.btn-save {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    background-color: var(--light-blue);
+    color: var(--dark);
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 5px; 
+    transition: all 1s; }
+
+
+.btn-disabled {display: none;}
+
 .edit-icon {
     position: absolute;
     top: 1.5rem;
-    right: 2rem; }
+    right: 2rem;
+    height: 1.5rem;
+    cursor: pointer; }
 
 .info-img {
     height: 45%;
@@ -89,9 +93,19 @@
     font-weight: 700;
     color: var(--blue); }
 
-.info-content-subtitle {
-    font-size: 1rem;
-    font-weight: 500; }
+.info-content-disabled {
+    min-width: 55%;
+    padding: .3rem;
+    border: dashed 1px var(--light);
+    background-color: inherit;
+    transition: all 1s ease-in-out; }
+    
+.info-content-edit {
+    min-width: 55%;
+    border: dashed 1px var(--blue);
+    padding: .3rem;
+    border-radius: 5px;
+    transition: all 1s ease-in-out; }
 
 .user-piece-collection {
     display: flex;
@@ -101,6 +115,7 @@
     background-color: var(--light-blue);
     color: var(--dark);
     border-radius: 15px;
+    transition: all 2s ease-in-out;
 }
 
 .user-piece-at-sale {
@@ -109,9 +124,7 @@
     padding: 0.5rem 0.5rem;
     margin: 0.5rem 0rem; 
     background-color: var(--light-blue);
-    border-radius: 15px;
-}
-
+    border-radius: 15px; }
 
 @media screen and (max-width: 992px) {
     .user-container {
