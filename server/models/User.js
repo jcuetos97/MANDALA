@@ -20,18 +20,23 @@ const userSchema = new Schema(
     },
     street: {
       type: String,
+      default: "None"
     },  
     zip: {
-      type: Number,
+      type: String,
+      default: "None"
     },
     city: {
       type: String,
+      default: "None"
     },
     state: {
       type: String,
+      default: "None"
     },
     country: {
       type: String,
+      default: "None"
     },
     cart: [
         {

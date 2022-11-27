@@ -1,13 +1,18 @@
 import React from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_CART_ITEMS } from "../utils/queries";
-import { DELETE_FROM_CART } from "../utils/mutations";
+import { DELETE_FROM_CART, DELETE_ALL_FROM_CART } from "../utils/mutations";
 import "../assets/css/general.css";
 import "../assets/css/cart.css";
 
 const Cart = () => {
     const numFor = Intl.NumberFormat('en-US');
     const [deleteFromCart] = useMutation(DELETE_FROM_CART, {
+        refetchQueries: [
+            { query: QUERY_CART_ITEMS }
+        ]
+    });
+    const [deleteAllFromCart] = useMutation(DELETE_ALL_FROM_CART, {
         refetchQueries: [
             { query: QUERY_CART_ITEMS }
         ]
@@ -29,7 +34,7 @@ const Cart = () => {
             <div>
                 <div className="card-cart-row">
                     <h4>Shopping Cart</h4>
-                    <button className="btn-remove-all">Remove All</button>
+                    <button className="btn-remove-all" onClick={deleteAllFromCart}>Remove All</button>
                 </div>
                 <ul>
                     {cart && cart.map((item) => (

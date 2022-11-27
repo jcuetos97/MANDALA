@@ -65,10 +65,10 @@ const Header = () => {
                         <li className='header-link-wrapper'>
                             <span className='header-link' onClick={logout}>Logout</span>
                         </li>
-                        <li className="shop-wrapper">
+                        <li className={shopCart === "visible" ? "shop-wrapper wrapper--active" : "shop-wrapper" }>
                             <button onClick={() => setShopCart(shopCart === "hidden" ? "visible" : "hidden")}>
-                                <img className="shop-cart" src={ShopCart} alt="Shop Cart Icon"/>
-                                <div className={data?.cartItems?.cart.length === 0 ? "": "shop-cart-dot"}></div>
+                                <img className = "shop-cart"  src={ShopCart} alt="Shop Cart Icon"/>
+                                <div className = {data?.cartItems?.cart.length === 0 ? "": "shop-cart-dot"}></div>
                             </button>
                         </li>
                         </>
