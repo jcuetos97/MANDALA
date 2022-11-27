@@ -21,6 +21,7 @@ const typeDefs = gql`
         author: String
         title: String
         description: String
+        medium: String
         price: Float
         image: String        
     }
@@ -41,9 +42,9 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         updateUser(username: String!, email: String!, street: String!, zip: String!, city: String!, state: String!, country: String!): User
         
-        addItemToSale(author: String!, title: String!, description: String!, price: Float!, image: String): Item
+        addItemToSale(author: String!, title: String!, description: String!, medium: String!, price: Float!, image: String): Item
         deleteItemToSale(itemId: ID!): Item
-        updateItemToSale(author: String!, title: String!, description: String!, price: Float!, image: String): Item
+        updateItemToSale(author: String!, title: String!, description: String!, medium: String!, price: Float!, image: String): Item
         addBoughtItem(itemId: ID!): Item
         addSoldItem(itemId: ID!): Item
 

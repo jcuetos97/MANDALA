@@ -17,6 +17,7 @@ export const QUERY_ME = gql`
             boughtItems {
               _id
               description
+              medium
               image
               price
               title
@@ -24,6 +25,7 @@ export const QUERY_ME = gql`
             saleItems {
               author
               description
+              medium
               image
               price
               title
@@ -31,6 +33,7 @@ export const QUERY_ME = gql`
             soldItems {
               _id
               description
+              medium
               image
               price
               title
@@ -46,6 +49,7 @@ export const QUERY_ITEMS = gql`
             title
             author
             description
+            medium
             price
             image
         }
@@ -59,6 +63,7 @@ export const QUERY_SINGLE_ITEM = gql `
             title
             author
             description
+            medium
             price
             image
         }
@@ -73,6 +78,7 @@ export const QUERY_CART_ITEMS = gql`
           title
           author
           description
+          medium
           price
           image
         }

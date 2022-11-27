@@ -125,6 +125,12 @@ const Header = () => {
                         <li className='header-sm-menu-link'>
                             <span className='header-link' onClick={logout}>Logout</span>
                         </li>
+                        <li className={shopCart === "visible" ? "header-sm-menu-link wrapper--active" : "header-sm-menu-link shop-wrapper" }>
+                            <button onClick={() => setShopCart(shopCart === "hidden" ? "visible" : "hidden")}>
+                                <img className = "shop-cart"  src={ShopCart} alt="Shop Cart Icon"/>
+                                <div className = {data?.cartItems?.cart.length === 0 ? "": "shop-cart-dot"}></div>
+                            </button>
+                        </li>
                         </>
                         ) : (
                         <>

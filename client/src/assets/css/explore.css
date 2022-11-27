@@ -9,14 +9,14 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap ;
-    width: 25%;
+    width: 20%;
     margin: 4rem 0rem;
     padding: 2rem 2rem;
     border-bottom: dashed 1px var(--blue);
     border-right: dashed 1px var(--blue);
     border-radius:  0 0 25px;
     transform: all 4s; }
-    @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 1050px) {
         .navbar-explore {
             flex-direction: row;
             width: 100%;
@@ -37,7 +37,7 @@
     font-size: .9rem;
     gap: 1rem;
     padding: .5rem 1rem; }
-    @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 1050px) {
         .navbar-explore-filters-container {
             display: flex;
             justify-content: space-around;
@@ -94,7 +94,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 5rem 2rem; }
-    @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 1050px) {
         .cards-container {
             width: 100%;
             padding: 0rem 2rem; } }
@@ -128,6 +128,7 @@
 .card-body { width: 100%; }
 
 .card-body-content {
+    position: relative;
     padding: 1rem;
     border: dashed 1px var(--blue);
     border-top: none;
@@ -140,12 +141,20 @@
 
 .card-text-description {
     font-size: .8rem;
-    padding: .6rem 1rem;
-}
+    padding: .6rem 1rem; }
 
 .card-text-price {
-    padding: .6rem 1rem;
-}
+    padding: .6rem 1rem; }
+
+.card-text-medium {
+    position: absolute;
+    top: -17px;
+    right: 7px;
+    font-size: .7rem;
+    background-color: var(--dark);
+    color: var(--light);
+    padding: .3rem 1rem;
+    border-radius: 15px; }
 
 .card-title-author {
     font-size: .8rem;

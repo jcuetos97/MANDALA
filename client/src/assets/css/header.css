@@ -74,6 +74,7 @@
 .shop-wrapper {
     position: relative;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     margin: .8rem 2rem; 
     border-radius: 25%;
@@ -89,6 +90,7 @@
         border-radius: 25%; }
 
 .shop-cart {
+    background-color: inherit;
     padding: 0 1rem ;
     height: 1.2rem; }
     

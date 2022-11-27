@@ -13,6 +13,11 @@ const itemSchema = new Schema({
     type: String,
     required: true,
   },
+  medium: {
+    type: String,
+    required: true,
+    default: "None"
+  },
   price: {
     type: Number,
     required: true,

@@ -8,7 +8,7 @@ import "../assets/css/general.css";
 import "../assets/css/explore.css";
 
 
-const Card = ({ image, author, title, description, id, price }) => {
+const Card = ({ image, author, title, description, id, medium, price }) => {
     const numFor = Intl.NumberFormat('en-US');
    
     const [addToCart] = useMutation(ADD_TO_CART, {
@@ -28,7 +28,8 @@ const Card = ({ image, author, title, description, id, price }) => {
             <div className="card-body">
                 <div className="card-body-content">
                     <h4 className="card-title">{title}</h4>
-                    <span className="card-title-author">- By {author}</span>
+                    <p className="card-title-author">- By {author}</p>
+                    <p className="card-text-medium">Medium: {medium}</p>
                     <p className="card-text-description">{description}</p>
                     <h4 className="card-text-price"><span>$</span>{numFor.format(price)}<span> MXN</span></h4>
                     <button className="btn-add" onClick={addToCart}>Add to cart</button>

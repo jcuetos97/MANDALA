@@ -5,19 +5,16 @@ import { QUERY_ME } from "../utils/queries";
 import { Link } from "react-router-dom";
 import Edit from "../assets/png/edit-ico.png";
 
-
-
 // CSS Style
 import '../assets/css/general.css';
 import '../assets/css/user.css';
 
 const User = () => {
- 
     
-    const { data, loading } = useQuery(QUERY_ME);
+      const { data, loading } = useQuery(QUERY_ME);
 
-    const user = data?.me || [];
-    const [formState, setFormState] = useState({
+      const user = data?.me || [];
+      const [formState, setFormState] = useState({
         username: "Loading",
         email: "Loading",
         street: "Loading",
@@ -41,6 +38,7 @@ const User = () => {
         }
       }, [loading, data])
       
+      console.log(data);
       const [disabled, setDisabled] = useState(true);
   
       const [ updateUser ] = useMutation(UPDATE_USER);

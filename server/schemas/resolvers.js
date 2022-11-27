@@ -69,6 +69,7 @@ const resolver = {
                         author: args.author,
                         title: args.title,
                         description: args.description,
+                        medium: args.medium,
                         price: args.price,
                         image: args.image
                     },

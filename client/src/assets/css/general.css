@@ -47,7 +47,8 @@ textarea:focus {
 
 button {
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  background-color: inherit; }
 
 textarea {
   resize: vertical; }
