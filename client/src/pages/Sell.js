@@ -58,33 +58,31 @@ const Sell = () => {
                             value={formState.name}
                             onChange={handleChange}
                             type="text"
-                            required 
-                            autocomplete="off"/>
+                            required />
                     </div>
                     <div class="field-wrap">
                         <label>Description (140 characters max)</label>
                         <textarea 
                             value={formState.description}
                             onChange={handleChange}
-                            maxlength="140" 
+                            maxLength="140" 
                             name="description" 
                             rows="3" 
                             cols="50" 
                             required />
                     </div>
-                    <div class="field-wrap">
+                    <div className="field-wrap">
                         <label>Price</label>
                         <input 
                             value={formState.price}
                             onChange={handleChange}
                             name="name"
                             type="text" 
-                            required 
-                            autocomplete="off"/>
+                            required />
                     </div>
                     
-                    <label className="tags-container-title">Tags</label>
-                    <div class="tags-container">
+                    <label className="tags-container-title">Medium</label>
+                    <div className="tags-container">
                         <div className="field-wrap-tag">
                             <label htmlFor="watercolor">Watercolor</label>
                             <input value={formState.tags} onChange={handleChange} name="watercolor" type="checkbox"/>
@@ -118,8 +116,7 @@ const Sell = () => {
                             onChange={handleChange}
                             type="file" 
                             name="image" 
-                            required 
-                            autocomplete="off"/>
+                            required />
                     </div>
                     <div className="button-started-container">
                         <button type="submit" className="btn button-animated">Publish</button>

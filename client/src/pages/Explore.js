@@ -42,31 +42,32 @@ const Explore = () => {
                         <p className={filterHide === "hidden" ? "hide" : "show"}> Hide filters</p>
                     </div>
                 </div>
-                <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Filters & Categories</h3>
+                <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Medium</h3>
                 <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
                     <li className="navbar-explore-link">
-                        <input type="checkbox" name="pieces" />
-                        <label htmlFor="pieces">Top 5 Pieces</label>
+                        <input type="checkbox" name="watercolor" />
+                        <label htmlFor="watercolor">Watercolor</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="checkbox" name="allCategories" />
-                        <label htmlFor="allCategories">All Categories</label>
+                        <input type="checkbox" name="oil" />
+                        <label htmlFor="oil">Oil</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="checkbox" name="artists" />
-                        <label htmlFor="artists">Top 5 Artists</label>
+                        <input type="checkbox" name="charcoal" />
+                        <label htmlFor="charcoal">Charcoal & Pencils</label>
                     </li>
-                </ul>
-                <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Tags</h3>
-                <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-tags"}>
-                    <li className="tag">Surrealism</li>
-                    <li className="tag">Abstract</li>
-                    <li className="tag">Pop Art</li>
-                    <li className="tag">Modernism</li>
-                    <li className="tag">Realism</li>
-                    <li className="tag">Landscape</li>
-                    <li className="tag">Portrait</li>
-                    <li className="tag">Animals</li>
+                    <li className="navbar-explore-link">
+                        <input type="checkbox" name="acrylic" />
+                        <label htmlFor="acrylic">Acrylic</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="checkbox" name="mixedMedia" />
+                        <label htmlFor="mixedMedia">Mixed Media</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="checkbox" name="other" />
+                        <label htmlFor="other">Other</label>
+                    </li>
                 </ul>
             </nav>
             <div className="cards-container">
@@ -87,6 +88,7 @@ const Explore = () => {
                     author={item.author}
                     title={item.title}
                     description={item.description}
+                    medium={item.medium}
                     id={item._id}
                     price={item.price}
                 />
