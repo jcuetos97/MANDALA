@@ -1,6 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const cors = require('cors');
 const { authMiddleware } = require('./utils/auth');
 
 const { typeDefs, resolvers } = require('./schemas');
@@ -15,8 +16,14 @@ const server = new ApolloServer({
     context: authMiddleware,
 });
 
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+//static files
+app.use(express.static(path.join(__dirname, '/public/upload')));
+//routes
+app.use('/', require('./routes/uploadImage'));
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));

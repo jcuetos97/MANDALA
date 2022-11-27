@@ -53,7 +53,7 @@ const Card = ({image,author,title,description,id,price}) => {
                     <span className="card-title-author">- By {author}</span> 
                     <p className="card-text-description">{description}</p>
                     <h4 className="card-text-price"><span>$</span>{numFor.format(price)}<span> MXN</span></h4>
-                    <button className="btn-add" onClick={onClickHandler}>{ onClickState === "available" && data.length !== 0  ? "Add to Cart" : "Remove from Cart"}</button>
+                    <button className="btn-add" onClick={onClickHandler}>{ onClickState === "available" ? "Add to Cart" : "Remove from Cart"}</button>
                 </div>   
             </div>
         </div>
