@@ -9,7 +9,7 @@
   <h3>Marketplace for artists</h3>
 
   <p align="center">
-    An easy way to sell and buy Art!
+    An easy way to sell and buy art!
     </br>
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
     ·
