@@ -4,7 +4,8 @@ import { QUERY_CART_ITEMS } from "../utils/queries";
 import { DELETE_FROM_CART } from "../utils/mutations";
 import "../assets/css/general.css";
 import "../assets/css/cart.css";
-
+//import { Item } from "../../../server/models/";
+const items = [];
 const Cart = () => {
     const numFor = Intl.NumberFormat('en-US');
     const [deleteFromCart] = useMutation(DELETE_FROM_CART, {
@@ -16,14 +17,14 @@ const Cart = () => {
 
     const cart = data?.cartItems?.cart || [];
     const subtotal = [];
-    const items = [];
+
 
     cart.map((item) => (subtotal.push(item.price)));
     cart.map((item) => (items.push(item)));
 
     const sum = subtotal.reduce((partialSum, a) => partialSum + a, 0);
     const totalItems = items.length;
-
+    console.log(items, "items");
     return (
         <div className="card-cart">
             <div>
@@ -63,7 +64,7 @@ const Cart = () => {
     )
 };
 function fetchdata() {
-    var data = { "price_ID": "price_1M4whsJL7p827Ta0DKuJFcBR" };
+    var data = { "price_ID": items }
     console.log(data, "data");
     fetch('/create-checkout-session',
         {
