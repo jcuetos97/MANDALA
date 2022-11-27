@@ -26,19 +26,39 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors())
 app.post('/create-checkout-session', async (req, res) => {
-  console.log("reqbody=", req.body);
-  const session = await stripe.checkout.sessions.create({
+  console.log("reqbody=", req.body.price_ID);
+  //console.log("cartitems", cartItems);
+  //console.log(line_items, "lineitems");
+  let line_items = req.body.price_ID.map((item) => {
+    //console.log(item, "item");
+    return {
+      price_data: {
+        currency: "USD",
+        unit_amount: item.price * 100,
+        product_data: {
 
-    line_items: [
-      {
-        customer_email: "javier@email.com",
-        price: req.body.price_ID,
-        quantity: 1,
-        //currency: "USD"
+          name: item.title,
+          images: [item.image],
+          description: item.description,
+          metadata: {
+            id: item._id,
+
+          }
+        },
 
       },
 
-    ],
+      quantity: 1,
+
+
+    };
+  });
+  const session = await stripe.checkout.sessions.create({
+
+    line_items,
+
+
+
     mode: 'payment',
     success_url: `${YOUR_DOMAIN}/explore?success=true`,
     cancel_url: `${YOUR_DOMAIN}?canceled=true`,
