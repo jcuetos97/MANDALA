@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors())
 app.post('/create-checkout-session', async (req, res) => {
-  console.log("reqbody=", req.body.price_ID);
+  //console.log("reqbody=", req.body.price_ID);
   //console.log("cartitems", cartItems);
   //console.log(line_items, "lineitems");
   let line_items = req.body.price_ID.map((item) => {
