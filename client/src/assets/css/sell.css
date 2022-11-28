@@ -16,3 +16,22 @@
     height: 35%;
     position: absolute;
     bottom: 15px; }
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+margin-top: .5rem; }
+
+
+.field-wrap-tag {
+    display: inline-flex;
+    background: var(--light-blue);
+    border: dashed 1px var(--blue);
+    font-size: .8rem;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    padding: .5rem;
+    gap: .3rem; }

@@ -1,87 +1,134 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
-import uploadService from '../utils/uploadService';
+import { useMutation } from "@apollo/client";
+import { ADD_ITEM_TO_SALE } from "../utils/mutations";
 
-import Auth from "../utils/auth";
 
 // CSS Style
 import "../assets/css/general.css";
 import "../assets/css/sell.css";
 
 
-
 const Sell = () => {
-
-    const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
-    const [price, setPrice] = useState('');
-    const [tags, setTags] = useState('');
-    const [file, setFile] = useState();
-    const [pathImages, setPathImages] = useState('');
-
-    const sendImage = (e) => {
-        e.preventDefault();
-        console.log(file, "filemane");
-        uploadService.sendImages(
-            name, description, price, tags, file
-        ).then((result) => {
-            console.log('Result: ', result);
+    const [formState, setFormState] = useState({
+        name: '',
+        description: '',
+        price: '',
+        watercolor: '',
+        oil: '',
+        charcoal: '',
+        acrylic: '',
+        mixedMedia: '',
+        other:'',
+        tags: '',
+        image: '',
+      });
+    const [ addItemToSale, { error } ] = useMutation(ADD_ITEM_TO_SALE);
+    
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+    
+        setFormState({
+          ...formState,
+          [name]: value,
         });
-    };
+      };
 
-    const onFileChange = (e) => {
-        if (e.target.files && e.target.files.length > 0) {
-            const file = e.target.files[0];
-            if (file.type.includes('image')) {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = function load() {
-                    setPathImages(reader.result)
-                }
-                setFile(file);
-            } else {
-                console.log('There was an error');
-            }
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+       
+        try {
+          await addItemToSale({
+            variables: { ...formState },
+          });
+    
+        } catch (e) {
+          console.error(e);
         }
-    }
-
+      };
+    
     return (
-        <div className="sell">
+        <div className="sell"> 
             <div className="sell-form-containter">
-                {Auth.loggedIn() ? (
-                    <form>
-                        <h2>Let the world discover your art!</h2>
-                        <div className="field-wrap">
-                            <label>Name </label>
-                            <input type="text" onChange={(e) => setName(e.target.value)} required autocomplete="off" />
+                <form onSubmit={handleFormSubmit}>
+                    <h2>Let the world discover your art!</h2>
+                    <div className="field-wrap">
+                        <label>Name </label>
+                        <input 
+                            value={formState.name}
+                            onChange={handleChange}
+                            type="text"
+                            required />
+                    </div>
+                    <div class="field-wrap">
+                        <label>Description (140 characters max)</label>
+                        <textarea 
+                            value={formState.description}
+                            onChange={handleChange}
+                            maxLength="140" 
+                            name="description" 
+                            rows="3" 
+                            cols="50" 
+                            required />
+                    </div>
+                    <div className="field-wrap">
+                        <label>Price</label>
+                        <input 
+                            value={formState.price}
+                            onChange={handleChange}
+                            name="name"
+                            type="text" 
+                            required />
+                    </div>
+                    
+                    <label className="tags-container-title">Medium</label>
+                    <div className="tags-container">
+                        <div className="field-wrap-tag">
+                            <label htmlFor="watercolor">Watercolor</label>
+                            <input value={formState.tags} onChange={handleChange} name="watercolor" type="checkbox"/>
                         </div>
-                        <div class="field-wrap">
-                            <label>Description (140 characters max)</label>
-                            <textarea maxlength="140" name="description" rows="3" cols="50" onChange={(e) => setDescription(e.target.value)} required></textarea>
+                        <div className="field-wrap-tag">
+                            <label htmlFor="oil">Oil</label>
+                            <input value={formState.tags} onChange={handleChange} name="oil" type="checkbox"/>
                         </div>
-                        <div class="field-wrap">
-                            <label>Price</label>
-                            <input type="text" onChange={(e) => setPrice(e.target.value)} required autocomplete="off" />
+                        <div className="field-wrap-tag">
+                            <label htmlFor="charcoal">Charcoal & Pencils</label>
+                            <input value={formState.tags} onChange={handleChange} name="charcoal" type="checkbox"/>
                         </div>
-                        <div class="field-wrap">
-                            <label>Tags</label>
-                            <input type="tags" onChange={(e) => setTags(e.target.value)} required autocomplete="off" />
+                        <div className="field-wrap-tag">
+                            <label htmlFor="acrylic">Acrylic</label>
+                            <input value={formState.tags} onChange={handleChange} name="acrylic" type="checkbox"/>
                         </div>
-                        <div class="field-wrap">
-                            <label>Image</label>
-                            <input type="file" name="fileImg" onChange={onFileChange} required autocomplete="off" />
+                        <div className="field-wrap-tag">
+                            <label htmlFor="mixedMedia">Mixed Media</label>
+                            <input value={formState.tags} onChange={handleChange} name="mixedMedia" type="checkbox"/>
                         </div>
-                        <div className="button-started-container">
-                            <button type="submit" className="btn button-animated" onClick={sendImage}>Publish</button>
+                        <div className="field-wrap-tag">
+                            <label htmlFor="other">Other</label>
+                            <input value={formState.tags} onChange={handleChange} name="other" type="checkbox"/>
                         </div>
-                    </form>
-                ) : (
-                    <>
-                        <h3>Sorry! It seems that you are not logged in!</h3>
-                        <p>Please <Link to="/signForm"><strong>sign in</strong></Link> to start discovering...</p>
-                    </>
-                )}
+                    </div>
+                    
+                    <div class="field-wrap">
+                        <label>Image</label>
+                        <input 
+                            value={formState.image}
+                            onChange={handleChange}
+                            type="file" 
+                            name="image" 
+                            required />
+                    </div>
+                    <div className="button-started-container">
+                        <button type="submit" className="btn button-animated">Publish</button>
+                    </div>
+                </form>
+                
+                {error && (
+                    <div>
+                    <br />
+                    {error.message}
+                    </div>
+                    )} 
             </div>
         </div>
     );

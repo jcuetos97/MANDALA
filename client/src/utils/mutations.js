@@ -25,8 +25,8 @@ export const ADD_USER = gql`
 `;
 
 export const UPDATE_USER = gql`
-	mutation updateUser($street: String!, $zip: String!, $city: String!, $state: String!, $country: String!) {
-    updateUser(street: $street, zip: $zip, city: $city, state: $state, country: $country) {
+	mutation updateUser($username: String!, $email: String!, $street: String!, $zip: String!, $city: String!, $state: String!, $country: String!) {
+    updateUser(username:$username, email:$email, street: $street, zip: $zip, city: $city, state: $state, country: $country) {
       _id
       username
       email
@@ -40,12 +40,13 @@ export const UPDATE_USER = gql`
 `;
 
 export const ADD_ITEM_TO_SALE = gql`
-	mutation addItemToSale($author: String!, $title: String!, $description: String!, $price: Float!) {
-    addItemToSale(author: $author, title: $title, description: $description, price: $price) {
+	mutation addItemToSale($author: String!, $title: String!, $description: String!, $medium: String!, $price: Float!) {
+    addItemToSale(author: $author, title: $title, description: $description, medium: $medium, price: $price) {
       _id
       title
       author
       description
+      medium
       price
       image
     }
@@ -59,6 +60,7 @@ export const DELETE_ITEM_TO_SALE = gql`
 	    title
   	  author
     	description
+      medium
 	    price
   	  image
 	  }
@@ -66,12 +68,13 @@ export const DELETE_ITEM_TO_SALE = gql`
 `;
 
 export const UPDATE_ITEM_TO_SALE = gql`
-	mutation updateItemToSale($author: String!, $title: String!, $description: String!, $price: Float!) {
-  	updateItemToSale(author: $author, title: $title, description: $description, price: $price) {
+	mutation updateItemToSale($author: String!, $title: String!, $description: String!, $medium: String!, $price: Float!) {
+  	updateItemToSale(author: $author, title: $title, description: $description, medium: $medium, price: $price) {
     	_id
     	title
     	author
   	  description
+      medium
 	    price
     	image
   	}
@@ -85,6 +88,7 @@ export const ADD_BOUGHT_ITEM = gql`
       title
       author
       description
+      medium
       price
       image
     }
@@ -98,6 +102,7 @@ export const ADD_SOLD_ITEM = gql`
       title
       author
       description
+      medium
       price
       image
     }
@@ -114,6 +119,7 @@ export const ADD_TO_CART = gql`
         title
         author
         description
+        medium
         price
         image
       }
@@ -131,6 +137,7 @@ export const DELETE_FROM_CART = gql`
         title
         author
         description
+        medium
         image
         price
       }
@@ -148,6 +155,7 @@ export const DELETE_ALL_FROM_CART = gql`
         title
         author
         description
+        medium
         price
         image
       }
