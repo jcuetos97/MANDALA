@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-
-//import { useMutation } from "@apollo/client";
-//import { ADD_ITEM_TO_SALE } from "../utils/mutations";
-import { Link } from 'react-router-dom';
 import uploadService from '../utils/uploadService';
+import { useNavigate } from 'react-router-dom';
+
 
 // CSS Style
 import "../assets/css/general.css";
@@ -11,9 +9,10 @@ import "../assets/css/sell.css";
 
 
 const Sell = () => {
+
+    const navigate = useNavigate();
     const [formState, setFormState] = useState({
         title: '',
-        author: '',
         description: '',
         price: '',
         medium: '',
@@ -36,10 +35,12 @@ const Sell = () => {
         e.preventDefault();
         console.log(file, "filename");
         uploadService.sendImages(
-            formState.name, formState.description, formState.price, formState.medium, file
+            formState.title, formState.description, formState.price, formState.medium, file
         ).then((result) => {
             console.log('Result: ', result);
+            navigate('/explore');
         });
+
     };
 
     const onFileChange = (e) => {
@@ -73,15 +74,6 @@ const Sell = () => {
                             required />
                     </div>
                     <div className="field-wrap">
-                        <label>Author </label>
-                        <input 
-                            value={formState.author}
-                            onChange={handleChange}
-                            name="author" 
-                            type="text"
-                            required />
-                    </div>
-                    <div className="field-wrap">
                         <label>Description (140 characters max)</label>
                         <textarea 
                             value={formState.description}
@@ -95,7 +87,7 @@ const Sell = () => {
                     <div className="field-wrap">
                         <label>Price</label>
                         <input 
-                            value={parseFloat(formState.price)}
+                            value={formState.price}
                             onChange={handleChange}
                             name="price"
                             type="text" 
