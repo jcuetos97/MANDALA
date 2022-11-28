@@ -16,7 +16,6 @@ const itemSchema = new Schema({
   medium: {
     type: String,
     required: true,
-    default: "None"
   },
   price: {
     type: Number,

@@ -2,7 +2,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
-var cors = require('cors')
+const cors = require('cors')
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
@@ -21,16 +21,14 @@ require('dotenv').config();
 const secretkey = (process.env.secret);
 const stripe = require("stripe")(secretkey);
 app.use(express.static('public'));
-const YOUR_DOMAIN = 'http://localhost:3002';
+const YOUR_DOMAIN = 'http://localhost:3000';
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors())
 app.post('/create-checkout-session', async (req, res) => {
-  //console.log("reqbody=", req.body.price_ID);
-  //console.log("cartitems", cartItems);
-  //console.log(line_items, "lineitems");
+  
   let line_items = req.body.price_ID.map((item) => {
-    //console.log(item, "item");
+    
     return {
       price_data: {
         currency: "USD",
@@ -45,7 +43,6 @@ app.post('/create-checkout-session', async (req, res) => {
 
           }
         },
-
       },
 
       quantity: 1,
@@ -54,13 +51,12 @@ app.post('/create-checkout-session', async (req, res) => {
     };
   });
   const session = await stripe.checkout.sessions.create({
-
     line_items,
     mode: 'payment',
     success_url: `${YOUR_DOMAIN}/explore?success=true`,
-    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+    cancel_url: `${YOUR_DOMAIN}/explore?canceled=true`,
   });
-  console.log(session, "session");
+  
   return res.json(session.url);
 });
 
