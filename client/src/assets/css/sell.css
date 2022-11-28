@@ -9,7 +9,7 @@
     height: inherit;
     font-family: 'Lora', serif;
     padding: 0 7rem;
-    margin-top: 7rem; }
+    margin: 7rem 0; }
 
 
 .collection-img {
@@ -22,7 +22,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-margin-top: .5rem; }
+    margin-top: .5rem; }
 
 
 .field-wrap-tag {

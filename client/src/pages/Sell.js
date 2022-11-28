@@ -12,17 +12,20 @@ import "../assets/css/sell.css";
 
 const Sell = () => {
     const [formState, setFormState] = useState({
-        name: '',
+        title: '',
+        author: '',
         description: '',
         price: '',
         medium: '',
     });
     const [file, setFile] = useState();
     const [pathImages, setPathImages] = useState('');
+
     
     const handleChange = (event) => {
         const { name, value } = event.target;
-    
+        
+
         setFormState({
           ...formState,
           [name]: value,
@@ -61,15 +64,24 @@ const Sell = () => {
                 <form>
                     <h2>Let the world discover your art!</h2>
                     <div className="field-wrap">
-                        <label>Name </label>
+                        <label>Title </label>
                         <input 
-                            value={formState.name}
+                            value={formState.title}
                             onChange={handleChange}
-                            name="name"
+                            name="title" 
                             type="text"
                             required />
                     </div>
-                    <div class="field-wrap">
+                    <div className="field-wrap">
+                        <label>Author </label>
+                        <input 
+                            value={formState.author}
+                            onChange={handleChange}
+                            name="author" 
+                            type="text"
+                            required />
+                    </div>
+                    <div className="field-wrap">
                         <label>Description (140 characters max)</label>
                         <textarea 
                             value={formState.description}
@@ -83,7 +95,7 @@ const Sell = () => {
                     <div className="field-wrap">
                         <label>Price</label>
                         <input 
-                            value={formState.price}
+                            value={parseFloat(formState.price)}
                             onChange={handleChange}
                             name="price"
                             type="text" 
@@ -118,7 +130,7 @@ const Sell = () => {
                         </div>
                     </div>
                     
-                    <div class="field-wrap">
+                    <div className="field-wrap">
                         <label>Image</label>
                         <input 
                             type="file" 

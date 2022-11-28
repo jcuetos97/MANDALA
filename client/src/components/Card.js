@@ -18,7 +18,7 @@ const Card = ({ image, author, title, description, id, medium, price }) => {
             { query: QUERY_SINGLE_ITEM }
         ]
     },);
-       
+
     return (
         <div className="card">
             <div className="card-image-container">

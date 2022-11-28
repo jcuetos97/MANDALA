@@ -32,7 +32,7 @@ const typeDefs = gql`
     type Query {
         me: User
         items: [Item]
-        #mediumItems(medium: String!): [Item]
+        mediumItems(medium: String!): [Item]
         item(itemId: ID!): Item
         cartItems: User
         #item por tag || descr || title || authorv

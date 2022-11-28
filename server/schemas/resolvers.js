@@ -19,6 +19,10 @@ const resolver = {
         items: async () => {
             return await Item.find({});
         },
+        mediumItems: async (parent, { mediumId }) => {
+            return await Item.find({ medium: mediumId  });
+        },
+        
         item: async (parent, { itemId }) => {
             return Item.findOne({ _id: itemId });
         },
