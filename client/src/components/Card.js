@@ -41,11 +41,16 @@ const Card = ({image,author,title,description,id,price}) => {
             deleteFromCart();
         }
     }
-   
+
     return (
         <div className="card">
             <div className="card-image-container">
-                <img className="card-image-top" src={image} alt={title}/>
+                <img className="card-image-top" src={image} 
+                    onError={({ currentTarget }) => {
+                        currentTarget.onerror = null; // prevents looping
+                        currentTarget.src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
+                    }}
+                    alt={title}/>
             </div>
             <div className="card-body">
                 <div className="card-body-content">

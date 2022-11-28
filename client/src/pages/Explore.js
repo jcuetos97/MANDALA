@@ -20,8 +20,8 @@ const Explore = () => {
     const { loading, data } = useQuery(QUERY_ITEMS);
     
     const prueba = uploadService.getItems();  //de esta forma se trae la info del server manipulandolo de la misma forma en que se subieron las imagenes
-    console.log('Esta es la data/prueba:');
-    console.log(prueba);
+    // console.log('Esta es la data/prueba:');
+    // console.log(prueba);
 
     const items = data?.items || [];
     
