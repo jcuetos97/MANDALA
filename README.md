@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="https://github.com/jcuetos97/MANDALA/blob/main/client/public/logo512.png" alt="Logo" width="80" height="80">
+  <img src="https://github.com/jcuetos97/MANDALA/blob/main/client/public/logo512.png" alt="Logo" width="80">
 
   <h1 align="center">MANDALA</h1>
   <h3>Marketplace for artists</h3>
