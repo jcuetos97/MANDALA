@@ -15,6 +15,10 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
+app.use(cors());
+//routes
+app.use('/', require('./routes/uploadImage'));
+
 
 // This is the checkout session
 require('dotenv').config();
@@ -24,7 +28,7 @@ app.use(express.static('public'));
 const YOUR_DOMAIN = 'http://localhost:3000';
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 app.post('/create-checkout-session', async (req, res) => {
   
   let line_items = req.body.price_ID.map((item) => {

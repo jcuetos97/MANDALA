@@ -8,8 +8,9 @@ const path = require('path');
 const uploader = multer({ storage });
 
 router.post('/upload', uploader.single('file'), async(req, res) => {
+    
     const { file, body } = req;
-
+    
     if (file && body) {
         const name = file.filename;
         const newItem = new Item({
@@ -17,6 +18,7 @@ router.post('/upload', uploader.single('file'), async(req, res) => {
             title: body.title,
             description: body.description,
             price: body.price,
+            medium: body.medium,
             image: path.join(__dirname, '../public/upload/') + name
         });
         await newItem.save();

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import { useMutation } from "@apollo/client";
-import { ADD_ITEM_TO_SALE } from "../utils/mutations";
-
+//import { useMutation } from "@apollo/client";
+//import { ADD_ITEM_TO_SALE } from "../utils/mutations";
+import { Link } from 'react-router-dom';
+import uploadService from '../utils/uploadService';
 
 // CSS Style
 import "../assets/css/general.css";
@@ -14,11 +15,12 @@ const Sell = () => {
         title: '',
         author: '',
         description: '',
-        price: 0,
-        medium:'',
-        image: '',
-      });
-    const [ addItemToSale, { error } ] = useMutation(ADD_ITEM_TO_SALE);
+        price: '',
+        medium: '',
+    });
+    const [file, setFile] = useState();
+    const [pathImages, setPathImages] = useState('');
+
     
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -28,25 +30,38 @@ const Sell = () => {
           ...formState,
           [name]: value,
         });
-      };
+    };
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-       
-        try {
-          await addItemToSale({
-            variables: { ...formState },
-          });
-    
-        } catch (e) {
-          console.error(e);
+    const sendImage = (e) => {
+        e.preventDefault();
+        console.log(file, "filename");
+        uploadService.sendImages(
+            formState.name, formState.description, formState.price, formState.medium, file
+        ).then((result) => {
+            console.log('Result: ', result);
+        });
+    };
+
+    const onFileChange = (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+            const file = e.target.files[0];
+            if (file.type.includes('image')) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function load() {
+                    setPathImages(reader.result)
+                }
+                setFile(file);
+            } else {
+                console.log('There was an error');
+            }
         }
-      };
+    };
     
     return (
         <div className="sell"> 
             <div className="sell-form-containter">
-                <form onSubmit={handleFormSubmit}>
+                <form>
                     <h2>Let the world discover your art!</h2>
                     <div className="field-wrap">
                         <label>Title </label>
@@ -83,7 +98,7 @@ const Sell = () => {
                             value={parseFloat(formState.price)}
                             onChange={handleChange}
                             name="price"
-                            type="number" 
+                            type="text" 
                             required />
                     </div>
                     
@@ -91,50 +106,49 @@ const Sell = () => {
                     <div className="tags-container">
                         <div className="field-wrap-tag">
                             <label htmlFor="watercolor">Watercolor</label>
-                            <input value="watercolor" onChange={handleChange} name="medium" type="radio"/>
+                            <input value="Watercolor" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="oil">Oil</label>
-                            <input value="oil" onChange={handleChange} name="medium" type="radio"/>
+                            <input value="Oil" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="charcoal">Charcoal & Pencils</label>
-                            <input value="charcoal" onChange={handleChange} name="medium" type="radio"/>
+                            <input value="Charcoal & Pencils" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="acrylic">Acrylic</label>
-                            <input value="acrylic" onChange={handleChange} name="medium" type="radio"/>
+                            <input value="Acrylic" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="mixedMedia">Mixed Media</label>
-                            <input value="mixedMedia" onChange={handleChange} name="medium" type="radio"/>
+                            <input value="Mixed Media" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="other">Other</label>
-                            <input value="other" onChange={handleChange} name="medium" type="radio"/>
+                            <input value="Other" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                     </div>
                     
                     <div className="field-wrap">
                         <label>Image</label>
                         <input 
-                            value={formState.image}
-                            onChange={handleChange}
                             type="file" 
                             name="image" 
+                            onChange={onFileChange} 
                             required />
                     </div>
                     <div className="button-started-container">
-                        <button type="submit" className="btn button-animated">Publish</button>
+                        <button type="submit" className="btn button-animated" onClick={sendImage}>Publish</button>
                     </div>
                 </form>
                 
-                {error && (
+                {/* {error && (
                     <div>
                     <br />
                     {error.message}
                     </div>
-                    )} 
+                    )}  */}
             </div>
         </div>
     );

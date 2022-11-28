@@ -12,12 +12,14 @@ import Auth from "../utils/auth";
 import "../assets/css/explore.css";
 import "../assets/css/general.css";
 
-import uploadService from "../utils/uploadService";
+//import uploadService from "../utils/uploadService";
 
 const Explore = () => {
     const [filterHide, setFilterHide] = useState("visible");
 
+
     const { data } = useQuery(QUERY_ITEMS);
+
     const items = data?.items || [];
     
     const prueba = uploadService.getItems();  
