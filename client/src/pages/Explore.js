@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { useQuery, useLazyQuery } from "@apollo/client";
-import { QUERY_ITEMS, QUERY_ITEMS_BY_MEDIUM } from "../utils/queries";
+import { useQuery } from "@apollo/client";
+import { QUERY_ITEMS } from "../utils/queries";
 
 import Card from "../components/Card";
 import Filter from "../assets/png/filter-ico.png";
@@ -12,24 +12,17 @@ import Auth from "../utils/auth";
 import "../assets/css/explore.css";
 import "../assets/css/general.css";
 
-//import uploadService from "../utils/uploadService";
 
 const Explore = () => {
     const [filterHide, setFilterHide] = useState("visible");
 
 
-    const { data } = useQuery(QUERY_ITEMS);
-
+    const { data } = useQuery(QUERY_ITEMS, {
+        pollInterval: 500,
+      });
     const items = data?.items || [];
-    
-    const prueba = uploadService.getItems();  
 
-    // const { data } = useQuery(QUERY_ITEMS);
-    
-    // const [loadMediumData, { data: mediumData }] = useLazyQuery(QUERY_ITEMS_BY_MEDIUM);
-    // const mediumItems = mediumData?.items || [];
-    // onClick={() => loadMediumData({ variables: { itemId: item._id } })}
-
+   
     return (
         <div className="explore">
             <nav className="navbar-explore">
