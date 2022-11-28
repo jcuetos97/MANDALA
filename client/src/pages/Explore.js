@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { useQuery } from "@apollo/client";
-import { QUERY_ITEMS } from "../utils/queries";
+import { useQuery, useLazyQuery } from "@apollo/client";
+import { QUERY_ITEMS, QUERY_ITEMS_BY_MEDIUM } from "../utils/queries";
 
 import Card from "../components/Card";
 import Filter from "../assets/png/filter-ico.png";
@@ -15,12 +15,10 @@ import "../assets/css/general.css";
 const Explore = () => {
     const [filterHide, setFilterHide] = useState("visible");
 
-    const { loading, data } = useQuery(QUERY_ITEMS);
+    const { data } = useQuery(QUERY_ITEMS);
     const items = data?.items || [];
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    const [loadMediumData, { data: mediumData }] = useLazyQuery(QUERY_ITEMS_BY_MEDIUM);
+    const mediumItems = mediumData?.items || [];
 
     return (
         <div className="explore">
@@ -43,32 +41,35 @@ const Explore = () => {
                     </div>
                 </div>
                 <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Medium</h3>
-                <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
-                    <li className="navbar-explore-link">
-                        <input type="checkbox" name="watercolor" />
-                        <label htmlFor="watercolor">Watercolor</label>
-                    </li>
-                    <li className="navbar-explore-link">
-                        <input type="checkbox" name="oil" />
-                        <label htmlFor="oil">Oil</label>
-                    </li>
-                    <li className="navbar-explore-link">
-                        <input type="checkbox" name="charcoal" />
-                        <label htmlFor="charcoal">Charcoal & Pencils</label>
-                    </li>
-                    <li className="navbar-explore-link">
-                        <input type="checkbox" name="acrylic" />
-                        <label htmlFor="acrylic">Acrylic</label>
-                    </li>
-                    <li className="navbar-explore-link">
-                        <input type="checkbox" name="mixedMedia" />
-                        <label htmlFor="mixedMedia">Mixed Media</label>
-                    </li>
-                    <li className="navbar-explore-link">
-                        <input type="checkbox" name="other" />
-                        <label htmlFor="other">Other</label>
-                    </li>
-                </ul>
+                <form action="">
+                    <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
+                        <li className="navbar-explore-link">
+                            <input type="checkbox" value="watercolor" name="watercolor" />
+                            <label htmlFor="watercolor">Watercolor</label>
+                        </li>
+                        <li className="navbar-explore-link">
+                            <input type="checkbox" value="oil" name="oil" />
+                            <label htmlFor="oil">Oil</label>
+                        </li>
+                        <li className="navbar-explore-link">
+                            <input type="checkbox" value="charcoal" name="charcoal" />
+                            <label htmlFor="charcoal">Charcoal & Pencils</label>
+                        </li>
+                        <li className="navbar-explore-link">
+                            <input type="checkbox" value="acrylic" name="acrylic" />
+                            <label htmlFor="acrylic">Acrylic</label>
+                        </li>
+                        <li className="navbar-explore-link">
+                            <input type="checkbox" value="mixedMedia" name="mixedMedia" />
+                            <label htmlFor="mixedMedia">Mixed Media</label>
+                        </li>
+                        <li className="navbar-explore-link">
+                            <input type="checkbox" value="other" name="other" />
+                            <label htmlFor="other">Other</label>
+                        </li>
+                    </ul>
+                    <button onClick={() => loadMediumData({ variables: { itemId: item._id } })} className="btn"> Filter </button>
+                </form>
             </nav>
             <div className="cards-container">
                 <div className="cards-container-header">

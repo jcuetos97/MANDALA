@@ -71,7 +71,7 @@ function App() {
               />
             </Routes>
             <ChatBox/>
-          </div>
+            </div>
           <Footer />
         </div>
       </Router>

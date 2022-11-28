@@ -33,7 +33,7 @@ const Header = () => {
         event.preventDefault();
         Auth.logout();
     };
-    console.log(data?.cartItems?.cart);
+    
     return (
         <header className='header'>
             <div className='header-content'>
@@ -46,7 +46,7 @@ const Header = () => {
                     </Link>  
                     <div className='search-bar'>
                         <FontAwesomeIcon className='search-icon' icon="magnifying-glass"/>
-                        <input type="text" name="search"/> 
+                        <input type="text" placeholder="Feature coming soon..." name="search"/> 
                     </div>
                 </div>
                 <div className='header-main'>

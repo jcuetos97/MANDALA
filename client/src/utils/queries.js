@@ -16,27 +16,13 @@ export const QUERY_ME = gql`
             }
             boughtItems {
               _id
-              description
-              medium
-              image
-              price
-              title
             }
             saleItems {
-              author
-              description
-              medium
-              image
-              price
-              title
+              _id
             }
             soldItems {
               _id
-              description
-              medium
-              image
-              price
-              title
+          
             }
         }
     }
@@ -57,19 +43,19 @@ export const QUERY_ITEMS = gql`
 `;
 
 
-// export const QUERY_ITEMS_BY_MEDIUM = gql`
-//     query MediumItems($medium: String!) {
-//         mediumItems(medium: $medium) {
-//             _id
-//             title
-//             author
-//             description
-//             medium
-//             price
-//             image
-//         }
-//     }
-// `;
+export const QUERY_ITEMS_BY_MEDIUM = gql`
+    query MediumItems($medium: String!) {
+        mediumItems(medium: $medium) {
+            _id
+            title
+            author
+            description
+            medium
+            price
+            image
+        }
+    }
+`;
 
 export const QUERY_SINGLE_ITEM = gql `
     query singleItem($itemId: ID!) {
