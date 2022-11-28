@@ -20,6 +20,7 @@ import HamMenu from '../assets/svg/ham-menu.svg';
 import HamMenuClose from '../assets/svg/ham-menu-close.svg';
 
 
+
 library.add(faMagnifyingGlass);
 
 const Header = () => {
@@ -32,7 +33,7 @@ const Header = () => {
         event.preventDefault();
         Auth.logout();
     };
-
+    console.log(data?.cartItems?.cart);
     return (
         <header className='header'>
             <div className='header-content'>
@@ -51,27 +52,27 @@ const Header = () => {
                 <div className='header-main'>
                     <ul className='header-links'>
                     {Auth.loggedIn() ? (
-                        <>
-                        <li className='header-link-wrapper'>
-                            <Link to='/user'>
-                            <span className='header-link'>My Profile</span>
-                            </Link>
-                        </li>
-                        <li className='header-link-wrapper'>
-                            <Link to='/explore'>
-                                <span className='header-link'>Explore</span>
-                            </Link>
-                        </li>
-                        <li className='header-link-wrapper'>
-                            <span className='header-link' onClick={logout}>Logout</span>
-                        </li>
-                        <li className={shopCart === "visible" ? "shop-wrapper wrapper--active" : "shop-wrapper" }>
-                            <button onClick={() => setShopCart(shopCart === "hidden" ? "visible" : "hidden")}>
-                                <img className = "shop-cart"  src={ShopCart} alt="Shop Cart Icon"/>
-                                <div className = {data?.cartItems?.cart.length === 0 ? "": "shop-cart-dot"}></div>
-                            </button>
-                        </li>
-                        </>
+                         <>
+                         <li className='header-link-wrapper'>
+                             <Link to='/user'>
+                             <span className='header-link'>My Profile</span>
+                             </Link>
+                         </li>
+                         <li className='header-link-wrapper'>
+                             <Link to='/explore'>
+                                 <span className='header-link'>Explore</span>
+                             </Link>
+                         </li>
+                         <li className='header-link-wrapper'>
+                             <span className='header-link' onClick={logout}>Logout</span>
+                         </li>
+                         <li className={shopCart === "visible" ? "shop-wrapper wrapper--active" : "shop-wrapper" }>
+                             <button onClick={() => setShopCart(shopCart === "hidden" ? "visible" : "hidden")}>
+                                 <img className = "shop-cart"  src={ShopCart} alt="Shop Cart Icon"/>
+                                 <div className = {data?.cartItems?.cart.length === 0 ? "": "shop-cart-dot"}></div>
+                             </button>
+                         </li>
+                         </>
                     ) : (
                         <>
                         <li className='header-link-wrapper'>
