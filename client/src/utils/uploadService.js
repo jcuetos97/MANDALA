@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3001;
 
 class UploadService {
     getItems() {
-        return axios.get(`${HOST}:${PORT}/download`);
+        return axios.get(`${HOST}/download`);
     };
 
     sendImages(title, description, price, medium, file) {        
@@ -19,7 +19,7 @@ class UploadService {
         form.append('medium', medium);
         form.append('file', file, 'form-data');
 
-        return axios.post(`${HOST}:${PORT}/upload`, form);
+        return axios.post(`${HOST}/upload`, form);
     };
 };
 
