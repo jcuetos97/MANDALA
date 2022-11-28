@@ -44,7 +44,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<p align="center">
+  <img src="https://github.com/aletsmc07/Images/blob/main/Images/Main.jpg?raw=true" alt="Logo" width="600" height="400">
+</p>
 
 All the people around the world knows about the greatest paintings of the most iconics artists, like Picasso, Van Gogh, Miguel Angel or Da Vinci, but what happen with smaller artists that want to be recognized or simply want to sell their paintings?
 
@@ -84,28 +86,24 @@ Please be secure that you have installed a source code editor like VSC; also ins
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Clone the repository (link provided on "LINKS" section).
+
 <p align="right"><a href="#content">Content</a></p>
 
 ### Installation
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+1. Open the folder in your code editor.
+2. Install dependencies:
    ```
-3. Install NPM packages
-   ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Run the app:
+   ```sh
+   npm run develop
+   ```
+4. If you are not redirectioned, copy and paste the link in your browser:
+   ```
+   http://localhost:3000/
    ```
 <p align="right"><a href="#content">Content</a></p>
 
@@ -128,7 +126,6 @@ _Below is an example of how you can instruct your audience on installing and set
 Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 <p align="right"><a href="#content">Content</a></p>
-
 
 
 <!-- CONTACT -->
