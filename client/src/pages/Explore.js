@@ -12,10 +12,17 @@ import Auth from "../utils/auth";
 import "../assets/css/explore.css";
 import "../assets/css/general.css";
 
+import uploadService from "../utils/uploadService";
+
 const Explore = () => {
     const [filterHide, setFilterHide] = useState("visible");
 
     const { loading, data } = useQuery(QUERY_ITEMS);
+    
+    const prueba = uploadService.getItems();  //de esta forma se trae la info del server manipulandolo de la misma forma en que se subieron las imagenes
+    // console.log('Esta es la data/prueba:');
+    // console.log(prueba);
+
     const items = data?.items || [];
 
     if (loading) {

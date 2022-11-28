@@ -30,6 +30,6 @@ export default function Checkout() {
     return message ? (
         <Message message={message} />
     ) : (
-        <Card />
+        ""
     );
 }
