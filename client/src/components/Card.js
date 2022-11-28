@@ -18,12 +18,26 @@ const Card = ({ image, author, title, description, id, medium, price }) => {
             { query: QUERY_SINGLE_ITEM }
         ]
     },);
+    
+    const [ deleteFromCart ] = useMutation(DELETE_FROM_CART, {
+        variables: { itemId: id },
+        refetchQueries: [
+          { query: QUERY_CART_ITEMS },
+          { query: QUERY_SINGLE_ITEM }
+        ]
+    });
 
 
+       
     return (
         <div className="card">
             <div className="card-image-container">
-                <img className="card-image-top" src={image} alt={title} />
+            <img className="card-image-top" src={image} 
+                    onError={({ currentTarget }) => {
+                        currentTarget.onerror = null; // prevents looping
+                        currentTarget.src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
+                    }}
+                    alt={title}/>
             </div>
             <div className="card-body">
                 <div className="card-body-content">
@@ -33,7 +47,7 @@ const Card = ({ image, author, title, description, id, medium, price }) => {
                     <p className="card-text-description">{description}</p>
                     <h4 className="card-text-price"><span>$</span>{numFor.format(price)}<span> MXN</span></h4>
                     <button className="btn-add" onClick={addToCart}>Add to cart</button>
-                </div>
+                </div>   
             </div>
         </div>
     )
