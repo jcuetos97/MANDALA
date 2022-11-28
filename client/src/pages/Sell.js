@@ -86,7 +86,7 @@ const Sell = () => {
                             value={formState.price}
                             onChange={handleChange}
                             name="price"
-                            type="text" 
+                            type="number" 
                             required />
                     </div>
                     

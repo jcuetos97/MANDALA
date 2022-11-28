@@ -14,14 +14,15 @@
   "dependencies": {
     "apollo-server-express": "^3.11.1",
     "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
     "dependencies": "^0.0.1",
     "dotenv": "^16.0.3",
-    "cors": "^2.8.5",
     "express": "^4.18.2",
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.2",
+    "multer": "^1.4.5-lts.1",
     "nodemon": "^2.0.20",
-    "multer": "^1.4.5-lts.1"
+    "stripe": "^11.1.0"
   }
 }
