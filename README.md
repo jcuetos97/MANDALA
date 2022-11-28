@@ -45,7 +45,7 @@
 ## About The Project
 
 <p align="center">
-  <img src="https://github.com/aletsmc07/Images/blob/main/Images/Main.jpg?raw=true" alt="Logo" width="600" height="400">
+  <img src="https://github.com/aletsmc07/Images/blob/main/Images/Main.jpg?raw=true" alt="Logo" width="100">
 </p>
 
 All the people around the world knows about the greatest paintings of the most iconics artists, like Picasso, Van Gogh, Miguel Angel or Da Vinci, but what happen with smaller artists that want to be recognized or simply want to sell their paintings?
