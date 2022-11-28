@@ -19,16 +19,7 @@ const Card = ({ image, author, title, description, id, medium, price }) => {
         ]
     },);
     
-    const [ deleteFromCart ] = useMutation(DELETE_FROM_CART, {
-        variables: { itemId: id },
-        refetchQueries: [
-          { query: QUERY_CART_ITEMS },
-          { query: QUERY_SINGLE_ITEM }
-        ]
-    });
-
-
-       
+   
     return (
         <div className="card">
             <div className="card-image-container">

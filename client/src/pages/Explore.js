@@ -17,16 +17,16 @@ import uploadService from "../utils/uploadService";
 const Explore = () => {
     const [filterHide, setFilterHide] = useState("visible");
 
-    const { loading, data } = useQuery(QUERY_ITEMS);
-    
-    const prueba = uploadService.getItems();  //de esta forma se trae la info del server manipulandolo de la misma forma en que se subieron las imagenes
-    // console.log('Esta es la data/prueba:');
-    // console.log(prueba);
-
     const { data } = useQuery(QUERY_ITEMS);
     const items = data?.items || [];
-    const [loadMediumData, { data: mediumData }] = useLazyQuery(QUERY_ITEMS_BY_MEDIUM);
-    const mediumItems = mediumData?.items || [];
+    
+    const prueba = uploadService.getItems();  
+
+    // const { data } = useQuery(QUERY_ITEMS);
+    
+    // const [loadMediumData, { data: mediumData }] = useLazyQuery(QUERY_ITEMS_BY_MEDIUM);
+    // const mediumItems = mediumData?.items || [];
+    // onClick={() => loadMediumData({ variables: { itemId: item._id } })}
 
     return (
         <div className="explore">
@@ -76,7 +76,7 @@ const Explore = () => {
                             <label htmlFor="other">Other</label>
                         </li>
                     </ul>
-                    <button onClick={() => loadMediumData({ variables: { itemId: item._id } })} className="btn"> Filter </button>
+                    <button  className="btn"> Filter </button>
                 </form>
             </nav>
             <div className="cards-container">

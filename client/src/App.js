@@ -55,7 +55,7 @@ function App() {
               />
               <Route
                 path='/user'
-                element={<User />}
+                element={Auth.loggedIn() ? <User/> : <Navigate to="/signForm"/>}
               />
               <Route
                 path='/explore'

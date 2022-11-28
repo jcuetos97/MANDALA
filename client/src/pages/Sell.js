@@ -11,23 +11,19 @@ import "../assets/css/sell.css";
 
 const Sell = () => {
     const [formState, setFormState] = useState({
-        name: '',
+        title: '',
+        author: '',
         description: '',
-        price: '',
-        watercolor: '',
-        oil: '',
-        charcoal: '',
-        acrylic: '',
-        mixedMedia: '',
-        other:'',
-        tags: '',
+        price: 0,
+        medium:'',
         image: '',
       });
     const [ addItemToSale, { error } ] = useMutation(ADD_ITEM_TO_SALE);
     
     const handleChange = (event) => {
         const { name, value } = event.target;
-    
+        
+
         setFormState({
           ...formState,
           [name]: value,
@@ -53,14 +49,24 @@ const Sell = () => {
                 <form onSubmit={handleFormSubmit}>
                     <h2>Let the world discover your art!</h2>
                     <div className="field-wrap">
-                        <label>Name </label>
+                        <label>Title </label>
                         <input 
-                            value={formState.name}
+                            value={formState.title}
                             onChange={handleChange}
+                            name="title" 
                             type="text"
                             required />
                     </div>
-                    <div class="field-wrap">
+                    <div className="field-wrap">
+                        <label>Author </label>
+                        <input 
+                            value={formState.author}
+                            onChange={handleChange}
+                            name="author" 
+                            type="text"
+                            required />
+                    </div>
+                    <div className="field-wrap">
                         <label>Description (140 characters max)</label>
                         <textarea 
                             value={formState.description}
@@ -74,10 +80,10 @@ const Sell = () => {
                     <div className="field-wrap">
                         <label>Price</label>
                         <input 
-                            value={formState.price}
+                            value={parseFloat(formState.price)}
                             onChange={handleChange}
-                            name="name"
-                            type="text" 
+                            name="price"
+                            type="number" 
                             required />
                     </div>
                     
@@ -85,31 +91,31 @@ const Sell = () => {
                     <div className="tags-container">
                         <div className="field-wrap-tag">
                             <label htmlFor="watercolor">Watercolor</label>
-                            <input value={formState.tags} onChange={handleChange} name="watercolor" type="checkbox"/>
+                            <input value="watercolor" onChange={handleChange} name="medium" type="radio"/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="oil">Oil</label>
-                            <input value={formState.tags} onChange={handleChange} name="oil" type="checkbox"/>
+                            <input value="oil" onChange={handleChange} name="medium" type="radio"/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="charcoal">Charcoal & Pencils</label>
-                            <input value={formState.tags} onChange={handleChange} name="charcoal" type="checkbox"/>
+                            <input value="charcoal" onChange={handleChange} name="medium" type="radio"/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="acrylic">Acrylic</label>
-                            <input value={formState.tags} onChange={handleChange} name="acrylic" type="checkbox"/>
+                            <input value="acrylic" onChange={handleChange} name="medium" type="radio"/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="mixedMedia">Mixed Media</label>
-                            <input value={formState.tags} onChange={handleChange} name="mixedMedia" type="checkbox"/>
+                            <input value="mixedMedia" onChange={handleChange} name="medium" type="radio"/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="other">Other</label>
-                            <input value={formState.tags} onChange={handleChange} name="other" type="checkbox"/>
+                            <input value="other" onChange={handleChange} name="medium" type="radio"/>
                         </div>
                     </div>
                     
-                    <div class="field-wrap">
+                    <div className="field-wrap">
                         <label>Image</label>
                         <input 
                             value={formState.image}
