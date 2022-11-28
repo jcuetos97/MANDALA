@@ -110,12 +110,20 @@ Clone the repository (link provided on "LINKS" section).
 <!-- USAGE -->
 ## Usage
 
+Welcome to MANDALA, feel free to create your profile:
+![chrome_yVpEvZNVSO](https://user-images.githubusercontent.com/107447818/204388691-21a1e9bd-1e9d-4c2f-8d9c-6a3040f9ade8.gif)
+
+Also if you are a member, login in your account; in "My Profile" section you can change your basic info, after that save changes:
+![chrome_cfaEUGHlpT](https://user-images.githubusercontent.com/107447818/204388872-24bdbf17-62ae-4c53-b5c6-a0c1d18c2157.gif)
+
+You can buy published pieces, section "EXPLORE" contains all the paintings of our artists, add to cart as many pieces as you want, remove from cart one or all elements of your list:
+![chrome_KeTPzdzMD8](https://user-images.githubusercontent.com/107447818/204390047-ef82ec4f-49d5-4b9d-a41d-2e9e8e5c2fc9.gif)
 
 <p align="right"><a href="#content">Content</a></p>
 
 <!-- LINKS -->
 ## Links
-* [MANDALA PAGE](https://www.google.com/)
+* [MANDALA PAGE](https://mandala.herokuapp.com/)
 * [Github Repository](https://github.com/jcuetos97/MANDALA)
 
 <p align="right"><a href="#content">Content</a></p>
@@ -126,7 +134,6 @@ Clone the repository (link provided on "LINKS" section).
 Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 <p align="right"><a href="#content">Content</a></p>
-
 
 <!-- CONTACT -->
 ## Contact
