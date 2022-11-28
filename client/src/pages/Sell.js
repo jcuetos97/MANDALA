@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import { useMutation } from "@apollo/client";
-import { ADD_ITEM_TO_SALE } from "../utils/mutations";
-
+//import { useMutation } from "@apollo/client";
+//import { ADD_ITEM_TO_SALE } from "../utils/mutations";
+import { Link } from 'react-router-dom';
+import uploadService from '../utils/uploadService';
 
 // CSS Style
 import "../assets/css/general.css";
@@ -14,16 +15,10 @@ const Sell = () => {
         name: '',
         description: '',
         price: '',
-        watercolor: '',
-        oil: '',
-        charcoal: '',
-        acrylic: '',
-        mixedMedia: '',
-        other:'',
-        tags: '',
-        image: '',
-      });
-    const [ addItemToSale, { error } ] = useMutation(ADD_ITEM_TO_SALE);
+        medium: '',
+    });
+    const [file, setFile] = useState();
+    const [pathImages, setPathImages] = useState('');
     
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -32,31 +27,45 @@ const Sell = () => {
           ...formState,
           [name]: value,
         });
-      };
+    };
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-       
-        try {
-          await addItemToSale({
-            variables: { ...formState },
-          });
-    
-        } catch (e) {
-          console.error(e);
+    const sendImage = (e) => {
+        e.preventDefault();
+        console.log(file, "filename");
+        uploadService.sendImages(
+            formState.name, formState.description, formState.price, formState.medium, file
+        ).then((result) => {
+            console.log('Result: ', result);
+        });
+    };
+
+    const onFileChange = (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+            const file = e.target.files[0];
+            if (file.type.includes('image')) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function load() {
+                    setPathImages(reader.result)
+                }
+                setFile(file);
+            } else {
+                console.log('There was an error');
+            }
         }
-      };
+    };
     
     return (
         <div className="sell"> 
             <div className="sell-form-containter">
-                <form onSubmit={handleFormSubmit}>
+                <form>
                     <h2>Let the world discover your art!</h2>
                     <div className="field-wrap">
                         <label>Name </label>
                         <input 
                             value={formState.name}
                             onChange={handleChange}
+                            name="name"
                             type="text"
                             required />
                     </div>
@@ -76,7 +85,7 @@ const Sell = () => {
                         <input 
                             value={formState.price}
                             onChange={handleChange}
-                            name="name"
+                            name="price"
                             type="text" 
                             required />
                     </div>
@@ -85,50 +94,49 @@ const Sell = () => {
                     <div className="tags-container">
                         <div className="field-wrap-tag">
                             <label htmlFor="watercolor">Watercolor</label>
-                            <input value={formState.tags} onChange={handleChange} name="watercolor" type="checkbox"/>
+                            <input value="Watercolor" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="oil">Oil</label>
-                            <input value={formState.tags} onChange={handleChange} name="oil" type="checkbox"/>
+                            <input value="Oil" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="charcoal">Charcoal & Pencils</label>
-                            <input value={formState.tags} onChange={handleChange} name="charcoal" type="checkbox"/>
+                            <input value="Charcoal & Pencils" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="acrylic">Acrylic</label>
-                            <input value={formState.tags} onChange={handleChange} name="acrylic" type="checkbox"/>
+                            <input value="Acrylic" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="mixedMedia">Mixed Media</label>
-                            <input value={formState.tags} onChange={handleChange} name="mixedMedia" type="checkbox"/>
+                            <input value="Mixed Media" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="other">Other</label>
-                            <input value={formState.tags} onChange={handleChange} name="other" type="checkbox"/>
+                            <input value="Other" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                     </div>
                     
                     <div class="field-wrap">
                         <label>Image</label>
                         <input 
-                            value={formState.image}
-                            onChange={handleChange}
                             type="file" 
                             name="image" 
+                            onChange={onFileChange} 
                             required />
                     </div>
                     <div className="button-started-container">
-                        <button type="submit" className="btn button-animated">Publish</button>
+                        <button type="submit" className="btn button-animated" onClick={sendImage}>Publish</button>
                     </div>
                 </form>
                 
-                {error && (
+                {/* {error && (
                     <div>
                     <br />
                     {error.message}
                     </div>
-                    )} 
+                    )}  */}
             </div>
         </div>
     );
