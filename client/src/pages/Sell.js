@@ -37,7 +37,6 @@ const Sell = () => {
         uploadService.sendImages(
             formState.title, formState.description, formState.price, formState.medium, file
         ).then((result) => {
-            console.log('Result: ', result);
             navigate('/explore');
         });
 
@@ -134,13 +133,6 @@ const Sell = () => {
                         <button type="submit" className="btn button-animated" onClick={sendImage}>Publish</button>
                     </div>
                 </form>
-                
-                {/* {error && (
-                    <div>
-                    <br />
-                    {error.message}
-                    </div>
-                    )}  */}
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Auth from '../utils/auth';
 
-const HOST = process.env.HOST || 'https://mandala.herokuapp.com';
+const HOST = process.env.HOST || 'http://localhost:3000';
 
 class UploadService {
     getItems() {

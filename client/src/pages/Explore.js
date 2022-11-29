@@ -16,9 +16,9 @@ const Explore = () => {
     
     const [filterHide, setFilterHide] = useState("visible");
 
-    const {medium = ''} = '';
+    const { medium = '' } = '';
     const { loading, data, refetch } = useQuery(QUERY_ITEMS_BY_MEDIUM, {
-        variables: {medium},
+        variables: { medium },
     });
 
     const items = data?.itemsByMedium || [];
@@ -47,6 +47,10 @@ const Explore = () => {
                 <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Medium</h3>
                 <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
                     <li className="navbar-explore-link">
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: '' })} />
+                        <label htmlFor="all">All</label>
+                    </li>
+                    <li className="navbar-explore-link">
                         <input type="radio" name="medium" onClick={() => refetch({ medium: 'Watercolor' })} />
                         <label htmlFor="watercolor">Watercolor</label>
                     </li>
@@ -67,7 +71,7 @@ const Explore = () => {
                         <label htmlFor="mixedMedia">Mixed Media</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="radio" name="medium" onClick={() => refetch({ medium: '' })} />
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Other' })} />
                         <label htmlFor="other">Other</label>
                     </li>
                 </ul>                
@@ -83,7 +87,7 @@ const Explore = () => {
                     </Link>
                 </div>
 
-                {items && items.map((item) =>
+                {items && items.length !==0 ? items.map((item) =>
                 (<Card
                     key={item._id}
                     image={item.image}
@@ -94,7 +98,11 @@ const Explore = () => {
                     id={item._id}
                     price={item.price}
                 />
-                ))}
+                )):(
+                    <div className="error-message">
+                        <p>Sorry! No artwork available... </p>
+                    </div>
+                )}
             </div>
         </div>
     );
