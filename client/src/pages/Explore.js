@@ -19,6 +19,7 @@ const Explore = () => {
     const { medium = '' } = '';
     const { loading, data, refetch } = useQuery(QUERY_ITEMS_BY_MEDIUM, {
         variables: { medium },
+        pollInterval: 500,
     });
 
     const items = data?.itemsByMedium || [];
