@@ -9,6 +9,8 @@ class UploadService {
     };
 
     sendImages(title, description, price, medium, file) {        
+      
+        
         const author = Auth.getProfile().data.username;        
         const form = new FormData();
         form.append('author', author );
