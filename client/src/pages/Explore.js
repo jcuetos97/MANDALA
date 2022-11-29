@@ -23,10 +23,7 @@ const Explore = () => {
 
     const items = data?.itemsByMedium || [];
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
+   
     return (
         <div className="explore">
             <nav className="navbar-explore">

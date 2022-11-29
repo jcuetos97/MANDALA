@@ -38,7 +38,7 @@ const User = () => {
         }
       }, [loading, data])
       
-      console.log(data);
+      
       const [disabled, setDisabled] = useState(true);
   
       const [ updateUser ] = useMutation(UPDATE_USER);

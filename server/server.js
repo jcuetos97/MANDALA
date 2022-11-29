@@ -15,7 +15,6 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-app.use(cors());
 //routes
 app.use('/', require('./routes/uploadImage'));
 
@@ -25,7 +24,7 @@ require('dotenv').config();
 const secretkey = (process.env.secret);
 const stripe = require("stripe")(secretkey);
 app.use(express.static('public'));
-const YOUR_DOMAIN = 'http://localhost:3000';
+const YOUR_DOMAIN = 'https://mandala.herokuapp.com';
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
@@ -57,8 +56,8 @@ app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items,
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}/explore?success=true`,
-    cancel_url: `${YOUR_DOMAIN}/explore?canceled=true`,
+    success_url: `${YOUR_DOMAIN}/?success=true`,
+    cancel_url: `${YOUR_DOMAIN}/?canceled=true`,
   });
   
   return res.json(session.url);

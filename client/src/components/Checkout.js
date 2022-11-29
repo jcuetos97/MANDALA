@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Card from "./Card";
 
 const Message = ({ message }) => (
     <section>
@@ -30,6 +29,6 @@ export default function Checkout() {
     return message ? (
         <Message message={message} />
     ) : (
-        ""
+       ""
     );
 }

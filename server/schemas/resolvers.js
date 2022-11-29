@@ -17,8 +17,13 @@ const resolver = {
             throw new AuthenticationError('You need to be logged in');
         },
         items: async () => {
-            return await Item.find({});
+            return await Item.find({})
+                .sort({_id:-1});
         },
+        mediumItems: async (parent, { mediumId }) => {
+            return await Item.find({ medium: mediumId  });
+        },
+        
         item: async (parent, { itemId }) => {
             return Item.findOne({ _id: itemId });
         },

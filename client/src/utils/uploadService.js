@@ -1,26 +1,24 @@
 import axios from 'axios';
 import Auth from '../utils/auth';
 
-const HOST = process.env.HOST || 'http://localhost';
-const PORT = process.env.PORT || 3001;
+const HOST = process.env.HOST || 'https://mandala.herokuapp.com';
 
 class UploadService {
     getItems() {
-        return axios.get(`${HOST}:${PORT}/download`);
+        return axios.get(`${HOST}/download`);
     };
 
-    sendImages(name, description, price, medium, file) {        
+    sendImages(title, description, price, medium, file) {        
         const author = Auth.getProfile().data.username;        
         const form = new FormData();
         form.append('author', author );
-        form.append('title', name);
+        form.append('title', title);
         form.append('description', description);
         form.append('price', price);
         form.append('medium', medium);
         form.append('file', file, 'form-data');
 
-        console.log('antes de enviar');
-        return axios.post(`${HOST}:${PORT}/upload`, form);
+        return axios.post(`${HOST}/upload`, form);
     };
 };
 

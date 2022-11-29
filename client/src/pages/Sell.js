@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-
-//import { useMutation } from "@apollo/client";
-//import { ADD_ITEM_TO_SALE } from "../utils/mutations";
-import { Link } from 'react-router-dom';
 import uploadService from '../utils/uploadService';
+import { useNavigate } from 'react-router-dom';
+
 
 // CSS Style
 import "../assets/css/general.css";
@@ -11,18 +9,22 @@ import "../assets/css/sell.css";
 
 
 const Sell = () => {
+
+    const navigate = useNavigate();
     const [formState, setFormState] = useState({
-        name: '',
+        title: '',
         description: '',
         price: '',
         medium: '',
     });
     const [file, setFile] = useState();
     const [pathImages, setPathImages] = useState('');
+
     
     const handleChange = (event) => {
         const { name, value } = event.target;
-    
+        
+
         setFormState({
           ...formState,
           [name]: value,
@@ -33,10 +35,12 @@ const Sell = () => {
         e.preventDefault();
         console.log(file, "filename");
         uploadService.sendImages(
-            formState.name, formState.description, formState.price, formState.medium, file
+            formState.title, formState.description, formState.price, formState.medium, file
         ).then((result) => {
             console.log('Result: ', result);
+            navigate('/explore');
         });
+
     };
 
     const onFileChange = (e) => {
@@ -61,15 +65,15 @@ const Sell = () => {
                 <form>
                     <h2>Let the world discover your art!</h2>
                     <div className="field-wrap">
-                        <label>Name </label>
+                        <label>Title </label>
                         <input 
-                            value={formState.name}
+                            value={formState.title}
                             onChange={handleChange}
-                            name="name"
+                            name="title" 
                             type="text"
                             required />
                     </div>
-                    <div class="field-wrap">
+                    <div className="field-wrap">
                         <label>Description (140 characters max)</label>
                         <textarea 
                             value={formState.description}
@@ -118,7 +122,7 @@ const Sell = () => {
                         </div>
                     </div>
                     
-                    <div class="field-wrap">
+                    <div className="field-wrap">
                         <label>Image</label>
                         <input 
                             type="file" 

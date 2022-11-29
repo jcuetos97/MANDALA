@@ -29,6 +29,7 @@ const Cart = () => {
     cart.map((item) => (subtotal.push(item.price)));
     cart.map((item) => (itemCount.push(item)));
     cart.map((item) => (items.push(item)));
+  
 
     const sum = subtotal.reduce((partialSum, a) => partialSum + a, 0);
     const totalItems = itemCount.length;
