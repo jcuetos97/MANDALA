@@ -12,7 +12,7 @@ router.post('/upload', uploader.single('file'), async(req, res) => {
     const { file, body } = req;
     
     if (file && body) {
-        const name = file.path;
+        const name = file.filename;
         const newItem = new Item({
             author: body.author,
             title: body.title,
