@@ -24,7 +24,7 @@ app.use('/', require('./routes/uploadImage'));
 require('dotenv').config();
 const secretkey = (process.env.secret);
 const stripe = require("stripe")(secretkey);
-const YOUR_DOMAIN = process.env.HOST ||'http://localhost:3000';
+const YOUR_DOMAIN ='https://mandala.herokuapp.com';
 app.use(express.static('uploads'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
