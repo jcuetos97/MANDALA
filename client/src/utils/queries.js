@@ -42,21 +42,6 @@ export const QUERY_ITEMS = gql`
     }
 `;
 
-
-export const QUERY_ITEMS_BY_MEDIUM = gql`
-    query MediumItems($medium: String!) {
-        mediumItems(medium: $medium) {
-            _id
-            title
-            author
-            description
-            medium
-            price
-            image
-        }
-    }
-`;
-
 export const QUERY_SINGLE_ITEM = gql `
     query singleItem($itemId: ID!) {
         item(itemId: $itemId) {
@@ -83,6 +68,20 @@ export const QUERY_CART_ITEMS = gql`
           price
           image
         }
+    }
+  }
+`;
+
+export const QUERY_ITEMS_BY_MEDIUM = gql`
+  query itemsByMedium($medium: String!) {
+   itemsByMedium(medium: $medium) {
+      _id
+      title
+      author
+      description
+      medium
+      price
+      image
     }
   }
 `;

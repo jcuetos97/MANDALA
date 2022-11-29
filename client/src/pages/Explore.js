@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useQuery } from "@apollo/client";
-import { QUERY_ITEMS } from "../utils/queries";
+import { QUERY_ITEMS_BY_MEDIUM } from "../utils/queries";
 
 import Card from "../components/Card";
 import Filter from "../assets/png/filter-ico.png";
@@ -12,15 +12,16 @@ import Auth from "../utils/auth";
 import "../assets/css/explore.css";
 import "../assets/css/general.css";
 
-
 const Explore = () => {
+    
     const [filterHide, setFilterHide] = useState("visible");
 
+    const {medium = ''} = '';
+    const { loading, data, refetch } = useQuery(QUERY_ITEMS_BY_MEDIUM, {
+        variables: {medium},
+    });
 
-    const { data } = useQuery(QUERY_ITEMS, {
-        pollInterval: 500,
-      });
-    const items = data?.items || [];
+    const items = data?.itemsByMedium || [];
 
    
     return (
@@ -44,35 +45,32 @@ const Explore = () => {
                     </div>
                 </div>
                 <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Medium</h3>
-                <form action="">
-                    <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
-                        <li className="navbar-explore-link">
-                            <input type="checkbox" value="watercolor" name="watercolor" />
-                            <label htmlFor="watercolor">Watercolor</label>
-                        </li>
-                        <li className="navbar-explore-link">
-                            <input type="checkbox" value="oil" name="oil" />
-                            <label htmlFor="oil">Oil</label>
-                        </li>
-                        <li className="navbar-explore-link">
-                            <input type="checkbox" value="charcoal" name="charcoal" />
-                            <label htmlFor="charcoal">Charcoal & Pencils</label>
-                        </li>
-                        <li className="navbar-explore-link">
-                            <input type="checkbox" value="acrylic" name="acrylic" />
-                            <label htmlFor="acrylic">Acrylic</label>
-                        </li>
-                        <li className="navbar-explore-link">
-                            <input type="checkbox" value="mixedMedia" name="mixedMedia" />
-                            <label htmlFor="mixedMedia">Mixed Media</label>
-                        </li>
-                        <li className="navbar-explore-link">
-                            <input type="checkbox" value="other" name="other" />
-                            <label htmlFor="other">Other</label>
-                        </li>
-                    </ul>
-                    <button  className="btn"> Filter </button>
-                </form>
+                <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
+                    <li className="navbar-explore-link">
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Watercolor' })} />
+                        <label htmlFor="watercolor">Watercolor</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Oil' })} />
+                        <label htmlFor="oil">Oil</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Charcoal and Pencils' })} />
+                        <label htmlFor="charcoal">Charcoal & Pencils</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Acrylic' })} />
+                        <label htmlFor="acrylic">Acrylic</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Mixed Media' })} />
+                        <label htmlFor="mixedMedia">Mixed Media</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: '' })} />
+                        <label htmlFor="other">Other</label>
+                    </li>
+                </ul>                
             </nav>
             <div className="cards-container">
                 <div className="cards-container-header">

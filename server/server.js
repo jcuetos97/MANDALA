@@ -15,6 +15,7 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
+
 app.use(cors());
 app.use('/', require('./routes/uploadImage'));
 
@@ -56,8 +57,8 @@ app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items,
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}/explore?success=true`,
-    cancel_url: `${YOUR_DOMAIN}/explore?canceled=true`,
+    success_url: `${YOUR_DOMAIN}/?success=true`,
+    cancel_url: `${YOUR_DOMAIN}/?canceled=true`,
   });
   
   return res.json(session.url);

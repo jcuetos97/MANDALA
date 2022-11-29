@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="https://github.com/jcuetos97/MANDALA/blob/main/client/public/logo512.png" alt="Logo" width="80" height="80">
+  <img src="https://github.com/jcuetos97/MANDALA/blob/main/client/public/logo512.png" alt="Logo" width="80">
 
   <h1 align="center">MANDALA</h1>
   <h3>Marketplace for artists</h3>
@@ -11,11 +11,9 @@
   <p align="center">
     An easy way to sell and buy art!
     </br>
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://mandala.herokuapp.com/">View App</a>
     ·
     <a href="https://github.com/jcuetos97/MANDALA/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/jcuetos97/MANDALA/issues">Request Feature</a>
   </p>
 </div>
 
@@ -44,7 +42,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<p align="center">
+  <img src="https://github.com/aletsmc07/Images/blob/main/Images/Main.jpg?raw=true" alt="Logo" width="100%">
+</p>
 
 All the people around the world knows about the greatest paintings of the most iconics artists, like Picasso, Van Gogh, Miguel Angel or Da Vinci, but what happen with smaller artists that want to be recognized or simply want to sell their paintings?
 
@@ -84,40 +84,44 @@ Please be secure that you have installed a source code editor like VSC; also ins
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Clone the repository (link provided on "LINKS" section).
+
 <p align="right"><a href="#content">Content</a></p>
 
 ### Installation
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+1. Open the folder in your code editor.
+2. Install dependencies:
    ```
-3. Install NPM packages
-   ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Run the app:
+   ```sh
+   npm run develop
+   ```
+4. If you are not redirectioned, copy and paste the link in your browser:
+   ```
+   http://localhost:3000/
    ```
 <p align="right"><a href="#content">Content</a></p>
 
 <!-- USAGE -->
 ## Usage
 
+Welcome to MANDALA, feel free to create your profile:
+![chrome_yVpEvZNVSO](https://user-images.githubusercontent.com/107447818/204388691-21a1e9bd-1e9d-4c2f-8d9c-6a3040f9ade8.gif)
+
+Also if you are a member, login in your account; in "My Profile" section you can change your basic info, after that save changes:
+![chrome_cfaEUGHlpT](https://user-images.githubusercontent.com/107447818/204388872-24bdbf17-62ae-4c53-b5c6-a0c1d18c2157.gif)
+
+You can buy published pieces, section "EXPLORE" contains all the paintings of our artists, add to cart as many pieces as you want, remove from cart one or all elements of your list:
+![chrome_KeTPzdzMD8](https://user-images.githubusercontent.com/107447818/204390047-ef82ec4f-49d5-4b9d-a41d-2e9e8e5c2fc9.gif)
 
 <p align="right"><a href="#content">Content</a></p>
 
 <!-- LINKS -->
 ## Links
-* [MANDALA PAGE](https://www.google.com/)
+* [MANDALA PAGE](https://mandala.herokuapp.com/)
 * [Github Repository](https://github.com/jcuetos97/MANDALA)
 
 <p align="right"><a href="#content">Content</a></p>
@@ -128,8 +132,6 @@ _Below is an example of how you can instruct your audience on installing and set
 Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 <p align="right"><a href="#content">Content</a></p>
-
-
 
 <!-- CONTACT -->
 ## Contact
