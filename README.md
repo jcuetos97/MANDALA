@@ -11,11 +11,9 @@
   <p align="center">
     An easy way to sell and buy art!
     </br>
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://mandala.herokuapp.com/">View App</a>
     ·
     <a href="https://github.com/jcuetos97/MANDALA/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/jcuetos97/MANDALA/issues">Request Feature</a>
   </p>
 </div>
 
