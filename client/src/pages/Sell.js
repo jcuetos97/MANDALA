@@ -102,7 +102,7 @@ const Sell = () => {
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="charcoal">Charcoal & Pencils</label>
-                            <input value="Charcoal & Pencils" onChange={handleChange} name="medium" type="radio" required/>
+                            <input value="Charcoal and Pencils" onChange={handleChange} name="medium" type="radio" required/>
                         </div>
                         <div className="field-wrap-tag">
                             <label htmlFor="acrylic">Acrylic</label>

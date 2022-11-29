@@ -29,6 +29,17 @@ const resolver = {
                 ).populate('cart');
             }
             throw new AuthenticationError('You need to be logged in');
+        },
+        itemsByMedium: async (parent, args) => {
+            console.log(args);
+            if (args.medium === '') {
+                return await Item.find({});
+            } else {                
+                return await Item.find(
+                    {medium: args.medium}
+                );                
+            }
+            
         }
     },
     Mutation: {

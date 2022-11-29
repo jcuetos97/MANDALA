@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useQuery } from "@apollo/client";
-import { QUERY_ITEMS } from "../utils/queries";
+import { QUERY_ITEMS_BY_MEDIUM } from "../utils/queries";
 
 import Card from "../components/Card";
 import Filter from "../assets/png/filter-ico.png";
@@ -12,13 +12,16 @@ import Auth from "../utils/auth";
 import "../assets/css/explore.css";
 import "../assets/css/general.css";
 
-//import uploadService from "../utils/uploadService";
-
 const Explore = () => {
+    
     const [filterHide, setFilterHide] = useState("visible");
 
-    const { loading, data } = useQuery(QUERY_ITEMS);
-    const items = data?.items || [];
+    const {medium = ''} = '';
+    const { loading, data, refetch } = useQuery(QUERY_ITEMS_BY_MEDIUM, {
+        variables: {medium},
+    });
+
+    const items = data?.itemsByMedium || [];
 
     if (loading) {
         return <div>Loading...</div>;
@@ -47,30 +50,30 @@ const Explore = () => {
                 <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Medium</h3>
                 <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
                     <li className="navbar-explore-link">
-                        <input type="checkbox" name="watercolor" />
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Watercolor' })} />
                         <label htmlFor="watercolor">Watercolor</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="checkbox" name="oil" />
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Oil' })} />
                         <label htmlFor="oil">Oil</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="checkbox" name="charcoal" />
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Charcoal and Pencils' })} />
                         <label htmlFor="charcoal">Charcoal & Pencils</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="checkbox" name="acrylic" />
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Acrylic' })} />
                         <label htmlFor="acrylic">Acrylic</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="checkbox" name="mixedMedia" />
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Mixed Media' })} />
                         <label htmlFor="mixedMedia">Mixed Media</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="checkbox" name="other" />
+                        <input type="radio" name="medium" onClick={() => refetch({ medium: '' })} />
                         <label htmlFor="other">Other</label>
                     </li>
-                </ul>
+                </ul>                
             </nav>
             <div className="cards-container">
                 <div className="cards-container-header">
