@@ -117,7 +117,16 @@ Also if you are a member, login in your account; in "My Profile" section you can
 ![chrome_cfaEUGHlpT](https://user-images.githubusercontent.com/107447818/204388872-24bdbf17-62ae-4c53-b5c6-a0c1d18c2157.gif)
 
 You can buy published pieces, section "EXPLORE" contains all the paintings of our artists, add to cart as many pieces as you want, remove from cart one or all elements of your list:
-![chrome_KeTPzdzMD8](https://user-images.githubusercontent.com/107447818/204390047-ef82ec4f-49d5-4b9d-a41d-2e9e8e5c2fc9.gif)
+![chrome_LAHR3PVnqt](https://user-images.githubusercontent.com/107447818/204414255-0afbadff-d117-46fe-b049-e4abe09ce264.gif)
+
+Complete your purchase: 
+![chrome_AaZAXw4Wvz](https://user-images.githubusercontent.com/107447818/204414421-dfa7badd-3b57-4301-8bbe-1767e6f7ddfa.gif)
+
+Fill the required info to confirm your purchase:
+![chrome_wm0vfCnYD5](https://user-images.githubusercontent.com/107447818/204414510-bed48dee-b88c-4377-9711-31d93d945d45.gif)
+
+You will recieve an email confirmation:
+![image](https://user-images.githubusercontent.com/107447818/204414842-d3f6eddb-3c06-4a84-982b-d7341cc04126.png)
 
 <p align="right"><a href="#content">Content</a></p>
 
