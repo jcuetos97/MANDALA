@@ -19,7 +19,7 @@ router.post('/upload', uploader.single('file'), async(req, res) => {
             description: body.description,
             price: body.price,
             medium: body.medium,
-            image: path.join(__dirname, '../public/upload/') + name
+            image: name
         });
         await newItem.save();
         res.json({
