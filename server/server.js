@@ -25,7 +25,7 @@ require('dotenv').config();
 const secretkey = (process.env.secret);
 const stripe = require("stripe")(secretkey);
 const YOUR_DOMAIN ='https://mandala.herokuapp.com';
-app.use(express.static(__dirname +'/uploads'));
+app.use('/uploads',express.static(__dirname +'/uploads'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
