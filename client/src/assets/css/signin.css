@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 
 .signin {
     display:flex;
     flex-wrap: wrap;
     width: 100%;
     height: inherit;
-    font-family: 'Lora', serif;
+    font-family: "Lora", serif;
     padding: 0 2rem;
     margin-top: 7rem; }
 
@@ -32,7 +32,6 @@
 .form-containter {
   animation: slideInRight;
   animation-timing-function: ease-in-out;
-  animation-delay: 0s;
   animation-duration: 1s;
   padding: 1rem;
   width: 100%; 

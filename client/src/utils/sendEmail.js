@@ -14,26 +14,26 @@ const transporter = nodemailer.createTransport({
     secure: true, // upgrade later with STARTTLS
     auth: {
       //Agregar en user el correo@electronico.com
-      user: '',
+      user: "",
       //Agregar la contraseña para aplicaciones
-      pass: '',
+      pass: "",
     },
   });
   
 const mailOption = {
-      from: '',
+      from: "",
       //Aqui se cambia el mail del usuario
       //Este mail es de testing
-      to: '',
-      subject: 'EMAIL TEST',
-      text: 'Este email es de test'
+      to: "",
+      subject: "EMAIL TEST",
+      text: "Este email es de test"
   };
   
 transporter.sendMail(mailOption, function(error, info){
       if (error) {
           console.log(error);
       } else {
-          console.log('Email Enviado! 👍📧');
+          console.log("Email Enviado! 👍📧");
       }
   });
 

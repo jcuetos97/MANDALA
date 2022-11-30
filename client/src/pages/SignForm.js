@@ -4,18 +4,18 @@ import LoginIn from "../components/LoginIn";
 
 
 // CSS Style
-import '../assets/css/general.css';
-import '../assets/css/signin.css';
+import "../assets/css/general.css";
+import "../assets/css/signin.css";
 
 const SignForm = () => {
     
-    const [currentPage, setCurrentPage] = useState('SignUp');
+    const [currentPage, setCurrentPage] = useState("SignUp");
 
     const renderPage = () => {
-        if (currentPage === 'LogIn') {
+        if (currentPage === "LogIn") {
             return <LoginIn />;
         }
-        if (currentPage === 'SignUp') {
+        if (currentPage === "SignUp") {
             return <SignUp />;
         }
 
@@ -29,8 +29,8 @@ const SignForm = () => {
 
             <div className="signin-content">
                 <ul className="tab-group">
-                    <li><a href="#signup" className={currentPage === 'SignUp' ? 'tab-active' : 'tab'} onClick={() => {setCurrentPage('SignUp')}}>Sign Up</a></li>
-                    <li><a href="#login" className={currentPage === 'LogIn' ? 'tab-active' : 'tab'} onClick={() => {setCurrentPage('LogIn')}}>Log In</a></li>
+                    <li><a href="#signup" className={currentPage === "SignUp" ? "tab-active" : "tab"} onClick={() => {setCurrentPage("SignUp")}}>Sign Up</a></li>
+                    <li><a href="#login" className={currentPage === "LogIn" ? "tab-active" : "tab"} onClick={() => {setCurrentPage("LogIn")}}>Log In</a></li>
                 </ul>
                 {renderPage()}
             </div>

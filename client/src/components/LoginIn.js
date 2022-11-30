@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 // CSS Style
-import '../assets/css/general.css';
-import '../assets/css/signin.css';
+import "../assets/css/general.css";
+import "../assets/css/signin.css";
 
 const LoginIn = () => {
-    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [formState, setFormState] = useState({ email: "", password: "" });
     const [login, { error }] = useMutation(LOGIN_USER);
 
     const handleChange = (event) => {
@@ -35,8 +35,8 @@ const LoginIn = () => {
         }
 
         setFormState({
-        email: '',
-        password: '',
+        email: "",
+        password: "",
         });
     };
         

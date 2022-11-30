@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 
 // CSS Style
-import '../assets/css/general.css';
-import '../assets/css/signin.css';
+import "../assets/css/general.css";
+import "../assets/css/signin.css";
 
 const SignUp = () => {
     const [formState, setFormState] = useState({
-        username: '',
-        email: '',
-        password: '',
+        username: "",
+        email: "",
+        password: "",
       });
       const [addUser, { error }] = useMutation(ADD_USER);
     

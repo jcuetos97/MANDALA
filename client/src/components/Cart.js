@@ -7,7 +7,7 @@ import "../assets/css/cart.css";
 
 
 const Cart = () => {
-    const numFor = Intl.NumberFormat('en-US');
+    const numFor = Intl.NumberFormat("en-US");
     const [deleteFromCart] = useMutation(DELETE_FROM_CART, {
         refetchQueries: [
             { query: QUERY_CART_ITEMS }
@@ -36,7 +36,7 @@ const Cart = () => {
     
     function fetchdata() {
         const data = { "price_ID": items }
-        fetch('/create-checkout-session',
+        fetch("/create-checkout-session",
             {
                 method: "POST",
                 body: JSON.stringify(data),

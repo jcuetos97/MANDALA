@@ -1,13 +1,13 @@
-const router = require('express').Router();
-const Item = require('../models/Item');
-const storage = require('../utils/multer');
-const multer = require('multer');
+const router = require("express").Router();
+const Item = require("../models/Item");
+const storage = require("../utils/multer");
+const multer = require("multer");
 
-const path = require('path');
+const path = require("path");
 
 const uploader = multer({ storage });
 
-router.post('/upload', uploader.single('file'), async(req, res) => {
+router.post("/upload", uploader.single("file"), async(req, res) => {
     
     const { file, body } = req;
     
@@ -29,7 +29,7 @@ router.post('/upload', uploader.single('file'), async(req, res) => {
 });
 
 
-router.get('/download', async(req, res) => {
+router.get("/download", async(req, res) => {
     const items = await Item.find();
     res.json(items);
 });

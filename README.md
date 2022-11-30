@@ -50,9 +50,9 @@ All the people around the world knows about the greatest paintings of the most i
 
 Mandala was created with the main purpouse to help this kind of artist or art lovers who wants to find unique pieces.
 
-Here's why:
+Here"s why:
 * You can register in the web, as a user you have two options, sell or buy paintings.
-* If you want to sell, you'll be able to upload your pieces, helping the buyers adding the title, description and price; when the customer buys your products, an email will be sent to you to see the purchase details.
+* If you want to sell, you"ll be able to upload your pieces, helping the buyers adding the title, description and price; when the customer buys your products, an email will be sent to you to see the purchase details.
 * As a customer, you can navigate and search by categories, artist or most relevant pieces, add to cart all you want and go to checkout to finish your purchase; after that you will recieve an email confirming your purchase with all the details. :smile:
 
 Of course, as we mentioned before, the principal purpose is to help the artist.

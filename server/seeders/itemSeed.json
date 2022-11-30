@@ -2,7 +2,7 @@
   {
     "author": "Vincent Van Gogh",
     "title": "The Starry Night",
-    "description": "Van Gogh's night sky is a field of roiling energy. Below the exploding stars, the village is a place of quiet order.",
+    "description": "Van Gogh"s night sky is a field of roiling energy. Below the exploding stars, the village is a place of quiet order.",
     "medium": "Oil",
     "price": 20000.00,
     "image": "https://cdn.pixabay.com/photo/2015/12/15/05/43/starry-night-1093721_960_720.jpg"
@@ -34,7 +34,7 @@
   {
     "author": "Michelangelo",
     "title": "The Creation of Adam",
-    "description": "The Creation of Adam (Italian: Creazione di Adamo) is a fresco painting by Italian artist Michelangelo, which forms part of the Sistine Chapel's ceiling.",
+    "description": "The Creation of Adam (Italian: Creazione di Adamo) is a fresco painting by Italian artist Michelangelo, which forms part of the Sistine Chapel"s ceiling.",
     "medium": "Acrylic",
     "price": 100000.00,
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Creaci%C3%B3n_de_Ad%C3%A1n.jpg"
