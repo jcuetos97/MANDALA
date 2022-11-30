@@ -22,7 +22,7 @@ const Card = ({ image, author, title, description, id, medium, price }) => {
     return (
         <div className="card">
             <div className="card-image-container">
-            <img className="card-image-top" src=`uploads/${image}` 
+            <img className="card-image-top" src={"uploads/"+ image} 
                     onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping
                         currentTarget.src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
