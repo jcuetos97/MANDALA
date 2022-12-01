@@ -119,14 +119,12 @@ Welcome to MANDALA, feel free to create your profile:
 ![chrome_yVpEvZNVSO](https://user-images.githubusercontent.com/107447818/204388691-21a1e9bd-1e9d-4c2f-8d9c-6a3040f9ade8.gif)
 
 ### Log In
-<p>&nbsp;</p>
 Also if you are a member, login in your account; in "My Profile" section you can change your basic info, after that save changes:
 <p>&nbsp;</p>
 
 ![chrome_cfaEUGHlpT](https://user-images.githubusercontent.com/107447818/204388872-24bdbf17-62ae-4c53-b5c6-a0c1d18c2157.gif)
 
 ### Explore & buy
-<p>&nbsp;</p>
 You can buy published pieces, section "EXPLORE" contains all the paintings of our artists, add to cart as many pieces as you want, remove from cart one or all elements of your list:
 <p>&nbsp;</p>
 
