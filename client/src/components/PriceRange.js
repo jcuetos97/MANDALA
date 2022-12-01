@@ -1,6 +1,6 @@
 
 import React  from 'react';
-import Slider from '@material-ui/core/Slider';
+import Slider from '@mui/material/Slider';
   
 const PriceRange = ({range, rangeSelector, filterHide}) => {
   const numFor = Intl.NumberFormat("en-US");
