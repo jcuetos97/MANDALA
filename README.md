@@ -115,6 +115,7 @@ Clone the repository (link provided on "LINKS" section).
 
 Welcome to MANDALA, feel free to create your profile:
 <p>&nbsp;</p>
+
 ![chrome_yVpEvZNVSO](https://user-images.githubusercontent.com/107447818/204388691-21a1e9bd-1e9d-4c2f-8d9c-6a3040f9ade8.gif)
 
 Also if you are a member, login in your account; in "My Profile" section you can change your basic info, after that save changes:
