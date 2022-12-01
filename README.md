@@ -49,10 +49,10 @@
 Mandala is an e-commerce marketplace where users can buy and sell local artwork.
 
 In this app users are able to:
-* Register and edit your profile.
+* Register and edit their own profiles.
 * Browse the explore section using filters such as price range and art techniques.
-* Publish your own artwork by specifing a title, description, medium and price.
-* Add, remove and checkout from your shopping cart; after every purchase you will recieve an email with confirmation details. :smile:
+* Publish artwork by specifing piece title, description, medium and price.
+* Add, remove and checkout from their own shopping cart; after every purchase the user will recieve an email with confirmation details. :smile:
 
 <p align="right"><a href="#content">Content</a></p>
 
