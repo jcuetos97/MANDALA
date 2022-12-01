@@ -1,7 +1,7 @@
 import axios from "axios";
 import Auth from "../utils/auth";
 
-const HOST = process.env.MANDALA || "http://localhost:3000";
+const HOST = process.env.MANDALA;
 
 class UploadService {
     getItems() {
