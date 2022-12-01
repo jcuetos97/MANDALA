@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import Edit from "../assets/png/edit-ico.png";
 
 // CSS Style
-import '../assets/css/general.css';
-import '../assets/css/user.css';
+import "../assets/css/general.css";
+import "../assets/css/user.css";
 
 const User = () => {
     
@@ -81,7 +81,7 @@ const User = () => {
                   <p className="info-content-subtitle">The Night Watch</p> 
                   <h5>$34,000MXN</h5> 
               </li>  
-              <Link to='/explore'>
+              <Link to="/explore">
                   <button type="submit" className="btn btn-art">See More</button>
               </Link> 
           </div>
@@ -107,7 +107,7 @@ const User = () => {
           </div>
           <div className="user-container items">
             <h2>Art-at-sale</h2>
-            <Link to='/sell'>
+            <Link to="/sell">
             <button type="submit" className="btn btn-explore">Sell Piece</button>
             </Link> 
             <ul>

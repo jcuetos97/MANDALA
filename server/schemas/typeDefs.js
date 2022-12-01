@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
     type User {
@@ -34,7 +34,7 @@ const typeDefs = gql`
         items: [Item]        
         item(itemId: ID!): Item
         cartItems: User
-        itemsByMedium(medium: String!): [Item]        
+        itemsByMedium(medium: String!, range:[Int]): [Item]        
     }
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth        

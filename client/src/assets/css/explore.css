@@ -1,19 +1,21 @@
 .explore {
     display: flex;
-    font-family: 'Lora', serif;
-    display: flex;
+    font-family: "Lora", serif;
     flex-wrap: wrap; }
 
 .navbar-explore {
+    position: sticky;
+    top: 76px; 
     animation: slideDown 2s;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
     width: 20%;
-    margin: 4rem 0rem;
-    padding: 2rem 2rem;
-    border-bottom: dashed 1px var(--blue);
-    border-right: dashed 1px var(--blue);
+    height: 670px;
+    margin-bottom: 1rem;
+    padding: 4rem 2rem;
+    background-color: var(--dark);
+    color: var(--light);
     border-radius:  0 0 25px;
     transform: all 4s; }
     @media only screen and (max-width: 1050px) {
@@ -21,8 +23,7 @@
             flex-direction: row;
             width: 100%;
             border-radius: 0;
-            border-right: none;
-            margin-bottom: 0rem; } }
+            border-right: none; } }
 
 .navbar-explore-title {
     width: 100%;
@@ -72,8 +73,7 @@
 
 .navbar-explore-links {
     display: flex;
-    flex-wrap: wrap;
-}
+    flex-wrap: wrap; }
 
 .navbar-explore-link {
     display: flex;
@@ -90,6 +90,7 @@
     animation: opacity 2s;
     display: flex;
     width: 75%;
+    min-height: 100vh;
     flex-wrap: wrap ;
     justify-content: flex-start;
     align-items: flex-start;
@@ -110,10 +111,15 @@
 .card {
     display: flex;
     flex-wrap: wrap;
+    height: 455px;
     width: 17rem;
     margin: 2rem;
     color: var(--dark);
     background-color: var(--light);}
+    .card:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
 
 .card-image-container {
     height: 255px;
@@ -141,7 +147,14 @@
 
 .card-text-description {
     font-size: .8rem;
-    padding: .6rem 1rem; }
+    padding: .6rem 1rem; 
+    height: 65px; }
+
+.card-text-description p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden; }
 
 .card-text-price {
     padding: .6rem 1rem; }
@@ -179,3 +192,15 @@
 
 .hide {
     display: none; }
+
+.error-message {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 2rem; }
+
+.error-message p {
+    padding: 2rem 4rem;
+    background-color: var(--light-blue);
+    border: dashed 1px var(--blue);
+    border-radius: 15px; }

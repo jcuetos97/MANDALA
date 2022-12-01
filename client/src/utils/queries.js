@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
     query me {
@@ -73,8 +73,8 @@ export const QUERY_CART_ITEMS = gql`
 `;
 
 export const QUERY_ITEMS_BY_MEDIUM = gql`
-  query itemsByMedium($medium: String!) {
-   itemsByMedium(medium: $medium) {
+  query itemsByMedium($medium: String!, $range:[Int]) {
+   itemsByMedium(medium: $medium, range: $range) {
       _id
       title
       author

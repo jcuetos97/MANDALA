@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import uploadService from '../utils/uploadService';
-import { useNavigate } from 'react-router-dom';
+import uploadService from "../utils/uploadService";
+import { useNavigate } from "react-router-dom";
 
 
 // CSS Style
@@ -12,13 +12,13 @@ const Sell = () => {
 
     const navigate = useNavigate();
     const [formState, setFormState] = useState({
-        title: '',
-        description: '',
-        price: '',
-        medium: '',
+        title: "",
+        description: "",
+        price: "",
+        medium: "",
     });
     const [file, setFile] = useState();
-    const [pathImages, setPathImages] = useState('');
+    const [pathImages, setPathImages] = useState("");
 
     
     const handleChange = (event) => {
@@ -33,12 +33,10 @@ const Sell = () => {
 
     const sendImage = (e) => {
         e.preventDefault();
-        console.log(file, "filename");
         uploadService.sendImages(
             formState.title, formState.description, formState.price, formState.medium, file
         ).then((result) => {
-            console.log('Result: ', result);
-            navigate('/explore');
+            navigate("/explore");
         });
 
     };
@@ -46,7 +44,7 @@ const Sell = () => {
     const onFileChange = (e) => {
         if (e.target.files && e.target.files.length > 0) {
             const file = e.target.files[0];
-            if (file.type.includes('image')) {
+            if (file.type.includes("image")) {
                 const reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onload = function load() {
@@ -54,7 +52,7 @@ const Sell = () => {
                 }
                 setFile(file);
             } else {
-                console.log('There was an error');
+                console.log("There was an error");
             }
         }
     };
@@ -134,13 +132,6 @@ const Sell = () => {
                         <button type="submit" className="btn button-animated" onClick={sendImage}>Publish</button>
                     </div>
                 </form>
-                
-                {/* {error && (
-                    <div>
-                    <br />
-                    {error.message}
-                    </div>
-                    )}  */}
             </div>
         </div>
     );

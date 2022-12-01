@@ -1,34 +1,34 @@
-import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { setContext } from '@apollo/client/link/context';
+import React from "react";
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { setContext } from "@apollo/client/link/context";
 
-import './assets/css/general.css';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import ChatBox from './components/Chatbox';
-import Sell from './pages/Sell';
-import Checkout from './components/Checkout';
-import Home from './pages/Home';
-import User from './pages/User';
-import Explore from './pages/Explore';
-import SignForm from './pages/SignForm';
-import Auth from './utils/auth';
+import "./assets/css/general.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import ChatBox from "./components/Chatbox";
+import Sell from "./pages/Sell";
+import Checkout from "./components/Checkout";
+import Home from "./pages/Home";
+import User from "./pages/User";
+import Explore from "./pages/Explore";
+import SignForm from "./pages/SignForm";
+import Auth from "./utils/auth";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -47,26 +47,26 @@ function App() {
       <Router>
         <div>
           <Header />
-          <div className='main-container'>
+          <div className="main-container">
             <Routes>
               <Route 
-                path='/'
+                path="/"
                 element={Auth.loggedIn() ? <Navigate to="/explore"/> : <Home/>}
               />
               <Route
-                path='/user'
+                path="/user"
                 element={Auth.loggedIn() ? <User/> : <Navigate to="/signForm"/>}
               />
               <Route
-                path='/explore'
+                path="/explore"
                 element={<Explore />}
               />
               <Route
-                path='/signForm'
+                path="/signForm"
                 element={<SignForm />}
               />
               <Route
-                path='/sell'
+                path="/sell"
                 element={Auth.loggedIn() ? <Sell/> : <Navigate to="/signForm"/>}
               />
             </Routes>

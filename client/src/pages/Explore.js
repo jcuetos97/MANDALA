@@ -1,28 +1,34 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_ITEMS_BY_MEDIUM } from "../utils/queries";
 
 import Card from "../components/Card";
-import Filter from "../assets/png/filter-ico.png";
-import Profile from "../assets/png/user-ico.png";
-
+import Filter from "../assets/png/filter-ico-light.png";
+import Profile from "../assets/png/user-ico-light.png";
+import PriceRange from "../components/PriceRange";
 import Auth from "../utils/auth";
 
 import "../assets/css/explore.css";
 import "../assets/css/general.css";
 
+
 const Explore = () => {
-    
+    const [range, setValue] = useState([1000,110000]);
+    const [medium, setMedium] = useState("");
     const [filterHide, setFilterHide] = useState("visible");
+    
+    
+    const rangeSelector = (event, newValue) => {
+        setValue(newValue);  
+    };
 
-    const {medium = ''} = '';
-    const { loading, data, refetch } = useQuery(QUERY_ITEMS_BY_MEDIUM, {
-        variables: {medium},
+    const { data } = useQuery(QUERY_ITEMS_BY_MEDIUM, {
+        variables: { medium, range },
+        pollInterval: 500,
     });
-
+    
     const items = data?.itemsByMedium || [];
-
    
     return (
         <div className="explore">
@@ -47,30 +53,36 @@ const Explore = () => {
                 <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Medium</h3>
                 <ul className={filterHide === "hidden" ? "hide" : "navbar-explore-links"}>
                     <li className="navbar-explore-link">
-                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Watercolor' })} />
+                        <input type="radio" name="medium" onClick={() => setMedium("")} />
+                        <label htmlFor="all">All</label>
+                    </li>
+                    <li className="navbar-explore-link">
+                        <input type="radio" name="medium" onClick={() => setMedium("Watercolor")} />
                         <label htmlFor="watercolor">Watercolor</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Oil' })} />
+                        <input type="radio" name="medium" onClick={() => setMedium("Oil")} />
                         <label htmlFor="oil">Oil</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Charcoal and Pencils' })} />
+                        <input type="radio" name="medium" onClick={() => setMedium("Charcoal and Pencils")} />
                         <label htmlFor="charcoal">Charcoal & Pencils</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Acrylic' })} />
+                        <input type="radio" name="medium" onClick={() => setMedium("Acrylic")} />
                         <label htmlFor="acrylic">Acrylic</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="radio" name="medium" onClick={() => refetch({ medium: 'Mixed Media' })} />
+                        <input type="radio" name="medium" onClick={() => setMedium("Mixed Media")} />
                         <label htmlFor="mixedMedia">Mixed Media</label>
                     </li>
                     <li className="navbar-explore-link">
-                        <input type="radio" name="medium" onClick={() => refetch({ medium: '' })} />
+                        <input type="radio" name="medium" onClick={() => setMedium("Other")} />
                         <label htmlFor="other">Other</label>
                     </li>
-                </ul>                
+                </ul>  
+                <h3 className={filterHide === "hidden" ? "hide" : "navbar-explore-title"}>Price Range</h3>
+                <PriceRange range={range} rangeSelector={rangeSelector} filterHide={filterHide}/>              
             </nav>
             <div className="cards-container">
                 <div className="cards-container-header">
@@ -83,7 +95,7 @@ const Explore = () => {
                     </Link>
                 </div>
 
-                {items && items.map((item) =>
+                {items && items.length !==0 ? items.map((item) =>
                 (<Card
                     key={item._id}
                     image={item.image}
@@ -94,7 +106,11 @@ const Explore = () => {
                     id={item._id}
                     price={item.price}
                 />
-                ))}
+                )):(
+                    <div className="error-message">
+                        <p>Sorry! No artwork available... </p>
+                    </div>
+                )}
             </div>
         </div>
     );
