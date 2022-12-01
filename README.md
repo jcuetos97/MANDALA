@@ -131,12 +131,18 @@ You can buy published pieces, section "EXPLORE" contains all the paintings of ou
 ![chrome_LAHR3PVnqt](https://user-images.githubusercontent.com/107447818/204414255-0afbadff-d117-46fe-b049-e4abe09ce264.gif)
 
 Complete your purchase: 
+<p>&nbsp;</p>
+
 ![chrome_AaZAXw4Wvz](https://user-images.githubusercontent.com/107447818/204414421-dfa7badd-3b57-4301-8bbe-1767e6f7ddfa.gif)
 
 Fill the required info to confirm your purchase:
+<p>&nbsp;</p>
+
 ![chrome_wm0vfCnYD5](https://user-images.githubusercontent.com/107447818/204414510-bed48dee-b88c-4377-9711-31d93d945d45.gif)
 
 You will recieve an email confirmation:
+<p>&nbsp;</p>
+
 ![image](https://user-images.githubusercontent.com/107447818/204414842-d3f6eddb-3c06-4a84-982b-d7341cc04126.png)
 
 <p align="right"><a href="#content">Content</a></p>
