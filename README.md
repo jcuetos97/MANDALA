@@ -46,16 +46,13 @@
   <img src="https://github.com/aletsmc07/Images/blob/main/Images/Main.jpg?raw=true" alt="Logo" width="100%">
 </p>
 
-All the people around the world knows about the greatest paintings of the most iconics artists, like Picasso, Van Gogh, Miguel Angel or Da Vinci, but what happen with smaller artists that want to be recognized or simply want to sell their paintings?
+Mandala is an e-commerce marketplace where users can buy and sell local artwork.
 
-Mandala was created with the main purpouse to help this kind of artist or art lovers who wants to find unique pieces.
-
-Here"s why:
-* You can register in the web, as a user you have two options, sell or buy paintings.
-* If you want to sell, you"ll be able to upload your pieces, helping the buyers adding the title, description and price; when the customer buys your products, an email will be sent to you to see the purchase details.
-* As a customer, you can navigate and search by categories, artist or most relevant pieces, add to cart all you want and go to checkout to finish your purchase; after that you will recieve an email confirming your purchase with all the details. :smile:
-
-Of course, as we mentioned before, the principal purpose is to help the artist.
+In this app users are able to:
+* Register and edit your profile.
+* Browse the explore section using filters such as price range and art techniques.
+* Publish your own artwork by specifing a title, description, medium and price.
+* Add, remove and checkout from your shopping cart; after every purchase you will recieve an email with confirmation details. :smile:
 
 <p align="right"><a href="#content">Content</a></p>
 
@@ -80,7 +77,7 @@ This app was created with the following resources:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Please be secure that you have installed a source code editor like VSC; also install NodeJs and MongoDB.
+Please be sure that you have installed a source code editor like VSC; it is also important to install NodeJs and MongoDB.
 
 ### Prerequisites
 
@@ -95,11 +92,19 @@ Clone the repository (link provided on "LINKS" section).
    ```
    npm install
    ```
-3. Run the app:
+3. Seed the database:
+   ```
+   npm run seed
+   ```  
+4. Run build script:
+   ```
+   npm run build
+   ```      
+5. Finally, run the app:
    ```sh
    npm run develop
    ```
-4. If you are not redirectioned, copy and paste the link in your browser:
+6. If you are not redirectioned, copy and paste the link in your browser:
    ```
    http://localhost:3000/
    ```
