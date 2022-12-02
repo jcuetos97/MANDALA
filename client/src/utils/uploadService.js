@@ -1,6 +1,6 @@
 import axios from "axios";
 import Auth from "../utils/auth";
-require("dotenv").config();
+
 
 const HOST = process.env.REACT_APP_API || "http://localhost:3000";
 
