@@ -46,16 +46,13 @@
   <img src="https://github.com/aletsmc07/Images/blob/main/Images/Main.jpg?raw=true" alt="Logo" width="100%">
 </p>
 
-All the people around the world knows about the greatest paintings of the most iconics artists, like Picasso, Van Gogh, Miguel Angel or Da Vinci, but what happen with smaller artists that want to be recognized or simply want to sell their paintings?
+Mandala is an e-commerce marketplace where users can buy and sell local artwork.
 
-Mandala was created with the main purpouse to help this kind of artist or art lovers who wants to find unique pieces.
-
-Here"s why:
-* You can register in the web, as a user you have two options, sell or buy paintings.
-* If you want to sell, you"ll be able to upload your pieces, helping the buyers adding the title, description and price; when the customer buys your products, an email will be sent to you to see the purchase details.
-* As a customer, you can navigate and search by categories, artist or most relevant pieces, add to cart all you want and go to checkout to finish your purchase; after that you will recieve an email confirming your purchase with all the details. :smile:
-
-Of course, as we mentioned before, the principal purpose is to help the artist.
+In this app users are able to:
+* Register and edit their own profiles.
+* Browse the explore section using filters such as price range and art techniques.
+* Publish artwork by specifing piece title, description, medium and price.
+* Add, remove and checkout from their own shopping cart; after every purchase the user will recieve an email with confirmation details. :smile:
 
 <p align="right"><a href="#content">Content</a></p>
 
@@ -80,7 +77,7 @@ This app was created with the following resources:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Please be secure that you have installed a source code editor like VSC; also install NodeJs and MongoDB.
+Please be sure that you have installed a source code editor like VSC; it is also important to install NodeJs and MongoDB.
 
 ### Prerequisites
 
@@ -95,11 +92,19 @@ Clone the repository (link provided on "LINKS" section).
    ```
    npm install
    ```
-3. Run the app:
+3. Seed the database:
+   ```
+   npm run seed
+   ```  
+4. Run build script:
+   ```
+   npm run build
+   ```      
+5. Finally, run the app:
    ```sh
    npm run develop
    ```
-4. If you are not redirectioned, copy and paste the link in your browser:
+6. If you are not redirectioned, copy and paste the link in your browser:
    ```
    http://localhost:3000/
    ```
@@ -107,15 +112,41 @@ Clone the repository (link provided on "LINKS" section).
 
 <!-- USAGE -->
 ## Usage
-
+### Sign Up
 Welcome to MANDALA, feel free to create your profile:
+<p>&nbsp;</p>
+
 ![chrome_yVpEvZNVSO](https://user-images.githubusercontent.com/107447818/204388691-21a1e9bd-1e9d-4c2f-8d9c-6a3040f9ade8.gif)
 
+### Log In
 Also if you are a member, login in your account; in "My Profile" section you can change your basic info, after that save changes:
+<p>&nbsp;</p>
+
 ![chrome_cfaEUGHlpT](https://user-images.githubusercontent.com/107447818/204388872-24bdbf17-62ae-4c53-b5c6-a0c1d18c2157.gif)
 
+### Explore
 You can buy published pieces, section "EXPLORE" contains all the paintings of our artists, add to cart as many pieces as you want, remove from cart one or all elements of your list:
-![chrome_KeTPzdzMD8](https://user-images.githubusercontent.com/107447818/204390047-ef82ec4f-49d5-4b9d-a41d-2e9e8e5c2fc9.gif)
+<p>&nbsp;</p>
+
+![chrome_LAHR3PVnqt](https://user-images.githubusercontent.com/107447818/204414255-0afbadff-d117-46fe-b049-e4abe09ce264.gif)
+
+### Buy
+Complete your purchase: 
+<p>&nbsp;</p>
+
+![chrome_AaZAXw4Wvz](https://user-images.githubusercontent.com/107447818/204414421-dfa7badd-3b57-4301-8bbe-1767e6f7ddfa.gif)
+
+### Checkout
+Fill the required info to confirm your purchase:
+<p>&nbsp;</p>
+
+![chrome_wm0vfCnYD5](https://user-images.githubusercontent.com/107447818/204414510-bed48dee-b88c-4377-9711-31d93d945d45.gif)
+
+### Email confirmation
+You will recieve an email confirmation:
+<p>&nbsp;</p>
+
+![image](https://user-images.githubusercontent.com/107447818/204414842-d3f6eddb-3c06-4a84-982b-d7341cc04126.png)
 
 <p align="right"><a href="#content">Content</a></p>
 
